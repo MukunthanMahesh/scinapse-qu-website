@@ -16,7 +16,7 @@ This website serves as a hub for:
 
 - **React** with **Vite**
 - **Tailwind CSS** for styling
-- Hosted on [Netlify/Vercel/GitHub Pages] (edit as needed)
+- Hosted on Netlify 
 - GitHub for version control
 
 ## Want to Contribute? Here's how you can get started! 🚀
