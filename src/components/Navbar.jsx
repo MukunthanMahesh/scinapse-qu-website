@@ -9,7 +9,7 @@ export default function Navbar() {
       <div className="max-w-screen-xl mx-auto flex justify-between items-center">
 
         {/* Logo */}
-        <img src="logo.png" alt="Scarborough Shift logo"/>
+        <img src="logo.png" alt="SCINAPSE-QU Logo" className="h-16 w-auto"/>
 
         {/* Desktop Nav Links */}
         <ul className="hidden md:flex gap-6 text-sm">
