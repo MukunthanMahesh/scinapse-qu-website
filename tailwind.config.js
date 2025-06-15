@@ -8,16 +8,16 @@ export default {
     extend: {
       colors: {
         brand: {
-          deepBlue: "#1E3A8A",
-          skybBlue: "#3B82F6",
+          cyanBlue: "#74DCDF",
+          cyanHue: "#00D4FF",
           white: "#FFFFFF",
-          lighGray: "#F3F4F6",
-          darkGray: "#374151",
-          offWhite: "#F9FAFB",
-          navyBlue: "#0A1A4A",
-          navyBlueDeep: "#050A30",
+          black: "#000000",
+          darkCyan: "#5FC6C9",
         }
-      }
+      },
+      fontFamily: {
+        sans: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+      },
     },
   },
   plugins: [],

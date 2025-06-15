@@ -5,24 +5,36 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="bg-brand-navyBlueDeep text-brand-offWhite px-4 md:px-6 py-2.5 shadow-md">
+    <nav className="bg-brand-black text-brand-white px-4 md:px-6 py-3 shadow-md">
       <div className="max-w-screen-xl mx-auto flex justify-between items-center">
 
         {/* Logo */}
-        <img src="logo.png" alt="SCINAPSE-QU Logo" className="h-16 w-auto"/>
+        <Link to="/">
+          <img src="/logo.png" alt="SciNapse Logo" className="h-12 w-auto" />
+        </Link>
 
-        {/* Desktop Nav Links */}
-        <ul className="hidden md:flex gap-6 text-sm">
-          <li><Link to="/about" className="hover:underline">About Us</Link></li>
-          <li><Link to="/faq" className="hover:underline">FAQ</Link></li>
-          <li><Link to="/services" className="hover:underline">Services</Link></li>
-          <li><Link to="/contact" className="hover:underline">Contact</Link></li>
+        {/* Desktop Links */}
+        <ul className="hidden md:flex gap-10 text-sm font-medium">
+          <li><Link to="/uscc" className="hover:text-brand-darkCyan">USCC</Link></li>
+          <li><Link to="/gallery" className="hover:text-brand-darkCyan">Gallery</Link></li>
+          <li><Link to="/team" className="hover:text-brand-darkCyan">Our Team</Link></li>
+          <li><Link to="/about" className="hover:text-brand-darkCyan">About Us</Link></li>
         </ul>
 
-        {/* Action Buttons (Desktop) */}
+        {/* Buttons */}
         <div className="hidden md:flex gap-3">
-          <button className="bg-brand-offWhite text-brand-darkGray px-3 py-1 rounded text-sm">❤️ Donate to SHN</button>
-          <button className="border border-white px-3 py-1 rounded text-sm">Sign Up</button>
+          <Link
+            to="/get-involved"
+            className="bg-brand-cyanBlue hover:bg-brand-darkCyan text-black px-4 py-1.5 rounded text-sm font-semibold"
+          >
+            Get Involved
+          </Link>
+          <Link
+            to="/contact"
+            className="border border-brand-white px-4 py-1.5 rounded text-sm font-semibold hover:bg-brand-white hover:text-brand-black transition"
+          >
+            Contact Us
+          </Link>
         </div>
 
         {/* Hamburger (Mobile) */}
@@ -47,13 +59,31 @@ export default function Navbar() {
 
       {/* Mobile Menu */}
       {isOpen && (
-        <div className="md:hidden mt-4 space-y-3 text-sm px-4">
-          <Link to="/about" className="block">About Us</Link>
-          <Link to="/faq" className="block">FAQ</Link>
-          <Link to="/services" className="block">Services</Link>
-          <Link to="/contact" className="block">Contact</Link>
-          <button className="w-full bg-brand-offWhite text-brand-darkGray px-3 py-1 rounded">❤️ Donate to SHN</button>
-          <button className="w-full border border-brand-offWhite px-3 py-1 rounded">Sign Up</button>
+        <div className="md:hidden bg-black text-white px-6 pt-6 pb-8 space-y-6 rounded-b-lg shadow-lg z-50">
+
+          {/* Navigation Links */}
+          <nav className="flex flex-col items-center space-y-6 text-base font-medium">
+            <Link to="/uscc" className="hover:text-brand-darkCyan">USCC</Link>
+            <Link to="/gallery" className="hover:text-brand-darkCyan">Gallery</Link>
+            <Link to="/team" className="hover:text-brand-darkCyan">Our Team</Link>
+            <Link to="/about" className="hover:text-brand-darkCyan">About Us</Link>
+          </nav>
+
+          {/* Call to Action Buttons */}
+          <div className="flex flex-col gap-3">
+            <Link
+              to="/get-involved"
+              className="text-center bg-brand-cyanBlue text-brand-black font-semibold px-4 py-2 rounded hover:brightness-110 transition"
+            >
+              Get Involved
+            </Link>
+            <Link
+              to="/contact"
+              className="text-center border border-white text-white font-semibold px-4 py-2 rounded hover:bg-white hover:text-black transition"
+            >
+              Contact Us!
+            </Link>
+          </div>
         </div>
       )}
     </nav>
