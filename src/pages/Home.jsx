@@ -1,5 +1,8 @@
+import HeroBanner from "../components/LandingPage/heroBanner";
 
 
 export default function Clinics() {
-    return <h1>Home</h1>;
+  return (
+    <HeroBanner />
+  );
   }
