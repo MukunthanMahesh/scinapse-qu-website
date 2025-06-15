@@ -1,4 +1,4 @@
-import HeroBanner from "../components/LandingPage/heroBanner";
+import HeroBanner from "./components/LandingPage/HeroBanner";
 
 
 export default function Clinics() {
