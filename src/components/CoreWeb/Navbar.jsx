@@ -26,7 +26,7 @@ export default function Navbar() {
         <div className="hidden md:flex gap-3">
           <Link
             to="/get-involved"
-            className="bg-brand-cyanBlue hover:bg-brand-darkCyan text-black px-4 py-1.5 rounded text-sm font-semibold"
+            className="bg-brand-cyanBlue hover:bg-brand-darkCyan text-brand-black px-4 py-1.5 rounded text-sm font-semibold"
           >
             Get Involved
           </Link>
@@ -60,7 +60,7 @@ export default function Navbar() {
 
       {/* Mobile Menu */}
       {isOpen && (
-        <div className="md:hidden bg-black text-white px-6 pt-6 pb-8 space-y-6 rounded-b-lg shadow-lg z-50">
+        <div className="md:hidden bg-brand-black text-brand-white px-6 pt-6 pb-8 space-y-6 rounded-b-lg shadow-lg z-50">
 
           {/* Navigation Links */}
           <nav className="flex flex-col items-center space-y-6 text-base font-medium">
@@ -81,7 +81,7 @@ export default function Navbar() {
             </Link>
             <Link
               to="/contact"
-              className="text-center border border-white text-white font-semibold px-4 py-2 rounded hover:bg-white hover:text-black transition"
+              className="text-center border border-brand-white text-brand-white font-semibold px-4 py-2 rounded hover:bg-brand-white hover:text-brand-black transition"
             >
               Contact Us!
             </Link>
