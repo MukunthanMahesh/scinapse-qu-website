@@ -9,7 +9,7 @@ export default function HeroBanner() {
         className="absolute inset-0 w-full h-full object-cover object-center opacity-60"
       />
 
-      <div className="relative z-10 flex flex-col px-6 py-16 md:px-16 lg:px-32 space-y-8">
+      <div className="relative z-10 flex flex-col justify-center grow px-6 py-16 md:px-16 lg:px-32 space-y-8 h-full">
         <div className="max-w-xl text-left space-y-6">
           {/* Responsive Headline */}
           <h1 className="text-2xl sm:text-3xl md:text-5xl font-bold leading-tight max-w-md sm:max-w-lg">
@@ -34,7 +34,7 @@ export default function HeroBanner() {
         </div>
 
         {/* Footer Text */}
-        <p className="mt-6 bg-black bg-opacity-60 p-3 text-sm leading-relaxed w-full max-w-xl md:max-w-lg lg:max-w-md">
+        <p className="mt-6 bg-black bg-opacity-60 p-4 text-sm sm:text-base md:text-lg leading-relaxed w-full max-w-md sm:max-w-lg md:max-w-xl lg:max-w-2xl">
           SciNapse is a non-profit led by students from universities across Ontario. We create opportunities for undergraduates to explore science, sharpen their skills, and stand out. Our core initiative is the national Undergraduate Science Case Competition (USCC), hosted annually at the University of Ottawa in partnership with uOttawa’s Faculty of Science and Faculty of Medicine.
         </p>
       </div>
