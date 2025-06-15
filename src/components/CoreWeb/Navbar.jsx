@@ -15,6 +15,7 @@ export default function Navbar() {
 
         {/* Desktop Links */}
         <ul className="hidden md:flex gap-10 text-sm font-medium">
+          <li><Link to="/" className="hover:text-brand-darkCyan">Home</Link></li>
           <li><Link to="/uscc" className="hover:text-brand-darkCyan">USCC</Link></li>
           <li><Link to="/gallery" className="hover:text-brand-darkCyan">Gallery</Link></li>
           <li><Link to="/team" className="hover:text-brand-darkCyan">Our Team</Link></li>
@@ -63,6 +64,7 @@ export default function Navbar() {
 
           {/* Navigation Links */}
           <nav className="flex flex-col items-center space-y-6 text-base font-medium">
+            <li><Link to="/" className="hover:text-brand-darkCyan">Home</Link></li>
             <Link to="/uscc" className="hover:text-brand-darkCyan">USCC</Link>
             <Link to="/gallery" className="hover:text-brand-darkCyan">Gallery</Link>
             <Link to="/team" className="hover:text-brand-darkCyan">Our Team</Link>
