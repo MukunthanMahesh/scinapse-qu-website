@@ -73,7 +73,7 @@ export default function Navbar() {
           <div className="flex flex-col gap-3">
             <Link
               to="/get-involved"
-              className="text-center bg-brand-cyanBlue text-brand-black font-semibold px-4 py-2 rounded hover:brightness-110 transition"
+              className="text-center bg-brand-cyanBlue hover:bg-brand-darkCyan text-brand-black font-semibold px-4 py-2 rounded hover:brightness-110 transition"
             >
               Get Involved
             </Link>
