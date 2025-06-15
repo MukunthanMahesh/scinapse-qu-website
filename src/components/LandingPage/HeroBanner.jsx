@@ -20,7 +20,7 @@ export default function HeroBanner() {
           <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 w-full sm:w-auto">
             <a
               href="/get-involved"
-              className="bg-cyan-400 text-black px-4 py-2 rounded text-center font-semibold hover:bg-cyan-300"
+              className="bg-brand-cyanBlue text-brand-black px-4 py-2 rounded text-center font-semibold hover:bg-brand-darkCyan"
             >
               Get Involved
             </a>
