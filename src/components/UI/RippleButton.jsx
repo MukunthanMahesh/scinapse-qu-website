@@ -1,35 +1,48 @@
 import React, { useRef, useEffect } from "react";
+import { useNavigate } from "react-router-dom"; // if you're using React Router
 
-export default function RippleButton({ children, className = "", ...props }) {
-  const btnRef = useRef(null);
+export default function RippleButton({ children, className = "", href, ...props }) {
+  const btnRef = useRef();
+  const navigate = useNavigate(); // ignore/remove this line if you're not using React Router
 
   useEffect(() => {
     const btn = btnRef.current;
 
-    const createRipple = (e) => {
-      const circle = document.createElement("span");
-      circle.className = "ripple";
+    const handleClick = (e) => {
+      e.preventDefault(); // stop instant navigation
+
+      // Ripple
+      const ripple = document.createElement("span");
+      ripple.className = "ripple";
+
       const rect = btn.getBoundingClientRect();
       const size = Math.max(rect.width, rect.height);
-      const x = e.clientX - rect.left - size / 2;
-      const y = e.clientY - rect.top - size / 2;
+      ripple.style.width = ripple.style.height = `${size}px`;
+      ripple.style.left = `${e.clientX - rect.left - size / 2}px`;
+      ripple.style.top = `${e.clientY - rect.top - size / 2}px`;
 
-      circle.style.width = circle.style.height = `${size}px`;
-      circle.style.left = `${x}px`;
-      circle.style.top = `${y}px`;
+      btn.appendChild(ripple);
+      setTimeout(() => ripple.remove(), 600);
 
-      btn.appendChild(circle);
-      setTimeout(() => circle.remove(), 600);
+      // Delay navigation
+      setTimeout(() => {
+        if (href.startsWith("/")) {
+          navigate(href); // internal routing
+        } else {
+          window.location.href = href; // full page load
+        }
+      }, 150); // adjust delay if needed
     };
 
-    btn.addEventListener("click", createRipple);
-    return () => btn.removeEventListener("click", createRipple);
-  }, []);
+    btn.addEventListener("click", handleClick);
+    return () => btn.removeEventListener("click", handleClick);
+  }, [href]);
 
   return (
     <a
       ref={btnRef}
-      className={`relative overflow-hidden select-none ${className}`}
+      className={` transition relative overflow-hidden select-none ${className}`}
+      href={href}
       {...props}
     >
       {children}
