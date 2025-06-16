@@ -1,4 +1,6 @@
 import React from "react";
+import RippleButton from "../UI/RippleButton";
+
 
 export default function HeroBanner() {
   return (
@@ -16,24 +18,24 @@ export default function HeroBanner() {
             <h1 className="text-2xl sm:text-3xl md:text-5xl font-bold leading-tight max-w-md sm:max-w-lg">
               We prepare undergraduates to lead through research and innovation.
             </h1>
-
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 w-full sm:w-auto">
-              <a
-                href="/get-involved"
-                className="bg-brand-cyanBlue text-brand-black px-4 py-2 rounded text-center font-semibold hover:bg-brand-darkCyan"
+              <RippleButton
+                href="/get-invovled"
+                className="bg-brand-cyanBlue text-brand-black px-4 py-2 rounded text-center font-semibold hover:bg-brand-darkCyan transition"
               >
                 Get Involved
-              </a>
-              <a
+              </RippleButton>
+
+              <RippleButton
                 href="/uscc"
-                className="border border-brand-white px-4 py-2 rounded text-center font-semibold hover:bg-brand-white hover:text-brand-black"
+                className="border disabled: border-brand-white px-4 py-2 rounded text-center font-semibold hover:border-brand-cyanBlue hover:text-brand-cyanBlue transition"
               >
                 USCC
-              </a>
+              </RippleButton>
             </div>
           </div>
 
-          <p className="mt-6 bg-brand-black bg-opacity-60 p-4 text-sm sm:text-base md:text-lg leading-relaxed w-full max-w-md sm:max-w-lg md:max-w-xl lg:max-w-2xl">
+          <p className="rounded-2xl mt-6 bg-brand-black bg-opacity-60 p-4 text-sm sm:text-base md:text-lg leading-relaxed w-full max-w-md sm:max-w-lg md:max-w-xl lg:max-w-2xl">
             SciNapse is a non-profit led by students from universities across Ontario. We create opportunities for undergraduates to explore science, sharpen their skills, and stand out. Our core initiative is the national Undergraduate Science Case Competition (USCC), hosted annually at the University of Ottawa in partnership with uOttawa’s Faculty of Science and Faculty of Medicine.
           </p>
         </div>
