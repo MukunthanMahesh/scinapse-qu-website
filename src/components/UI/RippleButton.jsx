@@ -1,9 +1,15 @@
 import React, { useRef, useEffect } from "react";
-import { useNavigate } from "react-router-dom"; // if you're using React Router
+import { useNavigate } from "react-router-dom"; 
 
-export default function RippleButton({ children, className = "", href, ...props }) {
+export default function RippleButton({ children, className = "", size = "md", href, ...props }) {
   const btnRef = useRef();
-  const navigate = useNavigate(); // ignore/remove this line if you're not using React Router
+  const navigate = useNavigate();
+
+  const sizeClasses = {
+  sm: "text-sm px-3 py-1",
+  md: "px-4 py-2 text-base",
+  lg: "text-lg px-6 py-3",
+  };    
 
   useEffect(() => {
     const btn = btnRef.current;
@@ -31,7 +37,7 @@ export default function RippleButton({ children, className = "", href, ...props 
         } else {
           window.location.href = href; // full page load
         }
-      }, 150); // adjust delay if needed
+      }, 150); // delay adjuster
     };
 
     btn.addEventListener("click", handleClick);
@@ -41,8 +47,8 @@ export default function RippleButton({ children, className = "", href, ...props 
   return (
     <a
       ref={btnRef}
-      className={` transition relative overflow-hidden select-none ${className}`}
       href={href}
+      className={`relative overflow-hidden select-none ${sizeClasses[size]} ${className}`}
       {...props}
     >
       {children}

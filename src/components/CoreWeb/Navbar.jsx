@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import RippleButton from "../UI/RippleButton";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -24,18 +25,21 @@ export default function Navbar() {
 
         {/* Buttons */}
         <div className="hidden md:flex gap-3">
-          <Link
-            to="/get-involved"
-            className="bg-brand-cyanBlue hover:bg-brand-darkCyan text-brand-black px-4 py-1.5 rounded text-sm font-semibold"
+          <RippleButton
+            href="/get-invovled"
+            size="sm"
+            className="bg-brand-cyanBlue text-brand-black px-4 py-2 rounded text-center font-semibold hover:bg-brand-darkCyan transition"
           >
             Get Involved
-          </Link>
-          <Link
-            to="/contact"
-            className="border border-brand-white px-4 py-1.5 rounded text-sm font-semibold hover:bg-brand-white hover:text-brand-black transition"
+          </RippleButton>
+
+          <RippleButton
+            href="/uscc"
+            size="sm"
+            className="border disabled: border-brand-white px-4 py-2 rounded text-center font-semibold hover:border-brand-cyanBlue hover:text-brand-cyanBlue transition"
           >
-            Contact Us
-          </Link>
+            USCC
+          </RippleButton>
         </div>
 
         {/* Hamburger (Mobile) */}
