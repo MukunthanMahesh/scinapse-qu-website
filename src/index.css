@@ -9,3 +9,22 @@
     @apply font-sans;
   }
 }
+
+/* Ripple effect base */
+.ripple {
+  position: absolute;
+  border-radius: 9999px;
+  transform: scale(0);
+  animation: ripple-animation 600ms linear;
+  background-color: rgba(255, 255, 255, 0.4); /* Change based on button color */
+  pointer-events: none;
+  z-index: 10;
+}
+
+/* Animation keyframes */
+@keyframes ripple-animation {
+  to {
+    transform: scale(4);
+    opacity: 0;
+  }
+}

@@ -1,4 +1,6 @@
 import React from "react";
+import RippleButton from "../UI/RippleButton";
+
 
 export default function HeroBanner() {
   return (
@@ -16,20 +18,19 @@ export default function HeroBanner() {
             <h1 className="text-2xl sm:text-3xl md:text-5xl font-bold leading-tight max-w-md sm:max-w-lg">
               We prepare undergraduates to lead through research and innovation.
             </h1>
-
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 w-full sm:w-auto">
-              <a
-                href="/get-involved"
+              <RippleButton
+                href="/get-invovled"
                 className="bg-brand-cyanBlue text-brand-black px-4 py-2 rounded text-center font-semibold hover:bg-brand-darkCyan"
               >
                 Get Involved
-              </a>
-              <a
-                href="/uscc"
-                className="border border-brand-white px-4 py-2 rounded text-center font-semibold hover:bg-brand-white hover:text-brand-black"
+              </RippleButton>
+
+              <RippleButton
+                className="border disabled: border-brand-white px-4 py-2 rounded text-center font-semibold hover:border-brand-cyanBlue hover:text-brand-cyanBlue"
               >
                 USCC
-              </a>
+              </RippleButton>
             </div>
           </div>
 
