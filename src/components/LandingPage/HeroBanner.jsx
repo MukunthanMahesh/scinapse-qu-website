@@ -64,10 +64,15 @@ export default function HeroBanner() {
           <div className="hidden sm:flex justify-center items-center gap-10">
             <img src="/other_chapters/western.png" alt="Western" className="max-h-12 sm:max-h-16 object-contain" />
             <img src="/other_chapters/uoftsc.png" alt="UofT Scarborough" className="max-h-12 sm:max-h-16 object-contain" />
-            <img src="/other_chapters/mcmaster.png" alt="McMaster" className="max-h-12 sm:max-h-16 object-contain" />
+            <img src="/other_chapters/mcmaster.png" alt="McMaster" className="max-h-12 sm:max-h-13 object-contain" />
             <img src="/other_chapters/uoft.png" alt="UofT" className="max-h-12 sm:max-h-16 object-contain" />
             <img src="/other_chapters/uofg.png" alt="Guelph" className="max-h-12 sm:max-h-16 object-contain" />
           </div>
+
+          { /*Seperate Hero and 'Event Section' with Line*/}
+          <hr/>
+          <hr/>
+          
         </div>
       </section>
     </>
