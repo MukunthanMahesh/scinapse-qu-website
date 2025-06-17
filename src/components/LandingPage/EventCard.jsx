@@ -1,68 +1,72 @@
 import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
 
 const EventCard = ({
   day,
   monthYear,
   title,
   location,
-  description,
   fullDetails,
   imageUrl,
   link
 }) => {
-  const [expanded, setExpanded] = useState(false);
+  const [showModal, setShowModal] = useState(false);
 
   return (
-    <div
-      className="rounded overflow-hidden shadow-md bg-brand-black text-brand-white flex flex-col cursor-pointer transition-transform duration-200 hover:scale-[1.01]"
-      onClick={() => setExpanded((prev) => !prev)}
-    >
-      {/* Image */}
-      <div
-        className="h-48 bg-cover bg-center"
-        style={{ backgroundImage: `url(${imageUrl})` }}
-      />
+    <>
+      {/* Card */}
+      <div className="overflow-hidden shadow bg-brand-black text-brand-white border-brand-black flex flex-col h-[400px]">
 
-      {/* Card Content */}
-      <div className="p-4 flex flex-col h-full">
-        {/* Date badge */}
-        <div className="bg-brand-white text-brand-black w-16 text-center py-1 rounded mb-2">
-          <div className="text-sm font-bold">{day}</div>
-          <div className="text-xs">{monthYear}</div>
+        {/* Image + Date Badge */}
+        <div
+          className="relative h-48 bg-cover bg-center border border-brand-black"
+          style={{ backgroundImage: `url(${imageUrl})` }}
+        >
+          <div className="absolute top-2 right-2 bg-brand-white text-brand-black px-2 py-1 text-sm font-semibold border border-brand-black">
+            {day} <span className="font-normal ml-1">{monthYear}</span>
+          </div>
         </div>
 
-        {/* Title & Location */}
-        <h3 className="font-semibold text-lg mb-1">{title}</h3>
-        <p className="text-sm mb-1">📍 {location}</p>
+        {/* Text */}
+        <div className="p-4 flex flex-col gap-2">
+          <h3 className="text-xl font-bold leading-snug">{title}</h3>
+          <p className="text-sm opacity-90">📍 {location}</p>
 
-        {/* Short description always shown */}
-        <p className="text-sm text-gray-200">{description}</p>
+          <p className="text-sm text-gray-300 line-clamp-3">{fullDetails}</p>
 
-        {/* Expandable full details */}
-        <AnimatePresence>
-          {expanded && (
-            <motion.div
-              initial={{ height: 0, opacity: 0 }}
-              animate={{ height: "auto", opacity: 1 }}
-              exit={{ height: 0, opacity: 0 }}
-              transition={{ duration: 0.2 }}
-              className="overflow-hidden"
-            >
-              <p className="text-sm text-gray-300 mt-2">{fullDetails}</p>
-              <a
-                href={link}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="mt-3 inline-block text-brand-cyanBlue hover:underline text-sm"
-              >
-                Learn more →
-              </a>
-            </motion.div>
-          )}
-        </AnimatePresence>
+          <button
+            onClick={() => setShowModal(true)}
+            className="mt-auto text-sm text-brand-cyanBlue hover:underline self-start"
+          >
+            Read more
+          </button>
+        </div>
       </div>
-    </div>
+
+      {/* Modal */}
+      {showModal && (
+        <div className="fixed inset-0 bg-black bg-opacity-60 z-50 flex items-center justify-center px-4">
+          <div className="bg-brand-white text-black p-6 max-w-lg w-full rounded shadow-lg relative">
+            <button
+              className="absolute top-2 right-3 text-black text-xl"
+              onClick={() => setShowModal(false)}
+            >
+              &times;
+            </button>
+            <h3 className="text-2xl font-bold mb-2">{title}</h3>
+            <p className="text-sm text-gray-700 mb-4"> Location: {location}</p>
+            <p className="text-base text-gray-800">{fullDetails}</p>
+            <a
+              href={link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-4 inline-block text-brand-black hover:underline text-sm"
+            >
+              Learn more →
+            </a>
+          </div>
+        </div>
+      )}
+    </>
   );
 };
 
