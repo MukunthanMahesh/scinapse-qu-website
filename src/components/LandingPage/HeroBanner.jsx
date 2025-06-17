@@ -45,7 +45,7 @@ export default function HeroBanner() {
       {/* White Chapter Bar */}
       <section className="bg-brandw-white text-brand-black py-2 px-4">
         <div className="max-w-screen-xl mx-auto text-center">
-          <h2 className="text-sm sm:text-base font-semibold font-serif mb-4">
+          <h2 className="text-sm sm:text-base font-medium font-serif mb-4">
             We Have Chapters Across Ontario!
           </h2>
 
@@ -54,7 +54,7 @@ export default function HeroBanner() {
             <div className="inline-flex gap-6 items-center justify-start px-2">
               <img src="/other_chapters/western.png" alt="Western" className="h-8" />
               <img src="/other_chapters/uoftsc.png" alt="UofT Scarborough" className="h-8" />
-              <img src="/other_chapters/mcmaster.png" alt="McMaster" className="h-8" />
+              <img src="/other_chapters/mcmaster.png" alt="McMaster" className="h-6" />
               <img src="/other_chapters/uoft.png" alt="UofT" className="h-8" />
               <img src="/other_chapters/uofg.png" alt="Guelph" className="h-8" />
             </div>

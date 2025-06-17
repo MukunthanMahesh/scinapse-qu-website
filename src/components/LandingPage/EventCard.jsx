@@ -14,28 +14,28 @@ const EventCard = ({
   return (
     <>
       {/* Card */}
-      <div className="overflow-hidden shadow bg-brand-black text-brand-white border-brand-black flex flex-col h-[400px]">
+      <div className="overflow-hidden shadow rounded-xl bg-brand-black text-brand-white border-brand-black flex flex-col h-[400px]">
 
         {/* Image + Date Badge */}
         <div
           className="relative h-48 bg-cover bg-center border border-brand-black"
           style={{ backgroundImage: `url(${imageUrl})` }}
         >
-          <div className="absolute top-2 right-2 bg-brand-white text-brand-black px-2 py-1 text-sm font-semibold border border-brand-black">
+          <div className="absolute top-2 right-2 rounded bg-brand-white text-brand-black px-2 py-1 text-sm font-semibold border border-brand-black">
             {day} <span className="font-normal ml-1">{monthYear}</span>
           </div>
         </div>
 
         {/* Text */}
-        <div className="p-4 flex flex-col gap-2">
+        <div className="font-crimson p-4 flex flex-col gap-2">
           <h3 className="text-xl font-bold leading-snug">{title}</h3>
-          <p className="text-sm opacity-90">📍 {location}</p>
+          <p className="text-md opacity-90">📍 {location}</p>
 
-          <p className="text-sm text-gray-300 line-clamp-3">{fullDetails}</p>
+          <p className="text-md text-gray-300 line-clamp-3">{fullDetails}</p>
 
           <button
             onClick={() => setShowModal(true)}
-            className="mt-auto text-sm text-brand-cyanBlue hover:underline self-start"
+            className="mt-auto text-md text-brand-cyanBlue hover:underline self-start"
           >
             Read more
           </button>
