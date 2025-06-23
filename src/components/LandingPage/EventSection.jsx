@@ -1,4 +1,6 @@
 import EventCard from "./EventCard";
+import { motion } from "framer-motion";
+import { slideUpVariant } from "../../utils/motionVariants";
 
 // This code defines an EventsSection component that displays a list of events using the EventCard component.
 // This ‘EventCard’ component should accept the following props: date, day, monthYear, title, location, description, imageUrl, link
@@ -44,7 +46,7 @@ const events = [
 
 const EventsSection = () => {
   return (
-    <section className="max-w-7xl mx-auto px-4 py-12">
+    <motion.section variants={slideUpVariant} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }} className="max-w-7xl mx-auto px-4 py-12">
       <div className="mb-10">
         <p className="font-crimson text-md text-brand-black font-medium">
           Your front row seats to undergrad research and innovation.
@@ -63,7 +65,7 @@ const EventsSection = () => {
           <EventCard key={idx} {...event} />
         ))}
       </div>
-    </section>
+    </motion.section>
   );
 };
 
