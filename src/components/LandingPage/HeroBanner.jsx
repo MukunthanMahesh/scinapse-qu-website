@@ -1,6 +1,7 @@
 import React from "react";
 import RippleButton from "../UI/RippleButton";
-
+import { motion } from "framer-motion";
+import { slideUpVariant } from "../../utils/motionVariants";
 
 export default function HeroBanner() {
   return (
@@ -44,7 +45,7 @@ export default function HeroBanner() {
 
       {/* Other Chapters Section */}
       {/* White Chapter Bar */}
-      <section className="bg-brandw-white text-brand-black py-2 px-4">
+      <motion.section className="bg-brandw-white text-brand-black py-2 px-4" variants={slideUpVariant} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }}>
         <div className="max-w-screen-xl mx-auto text-center">
           <h2 className="text-sm sm:text-base font-medium font-serif mb-4">
             We Have Chapters Across Ontario!
@@ -75,7 +76,7 @@ export default function HeroBanner() {
           <hr/>
           
         </div>
-      </section>
+      </motion.section>
     </>
   );
 }
