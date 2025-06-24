@@ -27,7 +27,7 @@ const EventCard = ({
         </div>
 
         {/* Text */}
-        <div className="font-crimson p-4 flex flex-col gap-2">
+        <div className="font-sans p-4 flex flex-col gap-2">
           <h3 className="text-xl font-bold leading-snug">{title}</h3>
           <p className="text-md opacity-90">📍 {location}</p>
 

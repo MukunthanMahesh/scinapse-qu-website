@@ -10,7 +10,7 @@ const AboutSection = () => {
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, amount: 0.2 }}
-      className="max-w-7xl mx-auto px-4 py-10"
+      className="max-w-7xl mx-auto px-4 py-16"
     >
       {/* Grid: Text + Video */}
       <div className="grid md:grid-cols-2 gap-10 items-center">
@@ -20,11 +20,11 @@ const AboutSection = () => {
             Ontario's gateway to student-driven science
           </p>
 
-          <h2 className="font-crimson text-4xl font-bold mb-6">
+          <h2 className="font-sans text-4xl font-bold mb-6">
             Empowering Undergraduate Research at Queen’s
           </h2>
 
-          <p className="font-crimson text-lg text-gray-800 mb-8 max-w-prose">
+          <p className="font-sans text-lg text-gray-800 mb-8 max-w-prose">
             SciNapse Queen’s leads Queen’s University’s participation in the{" "}
             <strong>Undergraduate Science Case Competition (USCC)</strong>—an
             Ontario-wide challenge where teams of 2–4 students develop innovative

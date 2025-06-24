@@ -51,8 +51,8 @@ const EventsSection = () => {
         <p className="text-brand-teal text-sm uppercase tracking-widest mb-2">
           Your front row seats to undergrad research and innovation.
         </p>
-        <h2 className="font-crimson text-4xl font-bold mt-2 mb-4 ">Mark Your Calendar</h2>
-        <p className="font-crimson text-lg max-w-2xl text-gray-800">
+        <h2 className="font-sans text-4xl font-bold mt-2 mb-4 ">Mark Your Calendar</h2>
+        <p className="font-sans text-lg max-w-2xl text-gray-800">
           SciNapse hosts <strong>year-round events</strong> designed to engage undergraduates in scientific discovery,
           skill-building, and collaboration. From panels to case competition—
           <strong> we’ve got something for every aspiring innovator</strong>.
