@@ -13,6 +13,7 @@ export default {
           white: "#FFFFFF",
           black: "#000000",
           darkCyan: "#5FC6C9",
+          teal: "#008080",
         }
       },
       fontFamily: {
