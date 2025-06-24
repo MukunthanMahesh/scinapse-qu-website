@@ -11,7 +11,7 @@ export default function Navbar() {
 
         {/* Logo */}
         <Link to="/">
-          <img src="/logo.png" alt="SciNapse Logo" className="h-12 w-auto" />
+          <img src="/assets/logo.png" alt="SciNapse Logo" className="h-12 w-auto" />
         </Link>
 
         {/* Desktop Links */}

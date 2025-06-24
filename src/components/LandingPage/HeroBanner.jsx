@@ -1,6 +1,7 @@
 import React from "react";
 import RippleButton from "../UI/RippleButton";
-
+import { motion } from "framer-motion";
+import { slideUpVariant } from "../../utils/motionVariants";
 
 export default function HeroBanner() {
   return (
@@ -8,9 +9,10 @@ export default function HeroBanner() {
       {/* Hero Banner */}
       <section className="min-h-[calc(100vh-72px)] md:h-[calc(100vh-72px)] bg-brand-black text-brand-white relative">
         <img
-          src="/hero_banner.jpg"
+          src="/assets/hero_banner.jpg"
           alt="Hero Banner - SciNapse affiliated professor giving a presentation to students"
           className="absolute inset-0 w-full h-full object-cover object-center opacity-60"
+          loading="eager"
         />
 
         <div className="relative z-10 flex flex-col justify-center grow px-6 py-16 md:px-16 lg:px-32 space-y-8 h-full">
@@ -43,7 +45,7 @@ export default function HeroBanner() {
 
       {/* Other Chapters Section */}
       {/* White Chapter Bar */}
-      <section className="bg-brandw-white text-brand-black py-2 px-4">
+      <motion.section className="bg-brandw-white text-brand-black py-2 px-4" variants={slideUpVariant} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }}>
         <div className="max-w-screen-xl mx-auto text-center">
           <h2 className="text-sm sm:text-base font-medium font-serif mb-4">
             We Have Chapters Across Ontario!
@@ -74,7 +76,7 @@ export default function HeroBanner() {
           <hr/>
           
         </div>
-      </section>
+      </motion.section>
     </>
   );
 }
