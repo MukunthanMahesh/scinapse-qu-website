@@ -17,7 +17,7 @@ export default function HeroBanner() {
 
         <div className="relative z-10 flex flex-col justify-center grow px-6 py-16 md:px-16 lg:px-32 space-y-8 h-full">
           <div className="max-w-xl text-left space-y-6">
-            <h1 className="text-2xl sm:text-3xl md:text-5xl font-bold leading-tight max-w-md sm:max-w-lg">
+            <h1 className="font-crimson text-2xl sm:text-3xl md:text-5xl font-bold leading-tight max-w-md sm:max-w-lg">
               We prepare undergraduates to lead through research and innovation.
             </h1>
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 w-full sm:w-auto">
@@ -37,7 +37,7 @@ export default function HeroBanner() {
             </div>
           </div>
 
-          <p className="rounded-2xl mt-6 bg-brand-black bg-opacity-60 p-4 text-sm sm:text-base md:text-lg leading-relaxed w-full max-w-md sm:max-w-lg md:max-w-xl lg:max-w-2xl">
+          <p className="font-crimson rounded-2xl mt-6 bg-brand-black bg-opacity-60 p-4 text-sm sm:text-base md:text-lg leading-relaxed w-full max-w-md sm:max-w-lg md:max-w-xl lg:max-w-2xl">
             SciNapse is a non-profit led by students from universities across Ontario. We create opportunities for undergraduates to explore science, sharpen their skills, and stand out. Our core initiative is the national Undergraduate Science Case Competition (USCC), hosted annually at the University of Ottawa in partnership with uOttawa’s Faculty of Science and Faculty of Medicine.
           </p>
         </div>
@@ -53,7 +53,7 @@ export default function HeroBanner() {
 
           {/* Mobile scroll */}
           <div className="sm:hidden overflow-x-auto whitespace-nowrap">
-            <div className="inline-flex gap-6 items-center justify-start px-2">
+            <div className="inline-flex gap-8 items-center justify-start px-2">
               <img src="/other_chapters/western.png" alt="Western" className="h-8" />
               <img src="/other_chapters/uoftsc.png" alt="UofT Scarborough" className="h-8" />
               <img src="/other_chapters/mcmaster.png" alt="McMaster" className="h-6" />
@@ -63,7 +63,7 @@ export default function HeroBanner() {
           </div>
 
           {/* Desktop inline logos */}
-          <div className="hidden sm:flex justify-center items-center gap-10">
+          <div className="hidden sm:flex justify-center items-center gap-14">
             <img src="/other_chapters/western.png" alt="Western" className="max-h-12 sm:max-h-16 object-contain" />
             <img src="/other_chapters/uoftsc.png" alt="UofT Scarborough" className="max-h-12 sm:max-h-16 object-contain" />
             <img src="/other_chapters/mcmaster.png" alt="McMaster" className="max-h-12 sm:max-h-13 object-contain" />
