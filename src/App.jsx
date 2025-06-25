@@ -5,12 +5,16 @@ import Footer from './components/CoreWeb/Footer';
 
 export default function App() {
   return (
-    <BrowserRouter>
-      <Navbar />
-      <Routes>
-        <Route path="/" element={<Home />} />
-      </Routes>
-      <Footer />
-    </BrowserRouter>
+    <div className="min-h-screen flex flex-col">
+      <BrowserRouter>
+        <Navbar />
+        <main className="flex-1">
+          <Routes>
+            <Route path="/" element={<Home />} />
+          </Routes>
+        </main>
+        <Footer />
+      </BrowserRouter>
+    </div>
   );
 }
