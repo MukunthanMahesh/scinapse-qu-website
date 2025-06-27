@@ -29,14 +29,30 @@ export default function Footer() {
         </div>
 
         {/* COLUMN 2: Footer Navigation Section */}
-        <div class="bg-brand-white">
-          <h3 className="text-lg font-semibold mb-2">Quick Links</h3>
-          <ul className="space-y-1 text-sm">
-            <li><a href="/about" className="hover:underline">About Us</a></li>
-            <li><a href="/events" className="hover:underline">Events</a></li>
-            <li><a href="/get-involved" className="hover:underline">Get Involved</a></li>
-            <li><a href="/contact" className="hover:underline">Contact</a></li>
-          </ul>
+        <div className="sm:pl-14 flex flex-col gap-6 sm:gap-10">
+          {/* Quick Links */}
+          <div>
+            <h3 className="text-lg font-semibold mb-2">Quick Links</h3>
+            <ul className="space-y-4 text-sm">
+              <p className="text-sm text-brand-white/60 mb-4">Did you miss anything?</p>
+              <li><a href="/about" className="hover:underline">About Us</a></li>
+              <li><a href="/events" className="hover:underline">Events</a></li>
+              <li><a href="/get-involved" className="hover:underline">Get Involved</a></li>
+              <li><a href="/contact" className="hover:underline">Contact</a></li>
+            </ul>
+          </div>
+
+          {/* Divider Line */}
+          <hr className="border-t border-brand-white/20" />
+
+          {/* Resources */}
+          <div>
+            <h3 className="text-lg font-semibold mb-2">Resources</h3>
+            <ul className="space-y-4 text-sm">
+              <p className="text-sm text-brand-white/60 mb-4">Explore our resources</p>
+              <li><a href="https://scinapsescience.com/about" className="hover:underline">USCC - Scinapse Science</a></li>
+              <li><a href="https://scinapsescience.com/" className="hover:underline">Official Scinapse Website</a></li>
+              <li><a href="/uscc-registration" className="hover:underline">USCC Registration</a></li>
         </div>
 
         {/* COLUMN 3: Footer Social Media + Newsletter Section */}
