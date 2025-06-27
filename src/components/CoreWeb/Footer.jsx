@@ -8,10 +8,7 @@ export default function Footer() {
           {/* About Text Square */}
           <div className="p-1.5 bg-gradient-to-r from-purple-500 to-brand-cyanBlue mb-4">
             <div className="bg-brand-black text-brand-black p-4 rounded-md flex flex-col justify-center">
-              <div className="bg-black text-white p-4 rounded-md self-start sm:self-stretch -mr-[30%]">
-                <p class="font-bold">This is a paragraph with a black background inside a gradient border block.</p>
-                <p class="">This is a paragraph with a black background inside a gradient border block.</p>
-                <p class="">This is a paragraph with a black background inside a gradient border block.</p>
+              <div className="bg-black text-white p-4 rounded-md self-start sm:self-stretch sm:-mr-[25%] -mr-[10%]">
               </div>
             </div>
           </div>
