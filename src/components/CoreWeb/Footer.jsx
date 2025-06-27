@@ -3,24 +3,24 @@ import RippleButton from "../UI/RippleButton";
 
 export default function Footer() {
   return (
-    <footer className="bg-brand-black text-brand-white py-8 px-4 mt-10">
-      <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-[1fr_2fr_1.5fr] gap-6">
+    <footer className="bg-brand-black text-brand-white py-8 px-2.5 mt-10">
+      <div className="max-w-7xl mx-auto overflow-hidden grid grid-cols-1 sm:grid-cols-[1fr_2fr_1.5fr] gap-6">
         
         {/* COLUMN 1: Footer About Section */}
-        <div className="">
+        <div>
 
           {/* Logo Above (Phone) */}
           <div className="flex sm:hidden justify-center mb-8">
-            <img src="/assets/logo.png" alt="SciNapse Logo" className="h-auto w-auto" />
+            <img src="/assets/logo.png" alt="SciNapse Logo" className="h-auto w-60" />
           </div>
 
           {/* About Text Square */}
-          <div className="p-1.5 bg-gradient-to-r from-purple-500 to-brand-cyanBlue mb-4">
+          <div className="p-1.5 bg-gradient-to-r from-purple-500 to-brand-cyanBlue mb-4 max-w-[95%] sm:max-w-none">
             <div className="bg-brand-black text-brand-black p-4 rounded-md flex flex-col justify-center">
               <div className="bg-black text-white p-4 rounded-md sm:min-h-0 self-start sm:self-stretch sm:-mr-[25%] -mr-[10%] content-center">
-                <p class="leading-snug text-lg mb-2"> Our mission is to empower Queen's Students to communicate science beyond the lecture halls. </p>
-                <p class="leading-snug text-sm mb-1">We offer hands-on research experience to undergraduates every year through cross-club events, the USCC, and STEM Horizons. </p>
-                <p class="leading-snug text-sm">Our chapter, based at <strong>Queen’s University in Kingston </strong>, works with national networks to expand science communication across Canada.</p>
+                <p class="leading-snug text-lg mb-2 max-w-[100%] sm:max-w-none"> Our mission is to empower Queen's Students to communicate science beyond the lecture halls. </p>
+                <p class="leading-snug text-sm mb-1 max-w-[100%] sm:max-w-none">We offer hands-on research experience to undergraduates every year through cross-club events, the USCC, and STEM Horizons. </p>
+                <p class="leading-snug text-sm max-w-[100%] sm:max-w-none">Our chapter, based at <strong>Queen’s University in Kingston </strong>, works with national networks to expand science communication across Canada.</p>
               </div>
             </div>
           </div>
@@ -106,7 +106,7 @@ export default function Footer() {
                 name="email"
                 required
                 placeholder="Your email"
-                className="px-3 py-2 rounded-md text-sm bg-brand-black text-white border border-brand-white/20 w-full sm:w-auto"
+                className="px-3 py-2 rounded-md text-sm bg-brand-black text-white border border-brand-white/20 w-full sm:w-auto mb-4 sm:mb-0 focus:outline-none focus:ring-2 focus:ring-brand-white/60 transition"
               />
               
               <RippleButton type="submit" className="px-4 py-2 text-sm bg-brand-cyanBlue text-brand-black rounded hover:bg-brand-white/60 transition">
