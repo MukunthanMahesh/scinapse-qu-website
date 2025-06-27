@@ -53,18 +53,40 @@ export default function Footer() {
               <li><a href="https://scinapsescience.com/about" className="hover:underline">USCC - Scinapse Science</a></li>
               <li><a href="https://scinapsescience.com/" className="hover:underline">Official Scinapse Website</a></li>
               <li><a href="/uscc-registration" className="hover:underline">USCC Registration</a></li>
+            </ul>
+          </div>
         </div>
 
         {/* COLUMN 3: Footer Social Media + Newsletter Section */}
-        <div class="bg-brand-white">
-          <h3 className="text-lg font-semibold mb-2">Quick Links</h3>
-          <ul className="space-y-1 text-sm">
-            <li><a href="/about" className="hover:underline">About Us</a></li>
-            <li><a href="/events" className="hover:underline">Events</a></li>
-            <li><a href="/get-involved" className="hover:underline">Get Involved</a></li>
-            <li><a href="/contact" className="hover:underline">Contact</a></li>
-          </ul>
+        <div className="sm:pl-14 flex flex-col gap-6 min-h-72">
+          {/* Stay Connected */}
+          <div>
+            <h3 className="text-lg font-semibold mb-2">Stay Connected</h3>
+            <div className="flex space-x-4 text-xl">
+              <a href="https://www.instagram.com/scinapse" target="_blank" rel="noopener noreferrer">
+                <FaInstagram className="hover:text-brand-cyanBlue transition" />
+              </a>
+              <a href="https://www.linkedin.com/company/scinapse" target="_blank" rel="noopener noreferrer">
+                <FaLinkedin className="hover:text-brand-cyanBlue transition" />
+              </a>
+              <a href="https://discord.gg/YOUR_INVITE" target="_blank" rel="noopener noreferrer">
+                <FaDiscord className="hover:text-brand-cyanBlue transition" />
+              </a>
+              <a href="https://facebook.com/scinapse" target="_blank" rel="noopener noreferrer">
+                <FaFacebook className="hover:text-brand-cyanBlue transition" />
+              </a>
+            </div>
+          </div>
 
+          {/* Divider */}
+          <hr className="border-t border-brand-white/20" />
+
+          {/* Newsletter */}
+          <div>
+            <h3 className="text-lg font-semibold mb-2">Newsletter</h3>
+            <p className="text-sm text-brand-white/60 mb-2">Get updates on events and opportunities.</p>
+            <a href="/newsletter" className="text-sm underline hover:text-brand-cyanBlue">Subscribe here →</a>
+          </div>
         </div>
       </div>
     </footer>
