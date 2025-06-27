@@ -1,3 +1,5 @@
+import { FaInstagram, FaLinkedin, FaDiscord, FaFacebook } from "react-icons/fa";
+
 export default function Footer() {
   return (
     <footer className="bg-brand-black text-brand-white py-8 px-4 mt-10">
@@ -51,8 +53,8 @@ export default function Footer() {
             <ul className="space-y-4 text-sm">
               <p className="text-sm text-brand-white/60 mb-4">Explore our resources</p>
               <li><a href="https://scinapsescience.com/about" className="hover:underline">USCC - Scinapse Science</a></li>
-              <li><a href="https://scinapsescience.com/" className="hover:underline">Official Scinapse Website</a></li>
               <li><a href="/uscc-registration" className="hover:underline">USCC Registration</a></li>
+              <li><a href="https://scinapsescience.com/" className="hover:underline">Official Scinapse Website</a></li>
             </ul>
           </div>
         </div>
@@ -63,16 +65,16 @@ export default function Footer() {
           <div>
             <h3 className="text-lg font-semibold mb-2">Stay Connected</h3>
             <div className="flex space-x-4 text-xl">
-              <a href="https://www.instagram.com/scinapse" target="_blank" rel="noopener noreferrer">
+              <a href="https://www.instagram.com/scinapsequ/" target="_blank" rel="noopener noreferrer">
                 <FaInstagram className="hover:text-brand-cyanBlue transition" />
               </a>
-              <a href="https://www.linkedin.com/company/scinapse" target="_blank" rel="noopener noreferrer">
+              <a href="https://www.linkedin.com/company/scinapse-queen-s-university/" target="_blank" rel="noopener noreferrer">
                 <FaLinkedin className="hover:text-brand-cyanBlue transition" />
               </a>
-              <a href="https://discord.gg/YOUR_INVITE" target="_blank" rel="noopener noreferrer">
+              <a href="https://discord.com/invite/rxreXNFhEa" target="_blank" rel="noopener noreferrer">
                 <FaDiscord className="hover:text-brand-cyanBlue transition" />
               </a>
-              <a href="https://facebook.com/scinapse" target="_blank" rel="noopener noreferrer">
+              <a href="https://www.facebook.com/scinapseuscc/" target="_blank" rel="noopener noreferrer">
                 <FaFacebook className="hover:text-brand-cyanBlue transition" />
               </a>
             </div>
