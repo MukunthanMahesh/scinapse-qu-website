@@ -1,4 +1,5 @@
 import { FaInstagram, FaLinkedin, FaDiscord, FaFacebook } from "react-icons/fa";
+import RippleButton from "../UI/RippleButton";
 
 export default function Footer() {
   return (
@@ -59,12 +60,16 @@ export default function Footer() {
           </div>
         </div>
 
+        {/* Divider (Mobile Only) */}
+        <hr className="sm:hidden border-t border-brand-white/20" />
+
         {/* COLUMN 3: Footer Social Media + Newsletter Section */}
         <div className="sm:pl-14 flex flex-col gap-6 min-h-72">
           {/* Stay Connected */}
           <div>
             <h3 className="text-lg font-semibold mb-2">Stay Connected</h3>
             <div className="flex space-x-4 text-xl">
+              <p className="text-sm text-brand-white/60 mb-4">Plug into our community: </p>
               <a href="https://www.instagram.com/scinapsequ/" target="_blank" rel="noopener noreferrer">
                 <FaInstagram className="hover:text-brand-cyanBlue transition" />
               </a>
@@ -84,10 +89,30 @@ export default function Footer() {
           <hr className="border-t border-brand-white/20" />
 
           {/* Newsletter */}
+          {/* Newsletter */}
           <div>
             <h3 className="text-lg font-semibold mb-2">Newsletter</h3>
-            <p className="text-sm text-brand-white/60 mb-2">Get updates on events and opportunities.</p>
-            <a href="/newsletter" className="text-sm underline hover:text-brand-cyanBlue">Subscribe here →</a>
+            <p className="text-sm text-brand-white/60 mb-4">Get updates on events and opportunities.</p>
+            
+            <form onSubmit={(e) => {
+              e.preventDefault();
+              const email = e.target.email.value;
+              // TODO: Send email to backend/API here
+              console.log("Submitted email:", email);
+            }} className="flex flex-col sm:flex-row items-start sm:items-center gap-2">
+              
+              <input
+                type="email"
+                name="email"
+                required
+                placeholder="Your email"
+                className="px-3 py-2 rounded-md text-sm bg-brand-black text-white border border-brand-white/20 w-full sm:w-auto"
+              />
+              
+              <RippleButton type="submit" className="px-4 py-2 text-sm bg-brand-cyanBlue text-brand-black rounded hover:bg-brand-white/60 transition">
+                Subscribe
+              </RippleButton>
+            </form>
           </div>
         </div>
       </div>
