@@ -20,7 +20,7 @@ const AboutSection = () => {
             Ontario's gateway to student-driven science
           </p>
 
-          <h2 className="font-sans text-4xl font-bold mb-6">
+          <h2 className="text-brand-black font-sans text-4xl font-bold mb-6">
             Empowering Undergraduate Research at Queen’s
           </h2>
 
