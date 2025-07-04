@@ -8,7 +8,6 @@ export default function Navbar() {
   return (
     <nav className="bg-brand-black text-brand-white px-4 md:px-6 py-3 shadow-md">
       <div className="max-w-screen-xl mx-auto flex justify-between items-center">
-
         {/* Logo */}
         <Link to="/">
           <img src="/assets/logo.png" alt="SciNapse Logo" className="h-12 w-auto" />
