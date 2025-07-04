@@ -18,9 +18,9 @@ export default function Footer() {
           <div className="p-1.5 bg-gradient-to-r from-purple-500 to-brand-cyanBlue mb-4 max-w-[95%] sm:max-w-none">
             <div className="bg-brand-black text-brand-black p-4 rounded-md flex flex-col justify-center">
               <div className="bg-black text-white p-4 rounded-md sm:min-h-0 self-start sm:self-stretch sm:-mr-[25%] -mr-[10%] content-center">
-                <p class="leading-snug text-lg mb-2 max-w-[100%] sm:max-w-none"> Our mission is to empower Queen's Students to communicate science beyond the lecture halls. </p>
-                <p class="leading-snug text-sm mb-1 max-w-[100%] sm:max-w-none">We offer hands-on research experience to undergraduates every year through cross-club events, the USCC, and STEM Horizons. </p>
-                <p class="leading-snug text-sm max-w-[100%] sm:max-w-none">Our chapter, based at <strong>Queen’s University in Kingston </strong>, works with national networks to expand science communication across Canada.</p>
+                <p className="leading-snug text-lg mb-2 max-w-[100%] sm:max-w-none"> Our mission is to empower Queen's Students to communicate science beyond the lecture halls. </p>
+                <p className="leading-snug text-sm mb-1 max-w-[100%] sm:max-w-none">We offer hands-on research experience to undergraduates every year through cross-club events, the USCC, and STEM Horizons. </p>
+                <p className="leading-snug text-sm max-w-[100%] sm:max-w-none">Our chapter, based at <strong>Queen’s University in Kingston </strong>, works with national networks to expand science communication across Canada.</p>
               </div>
             </div>
           </div>
