@@ -6,25 +6,22 @@ export default function Loader({ fadingOut }) {
     jellyTriangle.register();
   }, []);
 
+  const baseClasses = `fixed inset-0 z-50 flex items-center justify-center transition-all duration-500 ease-out`;
+  const fadeClass = fadingOut
+    ? "opacity-0 invisible pointer-events-none"
+    : "opacity-100 visible";
+
   return (
-    <div>
-      {/* Mobile Loader */}
-      <div
-        className={`md:hidden fixed inset-0 z-50 flex items-center justify-center bg-white transition-opacity duration-500 ${
-          fadingOut ? "opacity-0 pointer-events-none" : "opacity-100"
-        }`}
-      >
-        <l-jelly-triangle size="40" speed="1.75" color="black" />
+    <>
+      {/* Mobile */}
+      <div className={`md:hidden bg-brand-black ${baseClasses} ${fadeClass}`}>
+        <l-jelly-triangle size="40" speed="1.75" color="white" />
       </div>
 
-      {/* Desktop Loader */}
-      <div
-        className={`hidden md:flex fixed inset-0 z-50 items-center justify-center bg-white transition-opacity duration-500 ${
-          fadingOut ? "opacity-0 pointer-events-none" : "opacity-100"
-        }`}
-      >
-        <l-jelly-triangle size="50" speed="1.75" color="black" />
+      {/* Desktop */}
+      <div className={`hidden md:flex bg-brand-black ${baseClasses} ${fadeClass}`}>
+        <l-jelly-triangle size="50" speed="1.75" color="white" />
       </div>
-    </div>
+    </>
   );
 }
