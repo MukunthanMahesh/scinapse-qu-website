@@ -24,17 +24,17 @@ export default function App() {
     }
   }, []);
 
-  // Ensure at least 500ms of loader time
+  // Ensure minimum loader time
   useEffect(() => {
-    const timer = setTimeout(() => setMinTimeDone(true), 1_500);
+    const timer = setTimeout(() => setMinTimeDone(true), 1_200);
     return () => clearTimeout(timer);
   }, []);
 
-  // When everything is ready and 500ms passed, fade out
+  // When everything is ready and min loader time passes, fade out
   useEffect(() => {
     if (bootDone && domReady && minTimeDone) {
       setFadeOut(true);
-      const timer = setTimeout(() => setHideLoader(true), 500); // match fade duration
+      const timer = setTimeout(() => setHideLoader(true), 1_200); // match fade duration
       return () => clearTimeout(timer);
     }
   }, [bootDone, domReady, minTimeDone]);

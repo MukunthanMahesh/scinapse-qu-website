@@ -43,11 +43,9 @@ export default function Loader({ fadingOut }) {
         <div className="mt-16 text-white text-base font-medium tracking-wide">
           <Typewriter
             options={{
-              strings: ['Welcome to Scinapse!', 'Cha Gheill'],
+              strings: ['Welcome to Scinapse ;)'],
               autoStart: true,
-              loop: true,
-              delay: 40,
-              deleteSpeed: 30,
+              delay: 30,
             }}
           />
         </div>
