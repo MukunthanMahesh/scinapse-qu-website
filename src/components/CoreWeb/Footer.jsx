@@ -103,6 +103,7 @@ export default function Footer() {
               
               <input
                 type="email"
+                
                 name="email"
                 required
                 placeholder="Your email"
