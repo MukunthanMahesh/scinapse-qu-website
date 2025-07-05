@@ -29,7 +29,7 @@ export default function Loader({ fadingOut }) {
     <>
       {/* Mobile Loader */}
       <div className={`md:hidden flex flex-col items-center bg-brand-black ${baseClasses} ${fadeClass}`}>
-        <l-helix size="40" speed="1.2" color="#5FC6C9 " />
+        <l-helix size="70" speed="1.2" color="#5FC6C9 " />
         <div className="mt-16 text-gray-100 text-sm tracking-wide">
           <p>Loading Resources... {bootProgress}%</p>
           <div className="w-48 mt-2 h-2 bg-gray-700 rounded-full overflow-hidden">
