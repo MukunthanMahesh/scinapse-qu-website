@@ -10,24 +10,26 @@ function preloadImage(src) {
 }
 
 export default function useAppBoot() {
-  const [bootDone, setBootDone] = useState(false);
+  const [progress, setProgress] = useState(0);
 
   useEffect(() => {
     const bootstrap = async () => {
       try {
-        // Add your logic here
+        setProgress(20); // Step 1
         await preloadImage("/assets/hero_banner.jpg");
-        await new Promise((res) => setTimeout(res, 200)); // fast logic
 
-        setBootDone(true); // signal real loading is done
+        setProgress(60); // Step 2
+        await new Promise((res) => setTimeout(res, 200)); // Simulated logic
+
+        setProgress(100); // Done
       } catch (err) {
         console.error("App boot failed:", err);
-        setBootDone(true);
+        setProgress(100); // Fail safe
       }
     };
 
     bootstrap();
   }, []);
 
-  return bootDone;
+  return progress;
 }

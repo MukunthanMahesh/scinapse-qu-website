@@ -1,10 +1,11 @@
 import { useEffect } from "react";
-import { jellyTriangle } from "ldrs";
+import { helix } from "ldrs";
 import Typewriter from "typewriter-effect";
+import useAppBoot from "../../hooks/useAppBoot";
 
 export default function Loader({ fadingOut }) {
   useEffect(() => {
-    jellyTriangle.register();
+    helix.register();
   }, []);
 
   // Disable scroll bar during load
@@ -20,34 +21,37 @@ export default function Loader({ fadingOut }) {
     ? "opacity-0 invisible pointer-events-none"
     : "opacity-100 visible";
 
+  const bootProgress = useAppBoot();
+  const bootDone = bootProgress === 100;
+
+
   return (
     <>
       {/* Mobile Loader */}
       <div className={`md:hidden flex flex-col items-center bg-brand-black ${baseClasses} ${fadeClass}`}>
-        <l-jelly-triangle size="40" speed="1.2" color="#74DCDF" />
-        <div className="mt-16 text-white text-base font-medium tracking-wide">
-          <Typewriter
-            options={{
-              strings: ['Welcome to SciNapse!', 'Cha Gheill'],
-              autoStart: true,
-              loop: true,
-              delay: 40,
-              deleteSpeed: 30,
-            }}
-          />
+        <l-helix size="40" speed="1.2" color="#5FC6C9 " />
+        <div className="mt-16 text-gray-100 text-sm tracking-wide">
+          <p>Loading Resources... {bootProgress}%</p>
+          <div className="w-48 mt-2 h-2 bg-gray-700 rounded-full overflow-hidden">
+            <div
+              className="h-full bg-[#5FC6C9] transition-all duration-300 ease-out"
+              style={{ width: `${bootProgress}%` }}
+            />
+          </div>
         </div>
       </div>
       {/* Desktop Loader */}
+    
       <div className={`hidden md:flex flex-col items-center bg-brand-black ${baseClasses} ${fadeClass}`}>
-        <l-jelly-triangle size="40" speed="1.2" color="#74DCDF" />
-        <div className="mt-16 text-white text-base font-medium tracking-wide">
-          <Typewriter
-            options={{
-              strings: ['Welcome to Scinapse ;)'],
-              autoStart: true,
-              delay: 30,
-            }}
-          />
+        <l-helix size="80" speed="1.2" color="#5FC6C9 " />
+        <div className="mt-16 text-gray-100 text-sm tracking-wide">
+          <p>Loading Resources... {bootProgress}%</p>
+          <div className="w-48 mt-2 h-2 bg-gray-700 rounded-full overflow-hidden">
+            <div
+              className="h-full bg-[#5FC6C9] transition-all duration-300 ease-out"
+              style={{ width: `${bootProgress}%` }}
+            />
+          </div>
         </div>
       </div>
     </>
