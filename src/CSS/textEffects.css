@@ -1,0 +1,15 @@
+.fluid-textcyan {
+  position: relative;
+  line-height: 1.2;
+}
+
+.fluid-textcyan span {
+  display: inline-block;
+  transition: color 0.2s ease, transform 0.2s ease;
+  cursor: default;
+}
+
+.fluid-textcyan span:hover {
+  color: #74DCDF;
+  transform: scale(1.1);
+}
