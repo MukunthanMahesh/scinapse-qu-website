@@ -96,7 +96,7 @@ export default function FluidText({ text, breakAfterWords = [] }) {
                   hoverType === "main"
                     ? "text-brand-cyanBlue scale-125"
                     : hoverType === "adjacent"
-                    ? "text-brand-cyanBlue scale-100"
+                    ? "text-brand-cyanBlue scale-110"
                     : ""
                 }`}
               >
