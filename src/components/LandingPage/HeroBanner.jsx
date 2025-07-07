@@ -2,6 +2,7 @@ import React from "react";
 import RippleButton from "../UI/RippleButton";
 import { motion } from "framer-motion";
 import { slideUpVariant } from "../../utils/motionVariants";
+import FluidText from "../CoreWeb/FluidText";
 
 export default function HeroBanner() {
   return (
@@ -17,9 +18,10 @@ export default function HeroBanner() {
 
         <div className="relative z-10 flex flex-col justify-center grow px-6 py-16 md:px-16 lg:px-32 space-y-8 h-full">
           <div className="max-w-xl text-left space-y-6">
-            <h1 className="text-2xl sm:text-3xl md:text-5xl font-bold leading-tight max-w-md sm:max-w-lg">
-              We prepare undergraduates to lead through research and innovation.
-            </h1>
+            <FluidText
+              text="We prepare undergraduates to lead through research and innovation."
+              breakAfterWords={["prepare", "to", "research"]}
+            />
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 w-full sm:w-auto">
               <RippleButton
                 href="/get-invovled"
