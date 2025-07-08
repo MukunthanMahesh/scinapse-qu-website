@@ -46,7 +46,8 @@ const TestimonialsSection = () => {
           Alumni Reflections
         </h2>
         <p className="font-sans text-lg max-w-2xl text-gray-800">
-          Discover how SciNapse shaped their journeys — through research showcases, events, and one-of-a-kind learning experiences.
+          Discover how SciNapse shaped the journeys of our students and alumni — from presenting at research showcases and organizing campus-wide events, to finding mentorship, building lifelong skills, and unlocking new academic and career opportunities. 
+          <strong>These experiences weren’t just memorable — they were transformative.</strong>
         </p>
       </div>
 

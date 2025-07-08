@@ -10,7 +10,7 @@ const AboutSection = () => {
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, amount: 0.2 }}
-      className="max-w-7xl mx-auto px-4 py-16"
+      className="max-w-7xl mx-auto px-4 py-8"
     >
       {/* Grid: Text + Video */}
       <div className="grid md:grid-cols-2 gap-10 items-center">
