@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { ArrowRight } from "lucide-react";
 
 const EventCard = ({
   day,
@@ -14,7 +15,7 @@ const EventCard = ({
   return (
     <>
       {/* Card */}
-      <div className="overflow-hidden shadow rounded-xl bg-brand-black text-brand-white border-brand-black flex flex-col h-[400px]">
+      <div className="overflow-hidden shadow rounded-xl bg-brand-black hover:bg-brand-black/90 text-brand-white border-brand-black hover:-translate-y-1 transition-transform duration-300 flex flex-col h-[400px]">
 
         {/* Image + Date Badge */}
         <div
@@ -27,17 +28,24 @@ const EventCard = ({
         </div>
 
         {/* Text */}
-        <div className="font-sans p-4 flex flex-col gap-2">
+        <div className="font-sans p-4 flex flex-col gap-2 text-white">
           <h3 className="text-xl font-bold leading-snug">{title}</h3>
-          <p className="text-md opacity-90">📍 {location}</p>
 
+          {/* Location */}
+          <p className="text-sm text-gray-400 flex items-center gap-1">
+            <span role="img" aria-label="location">📍</span>
+            {location}
+          </p>
+
+          {/* Description */}
           <p className="text-md text-gray-300 line-clamp-3">{fullDetails}</p>
 
+          {/* Read More CTA */}
           <button
             onClick={() => setShowModal(true)}
-            className="mt-auto text-md text-brand-cyanBlue hover:underline self-start"
+            className="mt-auto flex items-center gap-1 text-md text-brand-cyanBlue hover:underline"
           >
-            Read more
+            Read more <ArrowRight className="w-4 h-4" />
           </button>
         </div>
       </div>

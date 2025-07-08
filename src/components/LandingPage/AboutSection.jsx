@@ -10,7 +10,7 @@ const AboutSection = () => {
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, amount: 0.2 }}
-      className="max-w-7xl mx-auto px-4 py-16"
+      className="max-w-7xl mx-auto px-4 py-8"
     >
       {/* Grid: Text + Video */}
       <div className="grid md:grid-cols-2 gap-10 items-center">
@@ -68,7 +68,7 @@ const AboutSection = () => {
         ].map((item, i) => (
           <div
             key={i}
-            className="border border-gray-200 p-4 rounded-lg shadow-sm bg-glozz hover:shadow-md transition"
+            className="border border-gray-200 p-4 rounded-lg shadow-sm hover:shadow-md transition"
           >
             <h3 className="font-semibold text-lg mb-1">{item.title}</h3>
             <p className="text-gray-600 text-sm">{item.desc}</p>
