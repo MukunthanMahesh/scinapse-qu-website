@@ -40,13 +40,13 @@ const TestimonialsSection = () => {
     >
       <div className="mb-10">
         <p className="text-brand-teal text-sm uppercase tracking-widest mb-2">
-          Words of Praise By Our Network
+          WORDS FROM OUR COMMUNITY
         </p>
         <h2 className="text-brand-black font-sans text-4xl font-bold mt-2 mb-4">
-          What Our Alumni Say
+          Alumni Reflections
         </h2>
         <p className="font-sans text-lg max-w-2xl text-gray-800">
-          Hear from our past alumns who’ve taken part in SciNapse Queens U's events, research showcases, and learning opportunities.
+          Discover how SciNapse Queens U shaped their journeys — through research showcases, events, and one-of-a-kind learning experiences.
         </p>
       </div>
 
