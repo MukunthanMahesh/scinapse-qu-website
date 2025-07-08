@@ -4,12 +4,12 @@ import { slideUpVariant } from "../../utils/motionVariants";
 
 const testimonials = [
   {
-    name: "Ava Chen",
-    role: "Biomedical Computing Student",
-    affiliation: "Queen’s University",
+    name: "Darren Jason Watkins Jr. (aka IShowSpeed)",
+    role: "Twitch Streamer",
+    affiliation: "U.S.A",
     quote:
       "SciNapse gave me the opportunity to explore AI in medicine in a way that lectures never could. It’s been a game-changer for my career path.",
-    imageUrl: "/testimonial_images/ava.jpg"
+    imageUrl: "/testimonial_images/darren.jpg"
   },
   {
     name: "Daniel Iqbal",
@@ -46,16 +46,18 @@ const TestimonialsSection = () => {
           Alumni Reflections
         </h2>
         <p className="font-sans text-lg max-w-2xl text-gray-800">
-          Discover how SciNapse Queens U shaped their journeys — through research showcases, events, and one-of-a-kind learning experiences.
+          Discover how SciNapse shaped their journeys — through research showcases, events, and one-of-a-kind learning experiences.
         </p>
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        {testimonials.map((testimonial, idx) => (
-          <TestimonialCard key={idx} {...testimonial} />
-        ))}
+      <div className="flex justify-center sm:block">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {testimonials.map((testimonial, idx) => (
+            <TestimonialCard key={idx} {...testimonial} />
+          ))}
+        </div>
       </div>
-    </motion.section>
+      </motion.section>
   );
 };
 
