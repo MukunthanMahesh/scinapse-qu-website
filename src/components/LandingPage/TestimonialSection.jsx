@@ -5,27 +5,27 @@ import { slideUpVariant } from "../../utils/motionVariants";
 const testimonials = [
   {
     name: "Darren Jason Watkins Jr. (aka IShowSpeed)",
-    role: "Twitch Streamer",
-    affiliation: "U.S.A",
+    role: "Content Creator",
+    affiliation: "YouTube / Twitch",
     quote:
       "SciNapse gave me the opportunity to explore AI in medicine in a way that lectures never could. It’s been a game-changer for my career path.",
     imageUrl: "/testimonial_images/darren.jpg"
   },
   {
-    name: "Daniel Iqbal",
-    role: "Computer Science Major",
-    affiliation: "University of Toronto",
+    name: "Donald Glover",
+    role: "Artist & Creator",
+    affiliation: "FX / Childish Gambino",
     quote:
       "The USCC was the most exciting and intense academic event I’ve attended. Our team walked away more connected and inspired.",
-    imageUrl: "/testimonial_images/daniel.jpg"
+    imageUrl: "/testimonial_images/donald.jpg"
   },
   {
-    name: "Meera Patel",
-    role: "Life Sciences Student",
-    affiliation: "McMaster University",
+    name: "Timothée Chalamet",
+    role: "Actor",
+    affiliation: "Dune",
     quote:
       "I never thought I’d be this involved in undergrad research. SciNapse helped me find the confidence and the community to grow.",
-    imageUrl: "/testimonial_images/meera.jpg"
+    imageUrl: "/testimonial_images/timothee.jpg"
   }
 ];
 
