@@ -46,7 +46,7 @@ export default function App() {
       <div className="min-h-screen flex flex-col bg-brand-white text-white">
         <BrowserRouter>
           <Navbar />
-          <main className="flex-1">
+          <main className="flex-1 pt-[72px]">
             <Routes>
               <Route path="/" element={<Home />} />
             </Routes>
