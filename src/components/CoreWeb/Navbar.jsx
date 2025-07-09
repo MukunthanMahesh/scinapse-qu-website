@@ -1,9 +1,11 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import RippleButton from "../UI/RippleButton";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const location = useLocation();
+  const currentPath = location.pathname;
 
   return (
     <nav className="bg-brand-black text-brand-white px-4 md:px-6 py-3 shadow-md">
@@ -15,11 +17,11 @@ export default function Navbar() {
 
         {/* Desktop Links */}
         <ul className="hidden md:flex gap-10 text-sm font-medium">
-          <li><Link to="/" className="hover:text-brand-darkCyan">Home</Link></li>
-          <li><Link to="/uscc" className="hover:text-brand-darkCyan">USCC</Link></li>
-          <li><Link to="/gallery" className="hover:text-brand-darkCyan">Gallery</Link></li>
-          <li><Link to="/team" className="hover:text-brand-darkCyan">Our Team</Link></li>
-          <li><Link to="/about" className="hover:text-brand-darkCyan">About Us</Link></li>
+          <li><Link to="/" className={`hover:text-brand-darkCyan pb-1 border-b-2 transition ${currentPath === "/" ? "border-brand-cyanBlue text-brand-cyanBlue" : "border-transparent"}`}>Home</Link></li>
+          <li><Link to="/uscc" className={`hover:text-brand-darkCyan pb-1 border-b-2 transition ${currentPath === "/uscc" ? "border-brand-cyanBlue text-brand-cyanBlue" : "border-transparent"}`}>USCC</Link></li>
+          <li><Link to="/gallery" className={`hover:text-brand-darkCyan pb-1 border-b-2 transition ${currentPath === "/gallery" ? "border-brand-cyanBlue text-brand-cyanBlue" : "border-transparent"}`}>Gallery</Link></li>
+          <li><Link to="/team" className={`hover:text-brand-darkCyan pb-1 border-b-2 transition ${currentPath === "/team" ? "border-brand-cyanBlue text-brand-cyanBlue" : "border-transparent"}`}>Our Team</Link></li>
+          <li><Link to="/about" className={`hover:text-brand-darkCyan pb-1 border-b-2 transition ${currentPath === "/about" ? "border-brand-cyanBlue text-brand-cyanBlue" : "border-transparent"}`}>About Us</Link></li>
         </ul>
 
         {/* Buttons */}
@@ -67,11 +69,11 @@ export default function Navbar() {
 
           {/* Navigation Links */}
           <nav className="flex flex-col items-center space-y-6 text-base font-medium">
-            <Link to="/" className="hover:text-brand-darkCyan">Home</Link>
-            <Link to="/uscc" className="hover:text-brand-darkCyan">USCC</Link>
-            <Link to="/gallery" className="hover:text-brand-darkCyan">Gallery</Link>
-            <Link to="/team" className="hover:text-brand-darkCyan">Our Team</Link>
-            <Link to="/about" className="hover:text-brand-darkCyan">About Us</Link>
+            <Link to="/" className={`hover:text-brand-darkCyan pb-1 border-b-2 transition ${currentPath === "/" ? "border-brand-cyanBlue text-brand-cyanBlue" : "border-transparent"}`}>Home</Link>
+            <Link to="/uscc" className={`hover:text-brand-darkCyan pb-1 border-b-2 transition ${currentPath === "/uscc" ? "border-brand-cyanBlue text-brand-cyanBlue" : "border-transparent"}`}>USCC</Link>
+            <Link to="/gallery" className={`hover:text-brand-darkCyan pb-1 border-b-2 transition ${currentPath === "/gallery" ? "border-brand-cyanBlue text-brand-cyanBlue" : "border-transparent"}`}>Gallery</Link>
+            <Link to="/team" className={`hover:text-brand-darkCyan pb-1 border-b-2 transition ${currentPath === "/team" ? "border-brand-cyanBlue text-brand-cyanBlue" : "border-transparent"}`}>Our Team</Link>
+            <Link to="/about" className={`hover:text-brand-darkCyan pb-1 border-b-2 transition ${currentPath === "/about" ? "border-brand-cyanBlue text-brand-cyanBlue" : "border-transparent"}`}>About Us</Link>
           </nav>
 
           {/* Call to Action Buttons */}
