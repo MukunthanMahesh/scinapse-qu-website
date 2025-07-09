@@ -17,11 +17,91 @@ export default function Navbar() {
 
         {/* Desktop Links */}
         <ul className="hidden md:flex gap-10 text-sm font-medium">
-          <li><Link to="/" className={`hover:text-brand-darkCyan pb-1 border-b-2 transition ${currentPath === "/" ? "border-brand-cyanBlue text-brand-cyanBlue" : "border-transparent"}`}>Home</Link></li>
-          <li><Link to="/uscc" className={`hover:text-brand-darkCyan pb-1 border-b-2 transition ${currentPath === "/uscc" ? "border-brand-cyanBlue text-brand-cyanBlue" : "border-transparent"}`}>USCC</Link></li>
-          <li><Link to="/gallery" className={`hover:text-brand-darkCyan pb-1 border-b-2 transition ${currentPath === "/gallery" ? "border-brand-cyanBlue text-brand-cyanBlue" : "border-transparent"}`}>Gallery</Link></li>
-          <li><Link to="/team" className={`hover:text-brand-darkCyan pb-1 border-b-2 transition ${currentPath === "/team" ? "border-brand-cyanBlue text-brand-cyanBlue" : "border-transparent"}`}>Our Team</Link></li>
-          <li><Link to="/about" className={`hover:text-brand-darkCyan pb-1 border-b-2 transition ${currentPath === "/about" ? "border-brand-cyanBlue text-brand-cyanBlue" : "border-transparent"}`}>About Us</Link></li>
+          <li className="relative">
+            <Link
+              to="/"
+              className={`hover:text-brand-cyanBlue transition-colors duration-300 ${currentPath === "/" ? "text-brand-cyanBlue" : ""} pb-1`}
+            >
+              Home
+              <span
+                className={`
+                  absolute left-0 -bottom-1 h-1 w-full bg-brand-cyanBlue rounded
+                  transition-transform duration-300 ease-in-out
+                  ${currentPath === "/" ? "scale-x-100" : "scale-x-0"}
+                  origin-left
+                  block
+                `}
+              />
+            </Link>
+          </li>
+          <li className="relative">
+            <Link
+              to="/uscc"
+              className={`hover:text-brand-cyanBlue transition-colors duration-300 ${currentPath === "/uscc" ? "text-brand-cyanBlue" : ""} pb-1`}
+            >
+              USCC
+              <span
+                className={`
+                  absolute left-0 -bottom-1 h-1 w-full bg-brand-cyanBlue rounded
+                  transition-transform duration-300 ease-in-out
+                  ${currentPath === "/uscc" ? "scale-x-100" : "scale-x-0"}
+                  origin-left
+                  block
+                `}
+              />
+            </Link>
+          </li>
+          <li className="relative">
+            <Link
+              to="/gallery"
+              className={`hover:text-brand-cyanBlue transition-colors duration-300 ${currentPath === "/gallery" ? "text-brand-cyanBlue" : ""} pb-1`}
+            >
+              Gallery
+              <span
+                className={`
+                  absolute left-0 -bottom-1 h-1 w-full bg-brand-cyanBlue rounded
+                  transition-transform duration-300 ease-in-out
+                  ${currentPath === "/gallery" ? "scale-x-100" : "scale-x-0"}
+                  origin-left
+                  block
+                `}
+              />
+            </Link>
+          </li>
+          <li className="relative">
+            <Link
+              to="/team"
+              className={`hover:text-brand-cyanBlue transition-colors duration-300 ${currentPath === "/team" ? "text-brand-cyanBlue" : ""} pb-1`}
+            >
+              Our Team
+              <span
+                className={`
+                  absolute left-0 -bottom-1 h-1 w-full bg-brand-cyanBlue rounded
+                  transition-transform duration-300 ease-in-out
+                  ${currentPath === "/team" ? "scale-x-100" : "scale-x-0"}
+                  origin-left
+                  block
+                `}
+              />
+            </Link>
+          </li>
+          <li className="relative">
+            <Link
+              to="/about"
+              className={`hover:text-brand-cyanBlue transition-colors duration-300 ${currentPath === "/about" ? "text-brand-cyanBlue" : ""} pb-1`}
+            >
+              About Us
+              <span
+                className={`
+                  absolute left-0 -bottom-1 h-1 w-full bg-brand-cyanBlue rounded
+                  transition-transform duration-300 ease-in-out
+                  ${currentPath === "/about" ? "scale-x-100" : "scale-x-0"}
+                  origin-left
+                  block
+                `}
+              />
+            </Link>
+          </li>
         </ul>
 
         {/* Buttons */}
