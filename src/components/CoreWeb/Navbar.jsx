@@ -7,6 +7,26 @@ export default function Navbar() {
   const location = useLocation();
   const currentPath = location.pathname;
 
+  // Scroll direction state for navbar visibility
+  const [showNavbar, setShowNavbar] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(window.scrollY);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+      if (currentScrollY < 10) {
+        setShowNavbar(true);
+      } else if (currentScrollY > lastScrollY) {
+        setShowNavbar(false); // scrolling down
+      } else {
+        setShowNavbar(true); // scrolling up
+      }
+      setLastScrollY(currentScrollY);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [lastScrollY]);
+
   return (
     <nav className={`fixed top-0 left-0 w-full z-50 bg-brand-black text-brand-white px-4 md:px-6 py-3 shadow-md transition-transform duration-300 ${showNavbar ? "translate-y-0" : "-translate-y-full"}`}>
       <div className="max-w-screen-xl mx-auto flex justify-between items-center">
