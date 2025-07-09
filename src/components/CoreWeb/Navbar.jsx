@@ -10,11 +10,12 @@ export default function Navbar() {
   // Scroll direction state for navbar visibility
   const [showNavbar, setShowNavbar] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(window.scrollY);
+  const hideThreshold = 800; // px
 
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
-      if (currentScrollY < 10) {
+      if (currentScrollY < hideThreshold) {
         setShowNavbar(true);
       } else if (currentScrollY > lastScrollY) {
         setShowNavbar(false); // scrolling down
