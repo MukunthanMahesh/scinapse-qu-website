@@ -46,7 +46,7 @@ const events = [
 
 const EventsSection = () => {
   return (
-    <motion.section variants={slideUpVariant} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }} className="max-w-7xl mx-auto px-4 py-8">
+    <motion.section variants={slideUpVariant} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }} className="max-w-7xl mx-auto px-4 py-12">
       <div className="mb-10">
         <p className="text-brand-teal text-sm uppercase tracking-widest mb-2">
           Your front row seats to undergrad research and innovation.

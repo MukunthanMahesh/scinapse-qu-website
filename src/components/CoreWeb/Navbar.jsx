@@ -29,7 +29,7 @@ export default function Navbar() {
   }, [lastScrollY]);
 
   return (
-    <nav className={`fixed top-0 left-0 w-full z-50 bg-brand-black text-brand-white px-4 md:px-6 py-3 shadow-md transition-transform duration-300 ${showNavbar ? "translate-y-0" : "-translate-y-full"}`}>
+    <nav className={`fixed top-0 left-0 w-full z-40 bg-brand-black text-brand-white px-4 md:px-6 py-3 shadow-md transition-transform duration-300 ${showNavbar ? "translate-y-0" : "-translate-y-full"}`}>
       <div className="max-w-screen-xl mx-auto flex justify-between items-center">
         {/* Logo */}
         <Link to="/">
@@ -166,7 +166,7 @@ export default function Navbar() {
 
       {/* Mobile Menu */}
       {isOpen && (
-        <div className="md:hidden bg-brand-black text-brand-white px-6 pt-6 pb-8 space-y-6 rounded-b-lg shadow-lg z-50">
+        <div className="md:hidden bg-brand-black text-brand-white px-6 pt-6 pb-8 space-y-6 rounded-b-lg shadow-lg z-40">
 
           {/* Navigation Links */}
           <nav className="flex flex-col items-center space-y-6 text-base font-medium">
