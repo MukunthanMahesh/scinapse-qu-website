@@ -1,8 +1,8 @@
 import React from "react";
 import RippleButton from "../UI/RippleButton";
 import { motion } from "framer-motion";
-import { slideUpVariant } from "../../utils/motionVariants";
 import FluidText from "../CoreWeb/FluidText";
+import { MapPin } from "lucide-react";
 
 export default function HeroBanner() {
   return (
@@ -18,10 +18,17 @@ export default function HeroBanner() {
 
         <div className="relative z-10 flex flex-col justify-center grow px-6 py-16 md:px-16 lg:px-32 space-y-8 h-full">
           <div className="max-w-xl text-left space-y-6 md:bg-white/10 md:backdrop-blur-md md:rounded-2xl md:border md:border-white/20 md:shadow-xl p-8">
-            <FluidText
-              text="We prepare undergraduates to lead through research and innovation."
-              breakAfterWords={["prepare", "to", "research"]}
-            />
+            {/* Desktop/Laptop: Show FluidText */}
+            <div className="hidden md:block">
+              <FluidText
+                text="We prepare undergraduates to lead through research and innovation."
+                breakAfterWords={["prepare", "to", "research"]}
+              />
+            </div>
+            {/* Mobile: Show simple heading */}
+            <h1 className="block md:hidden text-2xl font-bold text-center leading-tight">
+              We prepare undergraduate students to lead through research and innovation.
+            </h1>
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 w-full sm:w-auto">
               <RippleButton
                 href="/get-invovled"
@@ -47,9 +54,13 @@ export default function HeroBanner() {
         {/* Chapters Bar - white, overlaid, text left, animated logos right */}
         <div className="absolute bottom-6 left-1/2 -translate-x-1/2 z-20 w-[95vw] md:w-[30vw] max-w-4xl">
           <div className="flex items-center justify-between bg-white rounded-xl shadow-lg px-6 py-3 border border-gray-200 w-full">
-            <span className="text-gray-800 text-base tracking-wide whitespace-nowrap">
-              Chapters Across Ontario
-            </span>
+          <span className="hidden md:flex items-center text-gray-800 text-base tracking-wide whitespace-nowrap">
+            <MapPin className="h-5 w-5 text-cyan-500 mr-2" />
+            Chapters Across Ontario
+          </span>
+          <span className="md:hidden items-center text-gray-800 text-base tracking-wide whitespace-nowrap">
+            Chapters in:
+          </span>
             <div className="relative overflow-hidden flex-1 ml-6">
               <motion.div
                 className="flex items-center gap-8 min-w-max"

@@ -36,7 +36,7 @@ const TestimonialsSection = () => {
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, amount: 0.2 }}
-      className="max-w-7xl mx-auto px-4 py-8"
+      className="max-w-7xl mx-auto px-4 py-12"
     >
       <div className="mb-10">
         <p className="text-brand-teal text-sm uppercase tracking-widest mb-2">
