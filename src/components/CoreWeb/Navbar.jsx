@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import RippleButton from "../UI/RippleButton";
 
@@ -8,7 +8,7 @@ export default function Navbar() {
   const currentPath = location.pathname;
 
   return (
-    <nav className="bg-brand-black text-brand-white px-4 md:px-6 py-3 shadow-md">
+    <nav className={`fixed top-0 left-0 w-full z-50 bg-brand-black text-brand-white px-4 md:px-6 py-3 shadow-md transition-transform duration-300 ${showNavbar ? "translate-y-0" : "-translate-y-full"}`}>
       <div className="max-w-screen-xl mx-auto flex justify-between items-center">
         {/* Logo */}
         <Link to="/">
