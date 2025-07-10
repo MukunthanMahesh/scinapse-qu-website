@@ -28,7 +28,7 @@ This website serves as a hub for:
 ### Installation
 
 ```bash
-git clone https://github.com/your-username/scinapse-qu-website.git
+git clone https://github.com/MukunthanMahesh/scinapse-qu-website.git
 cd scinapse-qu-website
 npm install
 npm run dev
