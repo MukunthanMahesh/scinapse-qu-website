@@ -2,4 +2,15 @@
   body {
     @apply font-sans;
   }
+  
+  /* Change default text selection highlight color to branded blue */
+  ::selection {
+    background-color: rgba(116, 220, 223, 0.7);
+    color: #000000;
+  }
+  /* (firefox) Change default text selection highlight color to branded blue */
+  ::-moz-selection {
+    background-color: rgba(116, 220, 223, 0.7);
+    color: #000000;
+  }
 }
