@@ -4,17 +4,17 @@ const events = [
     title: 'USCC 2024-2025',
     date: 'March 2025',
     images: [
-      { src: '/event_images/uscc.jpg', alt: 'USCC Group', },
-      { src: '/event_images/nintendo.jpg', alt: 'Nintendo Event', },
-      { src: '/event_images/stem-horizons.jpg', alt: 'STEM Horizons', },
+      { src: '/landing/event_images/uscc.jpg', alt: 'USCC Group', },
+      { src: '/landing/event_images/nintendo.jpg', alt: 'Nintendo Event', },
+      { src: '/landing/event_images/stem-horizons.jpg', alt: 'STEM Horizons', },
     ],
   },
   {
     title: 'STEM Horizons: AI in Healthcare Summit 2025',
     date: 'January 2025',
     images: [
-      { src: '/event_images/stem-horizons.jpg', alt: 'STEM Horizons', },
-      { src: '/event_images/uscc.jpg', alt: 'USCC Group', },
+      { src: '/landing/event_images/stem-horizons.jpg', alt: 'STEM Horizons', },
+      { src: '/landing/event_images/uscc.jpg', alt: 'USCC Group', },
     ],
   },
 ];
