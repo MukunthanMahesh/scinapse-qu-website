@@ -1,5 +1,4 @@
-# SciNapse Queen's Website 🌐
-
+# SciNapse Queen's Website 🌐: www.scinapsequeensu.ca
 This is the official website for the Queen’s University chapter of **Scinapse**, a national student-run organization that empowers undergraduates through research-based competitions and events — most notably the **Undergraduate Science Case Competition (USCC)**.
 
 ## 🔍 What is Scinapse?
