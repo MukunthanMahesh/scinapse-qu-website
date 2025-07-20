@@ -1,0 +1,45 @@
+/* Gallery-specific styles to prevent layout shifts */
+
+.gallery-container {
+  contain: layout style paint;
+  will-change: auto;
+}
+
+.masonry-grid {
+  contain: layout style;
+  transform: translateZ(0); /* Force hardware acceleration */
+}
+
+.lazy-image-container {
+  contain: layout style;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+
+/* Prevent layout shifts during image loading */
+.image-placeholder {
+  background: linear-gradient(135deg, #f3f4f6 0%, #e5e7eb 100%);
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+/* Smooth transitions for show/hide */
+.gallery-transition {
+  transition: opacity 0.3s ease-in-out;
+}
+
+/* Prevent text selection during interactions */
+.gallery-interactive {
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+} 
