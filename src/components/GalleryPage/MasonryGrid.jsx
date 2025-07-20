@@ -1,52 +1,45 @@
-import { useState, useEffect } from 'react';
+import Masonry from 'react-masonry-css';
 import GalleryImage from './ClickableImage.jsx';
 
 /**
- * MasonryGrid - Responsive masonry layout for images
+ * MasonryGrid - Uses react-masonry-css for a true Pinterest-style layout
  * @param {Object[]} images - Array of image objects with src, alt, aspectRatio
- * @param {number} columns - Number of columns (default: 4)
  */
-export default function MasonryGrid({ images, columns = 4 }) {
-  // Track the height of each column for layout balancing
-  const [columnHeights, setColumnHeights] = useState(new Array(columns).fill(0));
-  // Store images with assigned columns for rendering
-  const [distributedImages, setDistributedImages] = useState([]);
+function getRandomAspectRatio(seed) {
+  // Generate a pseudo-random aspect ratio between 0.9 and 1.5
+  const min = 0.9, max = 1.5;
+  const x = Math.abs(Math.sin(seed) * 10000) % 1;
+  return min + (max - min) * x;
+}
 
-  useEffect(() => {
-    // Distribute images to columns to balance column heights
-    const newColumnHeights = new Array(columns).fill(0);
-    const newDistributedImages = images.map((img, index) => {
-      // Find the column with the smallest height
-      const shortestColumn = newColumnHeights.indexOf(Math.min(...newColumnHeights));
-      const height = img.aspectRatio * 200;
-      newColumnHeights[shortestColumn] += height + 24;
-      return { ...img, column: shortestColumn };
-    });
-    
-    setColumnHeights(newColumnHeights);
-    setDistributedImages(newDistributedImages);
-  }, [images, columns]);
+// Responsive breakpoints for columns
+const breakpointColumnsObj = {
+  default: 4,
+  1100: 3,
+  700: 2,
+  500: 1
+};
 
+export default function MasonryGrid({ images }) {
   return (
-    // Render columns and place images in their assigned columns
-    <div className={`grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6 masonry-grid ${
-      images.length === 0 ? 'min-h-0' : ''
-    }`}>
-      {Array.from({ length: columns }, (_, colIndex) => (
-        <div key={colIndex} className="space-y-6">
-          {distributedImages
-            .filter(img => img.column === colIndex)
-            .map((img, index) => (
-              <GalleryImage
-                key={`${img.src}-${index}`}
-                src={img.src}
-                alt={img.alt}
-                aspectRatio={img.aspectRatio}
-                className="hover:shadow-xl transition-shadow duration-300 lazy-image-container"
-              />
-            ))}
-        </div>
-      ))}
-    </div>
+    <Masonry
+      breakpointCols={breakpointColumnsObj}
+      className="masonry-grid flex w-auto"
+      columnClassName="masonry-grid_column px-2"
+    >
+      {images.map((img, index) => {
+        // Assign a random aspect ratio for organic look
+        const aspectRatio = getRandomAspectRatio((img.src || '').split('').reduce((acc, c) => acc + c.charCodeAt(0), 0) + index);
+        return (
+          <GalleryImage
+            key={`${img.src}-${index}`}
+            src={img.src}
+            alt={img.alt}
+            aspectRatio={aspectRatio}
+            className="mb-6 hover:shadow-xl transition-shadow duration-300 lazy-image-container"
+          />
+        );
+      })}
+    </Masonry>
   );
 } 
