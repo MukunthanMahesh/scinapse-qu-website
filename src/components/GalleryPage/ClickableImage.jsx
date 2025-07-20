@@ -1,9 +1,11 @@
 import { useState, useRef, useEffect } from 'react';
+import { HiOutlineMagnifyingGlass } from 'react-icons/hi2';
 
 /**
  * GalleryImage - Lazy loads and displays a high-quality image with a customizable placeholder
  * - Uses intersection observer to only load when in view
  * - Shows a skeleton or simple placeholder until loaded
+ * - Includes hover effects with dark overlay and enlarge icon
  * @param {string} src - Image URL
  * @param {string} alt - Alt text
  * @param {number} aspectRatio - Image aspect ratio
@@ -42,7 +44,7 @@ export default function GalleryImage({ src, alt, aspectRatio, className = "", pl
   return (
     <div
       ref={imgRef}
-      className={`relative overflow-hidden rounded-lg shadow-lg bg-gray-100 ${className}`}
+      className={`relative overflow-hidden rounded-lg shadow-lg bg-gray-100 group cursor-pointer transition-all duration-300 hover:shadow-xl ${className}`}
       style={{
         height: `${height}px`,
         minHeight: `${height}px`,
@@ -72,6 +74,18 @@ export default function GalleryImage({ src, alt, aspectRatio, className = "", pl
           style={{ minHeight: `${height}px` }}
         />
       )}
+      
+      {/* Hover Effects on Image: */}
+      
+      {/* Dark overlay on hover */}
+      <div className="absolute inset-0 bg-black opacity-0 group-hover:opacity-30 transition-opacity duration-300"></div>
+      
+      {/* "Magnifying Glass" icon on hover */}
+      <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+        <div className="bg-brand-cyanBlue bg-opacity-90 rounded-full p-3 shadow-lg">
+          <HiOutlineMagnifyingGlass className="w-6 h-6 text-gray-800" />
+        </div>
+      </div>
     </div>
   );
 } 
