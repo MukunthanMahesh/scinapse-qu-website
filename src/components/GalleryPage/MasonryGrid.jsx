@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import ProgressiveImage from './ClickableImage.jsx';
+import GalleryImage from './ClickableImage.jsx';
 
 /**
  * MasonryGrid - Responsive masonry layout for images
@@ -37,7 +37,7 @@ export default function MasonryGrid({ images, columns = 4 }) {
           {distributedImages
             .filter(img => img.column === colIndex)
             .map((img, index) => (
-              <ProgressiveImage
+              <GalleryImage
                 key={`${img.src}-${index}`}
                 src={img.src}
                 alt={img.alt}
