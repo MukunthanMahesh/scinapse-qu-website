@@ -1,66 +1,26 @@
-import { useState, useEffect, useCallback } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { useState } from 'react';
+import { motion } from 'framer-motion';
 import MasonryGrid from './MasonryGrid.jsx';
-import ImageLoader from './ImageLoader.jsx';
 
 /**
  * EventSection - Individual event with show/hide functionality
- * @param {Object} event - Event object with title, date, folder, initialShow
+ * @param {Object} event - Event object with title, date, images
  */
 export default function EventSection({ event }) {
   // Track if all images should be shown or just initial set
   const [showAll, setShowAll] = useState(false);
-  // Images currently displayed
-  const [images, setImages] = useState([]);
-  // All images loaded (for folder-based events)
-  const [allImages, setAllImages] = useState([]);
-  // Total number of images for this event
-  const [totalImages, setTotalImages] = useState(0);
-
-  // Callback for when images are loaded from ImageLoader
-  const handleImagesLoaded = useCallback((loadedImages) => {
-    setAllImages(loadedImages);
-    setTotalImages(loadedImages.length);
-    // Always start with initial count, let useEffect handle showAll logic
-    setImages(loadedImages.slice(0, event.initialShow || 4));
-  }, [event.initialShow]);
-
-  useEffect(() => {
-    if (event.folder) {
-      // Images will be loaded by ImageLoader component
-      return;
-    } else {
-      // Static images for other events
-      setImages(event.images);
-      setTotalImages(event.images.length);
-    }
-  }, [event]);
-
-  useEffect(() => {
-    if (allImages.length > 0) {
-      // Update displayed images when showAll changes
-      setImages(showAll ? allImages : allImages.slice(0, event.initialShow || 4));
-    }
-  }, [showAll, allImages, event.initialShow]);
-
+  // Number of images to show initially (default 4)
+  const initialShow = 4;
+  // Images to display (all or just initial set)
+  const imagesToShow = showAll ? event.images : event.images.slice(0, initialShow);
   // Only show the toggle button if there are more images than initially shown
-  const hasMoreImages = event.folder ? totalImages > (event.initialShow || 4) : false;
+  const hasMoreImages = event.images.length > initialShow;
 
   return (
     <section className="mb-6 relative" data-event={event.title}>
       {/* Event title and date */}
       <h2 className="text-3xl font-bold text-brand-black mb-1">{event.title}</h2>
       <div className="text-gray-500 mb-3">{event.date}</div>
-      
-      {/* Load images dynamically if folder is specified */}
-      {event.folder && (
-        <ImageLoader 
-          folderPath={event.folder} 
-          onImagesLoaded={handleImagesLoaded}
-          initialShow={event.initialShow}
-        />
-      )}
-      
       <div className="relative">
         {/* Animate the height of the image grid when toggling showAll */}
         <motion.div
@@ -96,10 +56,9 @@ export default function EventSection({ event }) {
           }}
         >
           {/* Masonry grid for event images */}
-          <MasonryGrid images={images} />
+          <MasonryGrid images={imagesToShow} />
         </motion.div>
       </div>
-      
       {/* Show toggle button if there are more images to display */}
       {hasMoreImages && (
         <div className="text-center mt-4">
@@ -107,7 +66,7 @@ export default function EventSection({ event }) {
             onClick={() => setShowAll(!showAll)}
             className="bg-brand-cyanBlue text-brand-black px-4 py-2 rounded text-center font-semibold hover:bg-brand-darkCyan transition relative overflow-hidden select-none"
           >
-            {showAll ? 'Show Less' : `View All ${totalImages} Photos`}
+            {showAll ? 'Show Less' : `View All ${event.images.length} Photos`}
           </button>
         </div>
       )}

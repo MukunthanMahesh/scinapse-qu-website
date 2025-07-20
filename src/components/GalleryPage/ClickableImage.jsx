@@ -4,7 +4,6 @@ import { useState, useRef, useEffect } from 'react';
  * GalleryImage - Lazy loads and displays a high-quality image with a customizable placeholder
  * - Uses intersection observer to only load when in view
  * - Shows a skeleton or simple placeholder until loaded
- * - Only loads the high-res image (no thumbnail)
  * @param {string} src - Image URL
  * @param {string} alt - Alt text
  * @param {number} aspectRatio - Image aspect ratio

@@ -1,241 +1,57 @@
-# GalleryPage Components
+# GalleryPage (Simple Guide)
 
-A modular gallery system for displaying event photos with lazy loading, masonry layout, and progressive image loading.
+A minimal, easy-to-extend gallery for event photos.
 
-## 📁 Component Structure
+## 🖼️ How It Works
+- All gallery logic is in your `src/pages/Gallery.jsx` file.
+- Each event has a title, date, and an array of images (with `src`, `alt`, and `aspectRatio`).
+- No dynamic folder loading—just list your images directly.
 
-```
-GalleryPage/
-├── Gallery.jsx          # Main gallery page component
-├── EventSection.jsx     # Individual event section with show/hide logic
-├── MasonryGrid.jsx      # Masonry layout for images
-├── LazyImage.jsx        # Lazy loading individual images
-├── ProgressiveImage.jsx # Progressive image loading with skeleton
-├── ImageLoader.jsx      # Dynamic image loading from folders
-└── README.md           # This file
-```
+## 📋 Adding a New Event or Image
+1. **Add your images to the `public/gallery/your_event/` folder.**
+2. **In `src/pages/Gallery.jsx`, add a new event object to the `events` array:**
 
-## 🚀 Quick Start
-
-```jsx
-// In your page component
-import Gallery from '../components/GalleryPage/Gallery.jsx';
-
-const events = [
-  {
-    title: 'Event Name',
-    date: '2024',
-    folder: '/gallery/event_folder',
-    initialShow: 8
-  }
-];
-
-export default function GalleryPage() {
-  return <Gallery events={events} />;
-}
-```
-
-## 📋 Components
-
-### Gallery.jsx
-**Main gallery page component**
-
-**Props:**
-- `events` (array): Array of event objects
-
-**Event Object Structure:**
-```jsx
+```js
 {
-  title: string,        // Event title
-  date: string,         // Event date
-  folder: string,       // Folder path (e.g., '/gallery/event_name')
-  initialShow: number   // Number of images to show initially
-}
-```
-
-**Features:**
-- Responsive header with motion animations
-- Renders multiple event sections
-- Uses brand colors from Tailwind config
-
----
-
-### EventSection.jsx
-**Individual event section with show/hide functionality**
-
-**Props:**
-- `event` (object): Event object with title, date, folder, initialShow
-
-**Features:**
-- Dynamic image loading from folder
-- Show/hide toggle for images
-- Masonry grid layout
-- Brand-colored button styling
-
----
-
-### MasonryGrid.jsx
-**Masonry layout component for optimal image display**
-
-**Props:**
-- `images` (array): Array of image objects
-- `columns` (number): Number of columns (default: 3)
-
-**Image Object Structure:**
-```jsx
-{
-  src: string,          // Image URL
-  alt: string,          // Alt text
-  aspectRatio: number   // Image aspect ratio (0.8-1.4)
-}
-```
-
-**Features:**
-- Responsive column layout
-- Dynamic height calculation
-- Even image distribution
-- Smooth spacing between images
-
----
-
-### LazyImage.jsx
-**Lazy loading individual images with intersection observer**
-
-**Props:**
-- `src` (string): Image URL
-- `alt` (string): Alt text
-- `aspectRatio` (number): Image aspect ratio
-
-**Features:**
-- Intersection Observer for lazy loading
-- Smooth opacity transitions
-- Fixed aspect ratios to prevent layout shifts
-- Error handling for broken images
-
----
-
-### ProgressiveImage.jsx
-**Progressive image loading with skeleton loader**
-
-**Props:**
-- `src` (string): High-quality image URL
-- `alt` (string): Alt text
-- `aspectRatio` (number): Image aspect ratio
-
-**Features:**
-- Skeleton loader while loading
-- Low-quality thumbnail first
-- Automatic high-quality image loading
-- Smooth transitions between states
-
----
-
-### ImageLoader.jsx
-**Dynamic image loading from folder paths**
-
-**Props:**
-- `folderPath` (string): Path to image folder
-- `onImagesLoaded` (function): Callback when images are loaded
-- `initialShow` (number): Initial number of images to show
-
-**Features:**
-- Folder-based image loading
-- Configurable image lists per folder
-- Error handling and loading states
-- Easy to add new folders
-
-## 🔧 Adding New Galleries
-
-### 1. Add Images to Public Folder
-```
-public/gallery/
-├── event_name_1/
-│   ├── image1.jpg
-│   ├── image2.jpg
-│   └── image3.jpg
-└── event_name_2/
-    ├── photo1.jpg
-    └── photo2.jpg
-```
-
-### 2. Update ImageLoader.jsx
-```jsx
-const folderImageMap = {
-  'SciNapse_USCC_2023-2024': [
-    '20240309-DSCF0377.jpg',
-    '20240309-DSCF0402.jpg',
-    // ... more images
-  ],
-  'event_name_1': [
-    'image1.jpg',
-    'image2.jpg',
-    'image3.jpg'
-  ],
-  'event_name_2': [
-    'photo1.jpg',
-    'photo2.jpg'
+  title: 'My New Event',
+  date: '2024',
+  images: [
+    { src: '/gallery/your_event/image1.jpg', alt: 'Description', aspectRatio: 1.3 },
+    { src: '/gallery/your_event/image2.jpg', alt: 'Description', aspectRatio: 1.2 },
+    // ...more images
   ]
-};
+}
 ```
+- **Tip:** You can copy an existing event and just change the details.
+- **Aspect ratio** is width/height (e.g. 1.33 for 4:3 images).
 
-### 3. Add to Gallery Page
-```jsx
-const events = [
-  {
-    title: 'New Event',
-    date: '2024',
-    folder: '/gallery/event_name_1',
-    initialShow: 6
-  }
-];
+## 🏗️ Main Components
+- **Gallery.jsx (page):** Sets up events and renders the gallery UI.
+- **EventSection.jsx:** Shows each event and its images, with a show more/less toggle.
+- **MasonryGrid.jsx:** Lays out images in a responsive grid.
+- **ClickableImage.jsx:** Handles lazy loading and skeleton for each image.
+
+## 🖊️ Example Event
+```js
+{
+  title: 'Sample Event',
+  date: '2024',
+  images: [
+    { src: '/gallery/sample_event/photo1.jpg', alt: 'Photo 1', aspectRatio: 1.33 },
+    { src: '/gallery/sample_event/photo2.jpg', alt: 'Photo 2', aspectRatio: 1.33 },
+  ]
+}
 ```
 
 ## 🎨 Styling
+- Uses brand colors from Tailwind CSS.
+- Custom styles in `src/CSS/gallery.css`.
 
-### Brand Colors
-All components use brand colors from `tailwind.config.js`:
-- `bg-brand-cyanBlue`
-- `text-brand-black`
-- `text-brand-teal`
-- `hover:bg-brand-darkCyan`
+## 💡 Tips
+- Use compressed images for faster loading.
+- Provide good alt text for accessibility.
+- To add more events, just add to the `events` array—no need to touch any other files!
 
-### CSS Files
-- `src/CSS/gallery.css`: Custom styles for skeleton loaders and animations
+---
 
-## 🔄 State Management
-
-### EventSection State
-- `images`: Array of loaded images
-- `showAll`: Boolean for show/hide toggle
-- `loading`: Loading state indicator
-
-### Image Loading Flow
-1. `ImageLoader` loads images from folder
-2. `EventSection` receives images via callback
-3. `MasonryGrid` distributes images into columns
-4. `LazyImage`/`ProgressiveImage` handle individual image loading
-
-## 🚨 Common Issues
-
-### Images Not Loading
-- Check folder path in `ImageLoader.jsx`
-- Verify image files exist in public folder
-- Check browser console for errors
-
-### Layout Shaking
-- Fixed aspect ratios prevent layout shifts
-- Skeleton loaders maintain consistent heights
-- CSS containment prevents overflow issues
-
-### Performance Issues
-- Reduce `initialShow` number
-- Use smaller image files
-- Consider image compression
-
-## 📝 Best Practices
-
-1. **Image Optimization**: Use compressed images (1-3MB max)
-2. **Aspect Ratios**: Keep between 0.8-1.4 for best layout
-3. **Folder Names**: Use descriptive, consistent naming
-4. **Initial Show**: Start with 6-8 images for good performance
-5. **Alt Text**: Provide descriptive alt text for accessibility 
+**That’s it! Anyone can add new events or images by editing one array.** 
