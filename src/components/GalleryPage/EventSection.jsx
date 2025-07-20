@@ -10,20 +10,31 @@ import FluidText from '../CoreWeb/FluidText.jsx';
 export default function EventSection({ event }) {
   // Track if all images should be shown or just initial set
   const [showAll, setShowAll] = useState(false);
+  // Track if the button should be disabled
+  const [buttonDisabled, setButtonDisabled] = useState(false);
+  // Track if user has ever clicked 'Show All'
+  const [hasShownAll, setHasShownAll] = useState(false);
 
   // Number of images to show initially (default 4)
   const initialShow = 4;
 
-  // Images to display (all or just initial set)
-  const imagesToShow = showAll ? event.images : event.images.slice(0, initialShow);
-
   // Only show the toggle button if there are more images than initially shown
   const hasMoreImages = event.images.length > initialShow;
+
+  // Handle show all/less with temporary disable
+  const handleToggle = () => {
+    setShowAll((prev) => {
+      const next = !prev;
+      if (next) setHasShownAll(true);
+      return next;
+    });
+    setButtonDisabled(true);
+    setTimeout(() => setButtonDisabled(false), 1000);
+  };
 
   return (
     <section className="mb-6 relative" data-event={event.title}>
       {/* Event title and date */}
-      {/* Show FluidText only on md+ screens, normal h2 on mobile */}
       <div>
         <span className="hidden md:block">
           <FluidText text={event.title} baseColor="text-brand-black" size="text-3xl" />
@@ -67,15 +78,16 @@ export default function EventSection({ event }) {
             }
           }}
         >
-          {/* Masonry grid for event images */}
-          <MasonryGrid images={imagesToShow} />
+          {/* Masonry grid for event images, keep all images mounted after first show all */}
+          <MasonryGrid images={event.images} showAll={showAll} initialShow={initialShow} keepAll={hasShownAll} />
         </motion.div>
       </div>
       {/* Show toggle button if there are more images to display */}
       {hasMoreImages && (
         <div className="text-center mt-4">
           <button
-            onClick={() => setShowAll(!showAll)}
+            onClick={handleToggle}
+            disabled={buttonDisabled}
             className="bg-brand-black text-brand-white px-4 py-2 rounded text-center hover:bg-brand-cyanBlue disabled:opacity-50 transition relative overflow-hidden select-none"
           >
             {showAll ? 'Show Less' : `View All Photos`}
