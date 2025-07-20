@@ -28,14 +28,7 @@ export default function ImageLoader({ folderPath, onImagesLoaded, initialShow = 
             '20240309-DSCF0425.jpg', '20240309-DSCF0430.jpg', '20240309-DSCF0446.jpg',
             '20240309-DSCF0452.jpg', '20240309-DSCF0467.jpg', '20240309-DSCF0476.jpg',
             '20240309-DSCF0496.jpg', '20240309-DSCF0503.jpg', '20240309-DSCF0521.jpg',
-            '20240309-DSCF0527.jpg', '20240309-DSCF0548.jpg', '20240309-DSCF7237.jpg',
-            '20240309-DSCF7251.jpg', '20240309-DSCF7263.jpg', '20240309-DSCF7280.jpg',
-            '20240309-DSCF7292.jpg', '20240309-DSCF7313.jpg', '20240309-DSCF7341.jpg',
-            '20240309-DSCF7369.jpg', '20240309-DSCF7384.jpg', '20240309-DSCF7399.jpg',
-            '20240309-DSCF7417.jpg', '20240309-DSCF7431.jpg', '20240309-DSCF7466.jpg',
-            '20240309-DSCF7480.jpg', '20240310-DSCF0725.jpg', '20240310-DSCF7541.jpg',
-            '20240310-DSCF7670.jpg', '20240310-DSCF7675.jpg', '20240310-DSCF7741.jpg',
-            '20240310-DSCF7751.jpg', '20240310-DSCF7762.jpg', '20240310-DSCF7774.jpg'
+            '20240309-DSCF0527.jpg', '20240309-DSCF0548.jpg',
           ],
         };
         

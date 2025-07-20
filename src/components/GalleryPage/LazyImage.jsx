@@ -17,7 +17,7 @@ export default function LazyImage({ src, alt, aspectRatio, className = "" }) {
       ([entry]) => {
         if (entry.isIntersecting) {
           setIsInView(true);
-          observer.disconnect();
+          // Don't disconnect - keep observing to maintain loaded state
         }
       },
       { threshold: 0.1, rootMargin: '50px' }
@@ -45,7 +45,7 @@ export default function LazyImage({ src, alt, aspectRatio, className = "" }) {
       {!isLoaded && (
         <div className="absolute inset-0 image-placeholder"></div>
       )}
-      {isInView && (
+      {(isInView || isLoaded) && (
         <img
           src={src}
           alt={alt}

@@ -19,7 +19,7 @@ export default function ProgressiveImage({ src, alt, aspectRatio, className = ""
       ([entry]) => {
         if (entry.isIntersecting) {
           setIsInView(true);
-          observer.disconnect();
+          // Don't disconnect - keep observing to maintain loaded state
         }
       },
       { threshold: 0.1, rootMargin: '50px' }
@@ -64,7 +64,7 @@ export default function ProgressiveImage({ src, alt, aspectRatio, className = ""
         </div>
       )}
       
-      {isInView && (
+      {(isInView || isThumbnailLoaded) && (
         <>
           <img
             src={getThumbnailUrl(src)}
