@@ -7,20 +7,25 @@ import { useState, useEffect } from 'react';
  * @param {number} initialShow - Initial number of images to show
  */
 export default function ImageLoader({ folderPath, onImagesLoaded, initialShow = 12 }) {
+  // State for loaded images
   const [images, setImages] = useState([]);
+  // State for loading spinner
   const [loading, setLoading] = useState(true);
+  // State for error messages
   const [error, setError] = useState(null);
 
   useEffect(() => {
+    // Load images from the specified folder
     const loadImagesFromFolder = async () => {
       try {
         setLoading(true);
         setError(null);
 
+        // Extract folder name from path
         const folderName = folderPath.split('/').pop();
         let folderImages = [];
         
-        // Folder image mapping
+        // Map folder names to image file lists
         const folderImageMap = {
           'SciNapse_USCC_2023-2024': [
             '20240309-DSCF0377.jpg', '20240309-DSCF0402.jpg', '20240309-DSCF0404.jpg',
@@ -32,9 +37,11 @@ export default function ImageLoader({ folderPath, onImagesLoaded, initialShow = 
           ],
         };
         
+        // Get image file list for the folder
         const imageFiles = folderImageMap[folderName];
         
         if (imageFiles) {
+          // Build image objects with src, alt, and aspectRatio
           folderImages = imageFiles.map((filename, index) => ({
             src: `${folderPath}/${filename}`,
             alt: filename.replace(/\.[^/.]+$/, ''),
@@ -45,6 +52,7 @@ export default function ImageLoader({ folderPath, onImagesLoaded, initialShow = 
         }
           
           setImages(folderImages);
+          // Notify parent component of loaded images
           onImagesLoaded?.(folderImages);
       } catch (err) {
         console.error('Error loading images:', err);
@@ -59,6 +67,7 @@ export default function ImageLoader({ folderPath, onImagesLoaded, initialShow = 
     }
   }, [folderPath, onImagesLoaded]);
 
+  // Show loading spinner while images are loading
   if (loading) {
     return (
       <div className="flex justify-center items-center py-12">
@@ -67,6 +76,7 @@ export default function ImageLoader({ folderPath, onImagesLoaded, initialShow = 
     );
   }
 
+  // Show error message if loading fails
   if (error) {
     return (
       <div className="text-center py-12 text-red-600">
@@ -78,9 +88,11 @@ export default function ImageLoader({ folderPath, onImagesLoaded, initialShow = 
     );
   }
 
+  // This component only loads images and not render them directly
   return null;
 }
 
+// Utility to generate image list from a folder and pattern
 export function generateImageList(folderPath, pattern = null) {
   if (pattern && typeof pattern === 'function') {
     return pattern(folderPath);

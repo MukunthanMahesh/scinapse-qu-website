@@ -8,11 +8,16 @@ import ImageLoader from './ImageLoader.jsx';
  * @param {Object} event - Event object with title, date, folder, initialShow
  */
 export default function EventSection({ event }) {
+  // Track if all images should be shown or just initial set
   const [showAll, setShowAll] = useState(false);
+  // Images currently displayed
   const [images, setImages] = useState([]);
+  // All images loaded (for folder-based events)
   const [allImages, setAllImages] = useState([]);
+  // Total number of images for this event
   const [totalImages, setTotalImages] = useState(0);
 
+  // Callback for when images are loaded from ImageLoader
   const handleImagesLoaded = useCallback((loadedImages) => {
     setAllImages(loadedImages);
     setTotalImages(loadedImages.length);
@@ -38,10 +43,12 @@ export default function EventSection({ event }) {
     }
   }, [showAll, allImages, event.initialShow]);
 
+  // Only show the toggle button if there are more images than initially shown
   const hasMoreImages = event.folder ? totalImages > (event.initialShow || 4) : false;
 
   return (
     <section className="mb-6 relative" data-event={event.title}>
+      {/* Event title and date */}
       <h2 className="text-3xl font-bold text-brand-black mb-1">{event.title}</h2>
       <div className="text-gray-500 mb-3">{event.date}</div>
       
@@ -55,6 +62,7 @@ export default function EventSection({ event }) {
       )}
       
       <div className="relative">
+        {/* Animate the height of the image grid when toggling showAll */}
         <motion.div
           initial={false}
           animate={{ 
@@ -87,10 +95,12 @@ export default function EventSection({ event }) {
             }
           }}
         >
+          {/* Masonry grid for event images */}
           <MasonryGrid images={images} />
         </motion.div>
       </div>
       
+      {/* Show toggle button if there are more images to display */}
       {hasMoreImages && (
         <div className="text-center mt-4">
           <button

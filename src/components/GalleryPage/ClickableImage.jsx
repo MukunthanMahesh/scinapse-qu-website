@@ -8,13 +8,19 @@ import { useState, useRef, useEffect } from 'react';
  * @param {string} className - Additional CSS classes
  */
 export default function ProgressiveImage({ src, alt, aspectRatio, className = "" }) {
+  // State to track if high-res image is loaded
   const [isLoaded, setIsLoaded] = useState(false);
+  // State to track if image is in viewport
   const [isInView, setIsInView] = useState(false);
+  // State to trigger loading of high-res image after thumbnail
   const [isHighQuality, setIsHighQuality] = useState(false);
+  // State to track if thumbnail is loaded
   const [isThumbnailLoaded, setIsThumbnailLoaded] = useState(false);
+  // Ref for intersection observer
   const imgRef = useRef();
 
   useEffect(() => {
+    // Set up intersection observer to detect when image enters viewport
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
@@ -32,13 +38,16 @@ export default function ProgressiveImage({ src, alt, aspectRatio, className = ""
     return () => observer.disconnect();
   }, []);
 
+  // Calculate image height based on aspect ratio
   const height = aspectRatio * 200;
 
+  // Helper to generate thumbnail URL (simulate CDN resizing)
   const getThumbnailUrl = (originalSrc) => {
     return `${originalSrc}?w=400&h=300&q=30&fit=crop`;
   };
 
   useEffect(() => {
+    // After thumbnail loads, trigger high-res image load with slight delay
     if (isThumbnailLoaded && !isHighQuality) {
       const timer = setTimeout(() => {
         setIsHighQuality(true);
@@ -58,14 +67,17 @@ export default function ProgressiveImage({ src, alt, aspectRatio, className = ""
         maxHeight: `${height}px`
       }}
     >
+      {/* Skeleton loader while thumbnail loads */}
       {!isThumbnailLoaded && (
         <div className="absolute inset-0 bg-gray-100 animate-pulse">
           <div className="absolute inset-0 bg-brand-white opacity-20 animate-shimmer"></div>
         </div>
       )}
       
+      {/* Only load images if in view or already loaded */}
       {(isInView || isThumbnailLoaded) && (
         <>
+          {/* Thumbnail image (low quality, loads first) */}
           <img
             src={getThumbnailUrl(src)}
             alt={alt}
@@ -77,6 +89,7 @@ export default function ProgressiveImage({ src, alt, aspectRatio, className = ""
             style={{ minHeight: `${height}px` }}
           />
           
+          {/* High quality image overlays thumbnail after loaded */}
           {isHighQuality && (
             <img
               src={src}
