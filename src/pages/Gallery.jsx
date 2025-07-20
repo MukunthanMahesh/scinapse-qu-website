@@ -1,89 +1,186 @@
 // Event Gallery Page
+import { useState, useRef, useEffect } from 'react';
+
+// Dynamic image loading from folders
+const getEventImages = (folderPath, count = 39) => {
+  const images = [];
+  for (let i = 1; i <= count; i++) {
+    // Generate filenames based on the pattern in the folder
+    const day = i <= 17 ? '09' : '10';
+    const baseNum = i <= 17 ? 377 + (i - 1) * 25 : 725 + (i - 18) * 25;
+    const filename = `202403${day}-DSCF${baseNum.toString().padStart(4, '0')}.jpg`;
+    images.push({
+      src: `${folderPath}/${filename}`,
+      alt: `Event Photo ${i}`,
+      // Random aspect ratio for masonry effect (0.8 to 1.4)
+      aspectRatio: 0.8 + Math.random() * 0.6
+    });
+  }
+  return images;
+};
+
 const events = [
-  {
-    title: 'SciNapse USCC 2023-2024',
-    date: 'March 2024',
-    images: [
-      { src: '/gallery/SciNapse_USCC_2023-2024/20240309-DSCF0377.jpg', alt: 'USCC Event Photo 1' },
-      { src: '/gallery/SciNapse_USCC_2023-2024/20240309-DSCF0402.jpg', alt: 'USCC Event Photo 2' },
-      { src: '/gallery/SciNapse_USCC_2023-2024/20240309-DSCF0404.jpg', alt: 'USCC Event Photo 3' },
-      { src: '/gallery/SciNapse_USCC_2023-2024/20240309-DSCF0409.jpg', alt: 'USCC Event Photo 4' },
-      { src: '/gallery/SciNapse_USCC_2023-2024/20240309-DSCF0414.jpg', alt: 'USCC Event Photo 5' },
-      { src: '/gallery/SciNapse_USCC_2023-2024/20240309-DSCF0422.jpg', alt: 'USCC Event Photo 6' },
-      { src: '/gallery/SciNapse_USCC_2023-2024/20240309-DSCF0425.jpg', alt: 'USCC Event Photo 7' },
-      { src: '/gallery/SciNapse_USCC_2023-2024/20240309-DSCF0430.jpg', alt: 'USCC Event Photo 8' },
-      { src: '/gallery/SciNapse_USCC_2023-2024/20240309-DSCF0446.jpg', alt: 'USCC Event Photo 9' },
-      { src: '/gallery/SciNapse_USCC_2023-2024/20240309-DSCF0452.jpg', alt: 'USCC Event Photo 10' },
-      { src: '/gallery/SciNapse_USCC_2023-2024/20240309-DSCF0467.jpg', alt: 'USCC Event Photo 11' },
-      { src: '/gallery/SciNapse_USCC_2023-2024/20240309-DSCF0476.jpg', alt: 'USCC Event Photo 12' },
-      { src: '/gallery/SciNapse_USCC_2023-2024/20240309-DSCF0496.jpg', alt: 'USCC Event Photo 13' },
-      { src: '/gallery/SciNapse_USCC_2023-2024/20240309-DSCF0503.jpg', alt: 'USCC Event Photo 14' },
-      { src: '/gallery/SciNapse_USCC_2023-2024/20240309-DSCF0521.jpg', alt: 'USCC Event Photo 15' },
-      { src: '/gallery/SciNapse_USCC_2023-2024/20240309-DSCF0527.jpg', alt: 'USCC Event Photo 16' },
-      { src: '/gallery/SciNapse_USCC_2023-2024/20240309-DSCF0548.jpg', alt: 'USCC Event Photo 17' },
-      { src: '/gallery/SciNapse_USCC_2023-2024/20240309-DSCF7237.jpg', alt: 'USCC Event Photo 18' },
-      { src: '/gallery/SciNapse_USCC_2023-2024/20240309-DSCF7251.jpg', alt: 'USCC Event Photo 19' },
-      { src: '/gallery/SciNapse_USCC_2023-2024/20240309-DSCF7263.jpg', alt: 'USCC Event Photo 20' },
-      { src: '/gallery/SciNapse_USCC_2023-2024/20240309-DSCF7280.jpg', alt: 'USCC Event Photo 21' },
-      { src: '/gallery/SciNapse_USCC_2023-2024/20240309-DSCF7292.jpg', alt: 'USCC Event Photo 22' },
-      { src: '/gallery/SciNapse_USCC_2023-2024/20240309-DSCF7313.jpg', alt: 'USCC Event Photo 23' },
-      { src: '/gallery/SciNapse_USCC_2023-2024/20240309-DSCF7341.jpg', alt: 'USCC Event Photo 24' },
-      { src: '/gallery/SciNapse_USCC_2023-2024/20240309-DSCF7369.jpg', alt: 'USCC Event Photo 25' },
-      { src: '/gallery/SciNapse_USCC_2023-2024/20240309-DSCF7384.jpg', alt: 'USCC Event Photo 26' },
-      { src: '/gallery/SciNapse_USCC_2023-2024/20240309-DSCF7399.jpg', alt: 'USCC Event Photo 27' },
-      { src: '/gallery/SciNapse_USCC_2023-2024/20240309-DSCF7417.jpg', alt: 'USCC Event Photo 28' },
-      { src: '/gallery/SciNapse_USCC_2023-2024/20240309-DSCF7431.jpg', alt: 'USCC Event Photo 29' },
-      { src: '/gallery/SciNapse_USCC_2023-2024/20240309-DSCF7466.jpg', alt: 'USCC Event Photo 30' },
-      { src: '/gallery/SciNapse_USCC_2023-2024/20240309-DSCF7480.jpg', alt: 'USCC Event Photo 31' },
-      { src: '/gallery/SciNapse_USCC_2023-2024/20240310-DSCF0725.jpg', alt: 'USCC Event Photo 32' },
-      { src: '/gallery/SciNapse_USCC_2023-2024/20240310-DSCF7541.jpg', alt: 'USCC Event Photo 33' },
-      { src: '/gallery/SciNapse_USCC_2023-2024/20240310-DSCF7670.jpg', alt: 'USCC Event Photo 34' },
-      { src: '/gallery/SciNapse_USCC_2023-2024/20240310-DSCF7675.jpg', alt: 'USCC Event Photo 35' },
-      { src: '/gallery/SciNapse_USCC_2023-2024/20240310-DSCF7741.jpg', alt: 'USCC Event Photo 36' },
-      { src: '/gallery/SciNapse_USCC_2023-2024/20240310-DSCF7751.jpg', alt: 'USCC Event Photo 37' },
-      { src: '/gallery/SciNapse_USCC_2023-2024/20240310-DSCF7762.jpg', alt: 'USCC Event Photo 38' },
-      { src: '/gallery/SciNapse_USCC_2023-2024/20240310-DSCF7774.jpg', alt: 'USCC Event Photo 39' },
-    ],
-  },
-  {
-    title: 'USCC 2024-2025',
-    date: 'March 2025',
-    images: [
-      { src: '/landing/event_images/uscc.jpg', alt: 'USCC Group', },
-      { src: '/landing/event_images/nintendo.jpg', alt: 'Nintendo Event', },
-      { src: '/landing/event_images/stem-horizons.jpg', alt: 'STEM Horizons', },
-    ],
-  },
   {
     title: 'STEM Horizons: AI in Healthcare Summit 2025',
     date: 'January 2025',
     images: [
-      { src: '/landing/event_images/stem-horizons.jpg', alt: 'STEM Horizons', },
-      { src: '/landing/event_images/uscc.jpg', alt: 'USCC Group', },
+      { src: '/landing/event_images/stem-horizons.jpg', alt: 'STEM Horizons', aspectRatio: 1.3 },
+      { src: '/landing/event_images/uscc.jpg', alt: 'USCC Group', aspectRatio: 1.2 },
     ],
+  },
+  {
+    title: 'Undergraduate Science Case Competition',
+    date: '2023-2024',
+    folder: '/gallery/SciNapse_USCC_2023-2024',
+    imageCount: 39,
+    initialShow: 12
   },
 ];
 
+// Lazy Image Component with masonry support
+function LazyImage({ src, alt, aspectRatio, className = "" }) {
+  const [isLoaded, setIsLoaded] = useState(false);
+  const [isInView, setIsInView] = useState(false);
+  const imgRef = useRef();
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsInView(true);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.1, rootMargin: '50px' }
+    );
+
+    if (imgRef.current) {
+      observer.observe(imgRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
+  const height = aspectRatio * 200; // Base width is 200px
+
+  return (
+    <div 
+      ref={imgRef} 
+      className={`relative overflow-hidden rounded-lg shadow-lg bg-gray-200 ${className}`}
+      style={{ height: `${height}px` }}
+    >
+      {!isLoaded && (
+        <div className="absolute inset-0 bg-gradient-to-br from-gray-200 to-gray-300 animate-pulse"></div>
+      )}
+      {isInView && (
+        <img
+          src={src}
+          alt={alt}
+          className={`w-full h-full object-cover transition-all duration-500 ${
+            isLoaded ? 'opacity-100 scale-100' : 'opacity-0 scale-105'
+          }`}
+          onLoad={() => setIsLoaded(true)}
+          loading="lazy"
+        />
+      )}
+    </div>
+  );
+}
+
+// Masonry Grid Component
+function MasonryGrid({ images, columns = 4 }) {
+  const [columnHeights, setColumnHeights] = useState(new Array(columns).fill(0));
+  const [distributedImages, setDistributedImages] = useState([]);
+
+  useEffect(() => {
+    // Distribute images to columns based on height (shortest column gets next image)
+    const newColumnHeights = new Array(columns).fill(0);
+    const newDistributedImages = images.map((img, index) => {
+      const shortestColumn = newColumnHeights.indexOf(Math.min(...newColumnHeights));
+      const height = img.aspectRatio * 200;
+      newColumnHeights[shortestColumn] += height + 16; // 16px for gap
+      return { ...img, column: shortestColumn };
+    });
+    
+    setColumnHeights(newColumnHeights);
+    setDistributedImages(newDistributedImages);
+  }, [images, columns]);
+
+  return (
+    <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
+      {Array.from({ length: columns }, (_, colIndex) => (
+        <div key={colIndex} className="space-y-4">
+          {distributedImages
+            .filter(img => img.column === colIndex)
+            .map((img, index) => (
+              <LazyImage
+                key={`${img.src}-${index}`}
+                src={img.src}
+                alt={img.alt}
+                aspectRatio={img.aspectRatio}
+                className="hover:shadow-xl transition-shadow duration-300 cursor-pointer"
+              />
+            ))}
+        </div>
+      ))}
+    </div>
+  );
+}
+
+// Event Section Component
+function EventSection({ event }) {
+  const [showAll, setShowAll] = useState(false);
+  const [images, setImages] = useState([]);
+
+  useEffect(() => {
+    if (event.folder) {
+      // Dynamic loading for folder-based events
+      const eventImages = getEventImages(event.folder, event.imageCount);
+      setImages(showAll ? eventImages : eventImages.slice(0, event.initialShow));
+    } else {
+      // Static images for other events
+      setImages(event.images);
+    }
+  }, [event, showAll]);
+
+  const hasMoreImages = event.folder && event.imageCount > event.initialShow;
+
+  return (
+    <section className="mb-16">
+      <h2 className="text-3xl font-bold text-gray-800 mb-2">{event.title}</h2>
+      <div className="text-gray-500 mb-6">{event.date}</div>
+      
+      <MasonryGrid images={images} />
+      
+      {hasMoreImages && (
+        <div className="text-center mt-8">
+          <button
+            onClick={() => setShowAll(!showAll)}
+            className="px-8 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-full hover:from-blue-700 hover:to-purple-700 transition-all duration-300 transform hover:scale-105 shadow-lg"
+          >
+            {showAll ? 'Show Less' : `View All ${event.imageCount} Photos`}
+          </button>
+        </div>
+      )}
+    </section>
+  );
+}
+
 export default function Gallery() {
   return (
-    <div className="min-h-screen bg-gray-50 pb-12">
-      <header className="text-center py-12">
-        <h1 className="text-4xl font-bold text-gray-900 mb-2">Event Gallery</h1>
-        <p className="text-lg text-gray-600 max-w-2xl mx-auto">Browse highlights from our latest events and activities. Click on any event to see its photos!</p>
+    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100">
+      <header className="text-center py-16">
+        <h1 className="text-5xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent mb-4">
+          Event Gallery
+        </h1>
+        <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          Explore our events through beautiful, optimized galleries. Images load smoothly as you scroll.
+        </p>
       </header>
-      <div className="max-w-5xl mx-auto space-y-16">
-        {events.map((event, idx) => (
-          <section key={event.title}>
-            <h2 className="text-2xl font-semibold text-gray-800 mb-1">{event.title}</h2>
-            <div className="text-gray-500 mb-4">{event.date}</div>
-            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
-              {event.images.map((img, i) => (
-                <div key={img.src + i} className="rounded overflow-hidden shadow bg-white">
-                  <img src={img.src} alt={img.alt} className="w-full h-40 object-cover" />
-                </div>
-              ))}
-            </div>
-          </section>
+      
+      <div className="max-w-7xl mx-auto px-4">
+        {events.map((event) => (
+          <EventSection key={event.title} event={event} />
         ))}
       </div>
     </div>
