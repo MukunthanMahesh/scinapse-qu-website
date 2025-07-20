@@ -75,11 +75,11 @@ export default function HeroBanner() {
 
           {/* Desktop inline logos */}
           <div className="hidden sm:flex justify-center items-center gap-10 pb-2">
-            <img src="/other_chapters/western.png" alt="Western" className="hover:scale-125 transition-transform max-h-12 sm:max-h-16 object-contain" />
-            <img src="/other_chapters/uoftsc.png" alt="UofT Scarborough" className="hover:scale-125 transition-transform  max-h-12 sm:max-h-16 object-contain" />
-            <img src="/other_chapters/mcmaster.png" alt="McMaster" className="hover:scale-125 transition-transform  max-h-12 sm:max-h-13 object-contain" />
-            <img src="/other_chapters/uoft.png" alt="UofT" className="hover:scale-125 transition-transform max-h-12 sm:max-h-16 object-contain" />
-            <img src="/other_chapters/uofg.png" alt="Guelph" className="hover:scale-125 transition-transform  max-h-12 sm:max-h-16 object-contain" />
+            <img src="/landing/other_chapters/western.png" alt="Western" className="hover:scale-125 transition-transform max-h-12 sm:max-h-16 object-contain" />
+            <img src="/landing/other_chapters/uoftsc.png" alt="UofT Scarborough" className="hover:scale-125 transition-transform  max-h-12 sm:max-h-16 object-contain" />
+            <img src="/landing/other_chapters/mcmaster.png" alt="McMaster" className="hover:scale-125 transition-transform  max-h-12 sm:max-h-13 object-contain" />
+            <img src="/landing/other_chapters/uoft.png" alt="UofT" className="hover:scale-125 transition-transform max-h-12 sm:max-h-16 object-contain" />
+            <img src="/landing/other_chapters/uofg.png" alt="Guelph" className="hover:scale-125 transition-transform  max-h-12 sm:max-h-16 object-contain" />
           </div>
 
           { /*Seperate Hero and 'Event Section' with Line*/}
