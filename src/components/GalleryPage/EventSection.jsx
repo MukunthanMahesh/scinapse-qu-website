@@ -1,7 +1,18 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import MasonryGrid from './MasonryGrid.jsx';
 import FluidText from '../CoreWeb/FluidText.jsx';
+
+// Hook to detect mobile screens
+function useIsMobile() {
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
+  useEffect(() => {
+    const onResize = () => setIsMobile(window.innerWidth < 768);
+    window.addEventListener('resize', onResize);
+    return () => window.removeEventListener('resize', onResize);
+  }, []);
+  return isMobile;
+}
 
 /**
  * EventSection - Individual event with show/hide functionality
@@ -32,6 +43,8 @@ export default function EventSection({ event }) {
     setTimeout(() => setButtonDisabled(false), 1000);
   };
 
+  const isMobile = useIsMobile();
+
   return (
     <section className="mb-6 relative" data-event={event.title}>
       {/* Event title and date */}
@@ -48,10 +61,11 @@ export default function EventSection({ event }) {
         {/* Animate the height of the image grid when toggling showAll */}
         <motion.div
           initial={false}
-          animate={{ 
-            maxHeight: showAll ? '2000px' : '600px',
-            opacity: 1 
-          }}
+          animate={
+            isMobile
+              ? { opacity: 1 }
+              : { maxHeight: showAll ? '2000px' : '600px', opacity: 1 }
+          }
           transition={{ 
             duration: 0.8,
             ease: "easeInOut"
@@ -84,7 +98,7 @@ export default function EventSection({ event }) {
       </div>
       {/* Show toggle button if there are more images to display */}
       {hasMoreImages && (
-        <div className="text-center mt-4">
+        <div className="text-center mt-8 md:mt-4">
           <button
             onClick={handleToggle}
             disabled={buttonDisabled}

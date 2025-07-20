@@ -20,7 +20,7 @@ const breakpointColumnsObj = {
   default: 4,
   1100: 3,
   700: 2,
-  500: 1
+  0: 2
 };
 
 export default function MasonryGrid({ images, showAll = false, initialShow = 4, keepAll = false }) {
