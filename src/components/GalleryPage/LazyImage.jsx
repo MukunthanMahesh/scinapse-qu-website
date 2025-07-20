@@ -1,6 +1,12 @@
 import { useState, useRef, useEffect } from 'react';
 
-// Lazy Image Component with masonry support
+/**
+ * LazyImage - Lazy loading image with intersection observer
+ * @param {string} src - Image URL
+ * @param {string} alt - Alt text
+ * @param {number} aspectRatio - Image aspect ratio
+ * @param {string} className - Additional CSS classes
+ */
 export default function LazyImage({ src, alt, aspectRatio, className = "" }) {
   const [isLoaded, setIsLoaded] = useState(false);
   const [isInView, setIsInView] = useState(false);
@@ -24,7 +30,7 @@ export default function LazyImage({ src, alt, aspectRatio, className = "" }) {
     return () => observer.disconnect();
   }, []);
 
-  const height = aspectRatio * 200; // Base width is 200px
+  const height = aspectRatio * 200;
 
   return (
     <div 

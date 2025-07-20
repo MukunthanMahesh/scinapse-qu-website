@@ -1,98 +1,241 @@
-# Gallery Page Components
+# GalleryPage Components
 
-This directory contains modular components for building event galleries with lazy loading and masonry layouts.
+A modular gallery system for displaying event photos with lazy loading, masonry layout, and progressive image loading.
 
-## Components
+## 📁 Component Structure
 
-### `Gallery.jsx`
-Main gallery component that renders the entire gallery page.
+```
+GalleryPage/
+├── Gallery.jsx          # Main gallery page component
+├── EventSection.jsx     # Individual event section with show/hide logic
+├── MasonryGrid.jsx      # Masonry layout for images
+├── LazyImage.jsx        # Lazy loading individual images
+├── ProgressiveImage.jsx # Progressive image loading with skeleton
+├── ImageLoader.jsx      # Dynamic image loading from folders
+└── README.md           # This file
+```
 
-**Props:**
-- `events` (array): Array of event objects
-
-### `EventSection.jsx`
-Renders a single event section with title, date, and image grid.
-
-**Props:**
-- `event` (object): Event object with title, date, and image configuration
-
-### `MasonryGrid.jsx`
-Creates a responsive masonry grid layout for images.
-
-**Props:**
-- `images` (array): Array of image objects
-- `columns` (number, optional): Number of columns (default: 4)
-
-### `LazyImage.jsx`
-Individual image component with lazy loading and intersection observer.
-
-**Props:**
-- `src` (string): Image source URL
-- `alt` (string): Image alt text
-- `aspectRatio` (number): Aspect ratio for masonry layout
-- `className` (string, optional): Additional CSS classes
-
-### `ImageLoader.jsx`
-Handles dynamic image loading from folders.
-
-**Props:**
-- `folderPath` (string): Path to the image folder
-- `onImagesLoaded` (function): Callback when images are loaded
-- `initialShow` (number, optional): Number of images to show initially
-
-## Usage Example
+## 🚀 Quick Start
 
 ```jsx
+// In your page component
 import Gallery from '../components/GalleryPage/Gallery.jsx';
 
 const events = [
   {
-    title: 'Event Title',
-    date: 'Event Date',
-    // For static images:
-    images: [
-      { src: '/path/to/image.jpg', alt: 'Description', aspectRatio: 1.2 }
-    ],
-    // OR for folder-based images:
-    folder: '/gallery/event-folder',
-    initialShow: 12
+    title: 'Event Name',
+    date: '2024',
+    folder: '/gallery/event_folder',
+    initialShow: 8
   }
 ];
 
-function GalleryPage() {
+export default function GalleryPage() {
   return <Gallery events={events} />;
 }
 ```
 
-## Event Object Structure
+## 📋 Components
 
-```javascript
+### Gallery.jsx
+**Main gallery page component**
+
+**Props:**
+- `events` (array): Array of event objects
+
+**Event Object Structure:**
+```jsx
 {
-  title: string,           // Event title
-  date: string,           // Event date
-  images?: array,         // Static image array (if not using folder)
-  folder?: string,        // Folder path for dynamic loading
-  initialShow?: number    // Number of images to show initially (default: 12)
+  title: string,        // Event title
+  date: string,         // Event date
+  folder: string,       // Folder path (e.g., '/gallery/event_name')
+  initialShow: number   // Number of images to show initially
 }
 ```
 
-## Image Object Structure
+**Features:**
+- Responsive header with motion animations
+- Renders multiple event sections
+- Uses brand colors from Tailwind config
 
-```javascript
+---
+
+### EventSection.jsx
+**Individual event section with show/hide functionality**
+
+**Props:**
+- `event` (object): Event object with title, date, folder, initialShow
+
+**Features:**
+- Dynamic image loading from folder
+- Show/hide toggle for images
+- Masonry grid layout
+- Brand-colored button styling
+
+---
+
+### MasonryGrid.jsx
+**Masonry layout component for optimal image display**
+
+**Props:**
+- `images` (array): Array of image objects
+- `columns` (number): Number of columns (default: 3)
+
+**Image Object Structure:**
+```jsx
 {
-  src: string,           // Image source URL
-  alt: string,           // Image alt text
-  aspectRatio: number    // Aspect ratio for masonry layout (0.8 to 1.4 recommended)
+  src: string,          // Image URL
+  alt: string,          // Alt text
+  aspectRatio: number   // Image aspect ratio (0.8-1.4)
 }
 ```
 
-## Features
+**Features:**
+- Responsive column layout
+- Dynamic height calculation
+- Even image distribution
+- Smooth spacing between images
 
-- ✅ Lazy loading with intersection observer
-- ✅ Responsive masonry grid layout
-- ✅ Dynamic image loading from folders
-- ✅ Show more/less functionality
-- ✅ Loading states and error handling
-- ✅ Optimized performance with React hooks
-- ✅ No hardcoded image counts
-- ✅ Modular component architecture 
+---
+
+### LazyImage.jsx
+**Lazy loading individual images with intersection observer**
+
+**Props:**
+- `src` (string): Image URL
+- `alt` (string): Alt text
+- `aspectRatio` (number): Image aspect ratio
+
+**Features:**
+- Intersection Observer for lazy loading
+- Smooth opacity transitions
+- Fixed aspect ratios to prevent layout shifts
+- Error handling for broken images
+
+---
+
+### ProgressiveImage.jsx
+**Progressive image loading with skeleton loader**
+
+**Props:**
+- `src` (string): High-quality image URL
+- `alt` (string): Alt text
+- `aspectRatio` (number): Image aspect ratio
+
+**Features:**
+- Skeleton loader while loading
+- Low-quality thumbnail first
+- Automatic high-quality image loading
+- Smooth transitions between states
+
+---
+
+### ImageLoader.jsx
+**Dynamic image loading from folder paths**
+
+**Props:**
+- `folderPath` (string): Path to image folder
+- `onImagesLoaded` (function): Callback when images are loaded
+- `initialShow` (number): Initial number of images to show
+
+**Features:**
+- Folder-based image loading
+- Configurable image lists per folder
+- Error handling and loading states
+- Easy to add new folders
+
+## 🔧 Adding New Galleries
+
+### 1. Add Images to Public Folder
+```
+public/gallery/
+├── event_name_1/
+│   ├── image1.jpg
+│   ├── image2.jpg
+│   └── image3.jpg
+└── event_name_2/
+    ├── photo1.jpg
+    └── photo2.jpg
+```
+
+### 2. Update ImageLoader.jsx
+```jsx
+const folderImageMap = {
+  'SciNapse_USCC_2023-2024': [
+    '20240309-DSCF0377.jpg',
+    '20240309-DSCF0402.jpg',
+    // ... more images
+  ],
+  'event_name_1': [
+    'image1.jpg',
+    'image2.jpg',
+    'image3.jpg'
+  ],
+  'event_name_2': [
+    'photo1.jpg',
+    'photo2.jpg'
+  ]
+};
+```
+
+### 3. Add to Gallery Page
+```jsx
+const events = [
+  {
+    title: 'New Event',
+    date: '2024',
+    folder: '/gallery/event_name_1',
+    initialShow: 6
+  }
+];
+```
+
+## 🎨 Styling
+
+### Brand Colors
+All components use brand colors from `tailwind.config.js`:
+- `bg-brand-cyanBlue`
+- `text-brand-black`
+- `text-brand-teal`
+- `hover:bg-brand-darkCyan`
+
+### CSS Files
+- `src/CSS/gallery.css`: Custom styles for skeleton loaders and animations
+
+## 🔄 State Management
+
+### EventSection State
+- `images`: Array of loaded images
+- `showAll`: Boolean for show/hide toggle
+- `loading`: Loading state indicator
+
+### Image Loading Flow
+1. `ImageLoader` loads images from folder
+2. `EventSection` receives images via callback
+3. `MasonryGrid` distributes images into columns
+4. `LazyImage`/`ProgressiveImage` handle individual image loading
+
+## 🚨 Common Issues
+
+### Images Not Loading
+- Check folder path in `ImageLoader.jsx`
+- Verify image files exist in public folder
+- Check browser console for errors
+
+### Layout Shaking
+- Fixed aspect ratios prevent layout shifts
+- Skeleton loaders maintain consistent heights
+- CSS containment prevents overflow issues
+
+### Performance Issues
+- Reduce `initialShow` number
+- Use smaller image files
+- Consider image compression
+
+## 📝 Best Practices
+
+1. **Image Optimization**: Use compressed images (1-3MB max)
+2. **Aspect Ratios**: Keep between 0.8-1.4 for best layout
+3. **Folder Names**: Use descriptive, consistent naming
+4. **Initial Show**: Start with 6-8 images for good performance
+5. **Alt Text**: Provide descriptive alt text for accessibility 

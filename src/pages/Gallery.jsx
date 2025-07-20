@@ -14,7 +14,7 @@ const events = [
     title: 'Undergraduate Science Case Competition',
     date: '2023-2024',
     folder: '/gallery/SciNapse_USCC_2023-2024',
-    initialShow: 12
+    initialShow: 4
   },
 ];
 
