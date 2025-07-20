@@ -1,4 +1,5 @@
 import { useState, useEffect, useCallback } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import MasonryGrid from './MasonryGrid.jsx';
 import ImageLoader from './ImageLoader.jsx';
 
@@ -40,7 +41,7 @@ export default function EventSection({ event }) {
   const hasMoreImages = event.folder ? totalImages > (event.initialShow || 4) : false;
 
   return (
-    <section className="mb-6 relative">
+    <section className="mb-6 relative" data-event={event.title}>
       <h2 className="text-3xl font-bold text-brand-black mb-1">{event.title}</h2>
       <div className="text-gray-500 mb-3">{event.date}</div>
       
@@ -54,7 +55,40 @@ export default function EventSection({ event }) {
       )}
       
       <div className="relative">
-        <MasonryGrid images={images} />
+        <motion.div
+          initial={false}
+          animate={{ 
+            maxHeight: showAll ? '2000px' : '600px',
+            opacity: 1 
+          }}
+          transition={{ 
+            duration: 0.8,
+            ease: "easeInOut"
+          }}
+          onAnimationComplete={() => {
+            const element = document.querySelector(`[data-event="${event.title}"]`);
+            if (element) {
+              if (showAll) {
+                // Scroll to show the newly revealed content
+                element.scrollIntoView({ 
+                  behavior: 'smooth', 
+                  block: 'end',
+                  inline: 'nearest'
+                });
+              } else {
+                // Scroll back to top of section when showing less with some space above
+                const rect = element.getBoundingClientRect();
+                const scrollTop = window.pageYOffset + rect.top - 100; // 100px above
+                window.scrollTo({
+                  top: scrollTop,
+                  behavior: 'smooth'
+                });
+              }
+            }
+          }}
+        >
+          <MasonryGrid images={images} />
+        </motion.div>
       </div>
       
       {hasMoreImages && (
