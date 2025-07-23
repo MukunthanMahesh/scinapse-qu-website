@@ -46,7 +46,7 @@ export default function EventSection({ event }) {
   const isMobile = useIsMobile();
 
   return (
-    <section className="mb-6 relative" data-event={event.title}>
+    <section className="mb-10 relative" data-event={event.title}>
       {/* Event title and date */}
       <div>
         <span className="hidden md:block">
