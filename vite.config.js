@@ -15,4 +15,7 @@ export default defineConfig({
       ext: '.br',
     }),
   ],
+  build: {
+    sourcemap: false,
+  },
 })
