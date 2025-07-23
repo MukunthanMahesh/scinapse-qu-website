@@ -3,8 +3,10 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import useAppBoot from "./hooks/useAppBoot";
 import Loader from "./components/UI/Loader";
 import Home from "./pages/Home";
+import Gallery from "./pages/Gallery";
 import Navbar from "./components/CoreWeb/Navbar";
 import Footer from "./components/CoreWeb/Footer";
+import { Analytics } from "@vercel/analytics/react";
 
 export default function App() {
   const bootDone = useAppBoot(); // preload fonts/assets
@@ -49,7 +51,9 @@ export default function App() {
           <main className="flex-1 pt-[72px]">
             <Routes>
               <Route path="/" element={<Home />} />
+              <Route path="/gallery" element={<Gallery />} />
             </Routes>
+            <Analytics />
           </main>
           <Footer />
         </BrowserRouter>

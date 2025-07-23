@@ -15,7 +15,7 @@ const events = [
     // description: "Join us for Nintendo games like Smash Bros...",
     fullDetails:
       "Come join us for an evening of Nintendo games, featuring Super Smash Bros, Mario Kart Deluxe, and more! Free snacks, no registration needed.",
-    imageUrl: "/event_images/nintendo.jpg",
+    imageUrl: "/landing/event_images/nintendo.jpg",
     link: "#"
   },
   {
@@ -27,7 +27,7 @@ const events = [
     // description: "Do you want an opportunity to explore your scientific creativity?",
     fullDetails:
       "The Undergraduate Science Case Competition is a chance to solve research problems and network with peers. Open to all undergraduates.",
-    imageUrl: "/event_images/uscc.jpg",
+    imageUrl: "/landing/event_images/uscc.jpg",
     link: "#"
   },
   {
@@ -39,7 +39,7 @@ const events = [
     // description: "SciNapse is teaming up with QMind for STEM Horizons!",
     fullDetails:
       "Whether you're passionate about AI, medicine, or research, this event is for you. Join industry experts and students for a full day of innovation.",
-    imageUrl: "/event_images/stem-horizons.jpg",
+    imageUrl: "/landing/event_images/stem-horizons.jpg",
     link: "#"
   }
 ];

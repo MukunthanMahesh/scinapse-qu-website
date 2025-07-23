@@ -1,0 +1,59 @@
+/* Gallery-specific styles to prevent layout shifts */
+
+.gallery-container {
+  contain: layout style paint;
+  will-change: auto;
+}
+
+.masonry-grid {
+  contain: layout style;
+  transform: translateZ(0); /* Force hardware acceleration */
+}
+
+.lazy-image-container {
+  contain: layout style;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+
+/* Prevent layout shifts during image loading */
+.image-placeholder {
+  background: #f8fafc;
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+/* Shimmer animation for skeleton loading */
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.animate-shimmer {
+  animation: shimmer 2s infinite;
+}
+
+/* Smooth transitions for show/hide */
+.gallery-transition {
+  transition: opacity 0.3s ease-in-out;
+}
+
+/* Prevent text selection during interactions */
+.gallery-interactive {
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+} 

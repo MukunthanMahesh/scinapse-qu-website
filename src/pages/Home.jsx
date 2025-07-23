@@ -3,7 +3,7 @@ import EventSection from "../components/LandingPage/EventSection";
 import AboutSection from "../components/LandingPage/AboutSection";
 import TestimonialSection from "../components/LandingPage/TestimonialSection";
 
-export default function Clinics() {
+export default function Home() {
   return (
     <>
     <HeroBanner />

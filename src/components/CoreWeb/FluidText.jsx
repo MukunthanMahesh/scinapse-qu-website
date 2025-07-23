@@ -12,15 +12,21 @@ import { useState, useMemo } from "react";
  * Props:
  * - text: string (required) - the full sentence/phrase to render.
  * - breakAfterWords: array of words (optional) - each word after which a <br /> will be inserted.
+ * - color: string (optional) - Tailwind color class for hover (default: 'text-brand-cyanBlue')
+ * - size: string (optional) - Tailwind text size classes for the base text (default: 'text-2xl sm:text-3xl md:text-5xl')
+ * - baseColor: string (optional) - Tailwind color class for the base text (default: 'text-white')
  * 
  * Example usage:
  * <FluidText
  *   text="We prepare undergraduates to lead through research and innovation."
  *   breakAfterWords={["prepare", "to", "research"]}
+ *   color="text-brand-teal"
+ *   size="text-3xl md:text-6xl"
+ *   baseColor="text-brand-black"
  * />
  */
 
-export default function FluidText({ text, breakAfterWords = [] }) {
+export default function FluidText({ text, breakAfterWords = [], color = "text-brand-cyanBlue", size = "text-2xl sm:text-3xl md:text-5xl", baseColor = "text-white" }) {
   // Tracks which character index is currently being hovered
   const [hoverIndex, setHoverIndex] = useState(null);
 
@@ -54,8 +60,13 @@ export default function FluidText({ text, breakAfterWords = [] }) {
     };
   });
 
+  // Use a wide max-w if no manual breaks, else use the default
+  const widthClass = breakAfterWords.length === 0
+    ? "w-full max-w-4xl"
+    : "max-w-md sm:max-w-lg";
+
   return (
-    <h1 className="text-2xl sm:text-3xl md:text-5xl font-bold leading-tight max-w-md sm:max-w-lg fluid-textcyanBlue text-center sm:text-left">
+    <h1 className={`${size} ${baseColor} font-bold leading-tight ${widthClass} text-center sm:text-left`}>
       {words.map((word, wordIndex) => (
         <span key={wordIndex}>
           {/* Render each letter in the word */}
@@ -94,9 +105,9 @@ export default function FluidText({ text, breakAfterWords = [] }) {
                 onMouseLeave={() => setHoverIndex(null)}
                 className={`inline-block transition duration-200 ease-in-out ${
                   hoverType === "main"
-                    ? "text-brand-cyanBlue scale-125"
+                    ? `${color} scale-125`
                     : hoverType === "adjacent"
-                    ? "text-brand-cyanBlue scale-110"
+                    ? `${color} scale-110`
                     : ""
                 }`}
               >
