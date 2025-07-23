@@ -48,14 +48,27 @@ const EventsSection = () => {
   return (
     <motion.section variants={slideUpVariant} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }} className="max-w-7xl mx-auto px-4 py-12">
       <div className="mb-10">
+        <div className="flex items-center">
         <p className="text-brand-teal text-sm uppercase tracking-widest mb-2">
-          Your front row seats to undergrad research and innovation.
+          Grab Your Front Row Seat to Undergraduate Research and mentorship at
         </p>
+        <img src="/assets/queenslogo.jpg" alt="SciNapse Logo" className="h-6 w-auto ml-4 mb-2 hover:scale-125 transition-transform duration-300" />
+        </div>
         <h2 className="text-brand-black font-sans text-4xl font-bold mt-2 mb-4 ">Mark Your Calendar</h2>
         <p className="font-sans text-lg max-w-2xl text-gray-800">
-          SciNapse hosts <strong>year-round events</strong> designed to engage undergraduates in scientific discovery,
-          skill-building, and collaboration. From panels to case competition—
-          <strong> we’ve got something for every aspiring innovator</strong>.
+          Connect, collaborate, and kickstart your research journey with SciNapse events all year round. Whether you’re here to make friends, find a mentor, or launch your first research project. From casual socials to hands-on workshops, faculty panels, and the USCC case competition, there’s something for every stage of your journey.
+          <span className="block mt-4">
+            Want reminders? {" "} 
+            <a
+              href="https://calendar.google.com/calendar/u/0/r/eventedit?text=SciNapse+Events&dates=20250723T180000Z/20250723T190000Z&location=Queen's+University&pli=1&sf=true&output=xml#eventpage_6"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-brand-darkCyan hover:underline"
+            >
+              Add us to your Google Calendar
+            </a>
+            .
+          </span>
         </p>
       </div>
 
