@@ -6,6 +6,7 @@ import Home from "./pages/Home";
 import Gallery from "./pages/Gallery";
 import Navbar from "./components/CoreWeb/Navbar";
 import Footer from "./components/CoreWeb/Footer";
+import { Analytics } from "@vercel/analytics/react";
 
 export default function App() {
   const bootDone = useAppBoot(); // preload fonts/assets
@@ -52,6 +53,7 @@ export default function App() {
               <Route path="/" element={<Home />} />
               <Route path="/gallery" element={<Gallery />} />
             </Routes>
+            <Analytics />
           </main>
           <Footer />
         </BrowserRouter>
