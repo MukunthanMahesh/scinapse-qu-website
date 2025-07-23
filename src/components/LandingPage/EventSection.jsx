@@ -65,7 +65,7 @@ const EventsSection = () => {
               rel="noopener noreferrer"
               className="text-brand-darkCyan hover:underline"
             >
-              Add us to your Google Calendar
+              <strong>Add our Google Calendar</strong>
             </a>
             .
           </span>
