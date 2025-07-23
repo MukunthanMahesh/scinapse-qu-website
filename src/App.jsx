@@ -4,6 +4,9 @@ import useAppBoot from "./hooks/useAppBoot";
 import Loader from "./components/UI/Loader";
 import Home from "./pages/Home";
 import Gallery from "./pages/Gallery";
+import USCC from "./pages/USCC";
+import About from "./pages/About";
+import Team from "./pages/Team";
 import Navbar from "./components/CoreWeb/Navbar";
 import Footer from "./components/CoreWeb/Footer";
 import { Analytics } from "@vercel/analytics/react";
@@ -52,6 +55,9 @@ export default function App() {
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/gallery" element={<Gallery />} />
+              <Route path="/uscc" element={<USCC />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/team" element={<Team />} />
             </Routes>
             <Analytics />
           </main>
