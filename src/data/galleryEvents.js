@@ -16,22 +16,7 @@ export const events = [
     date: '2023-2024',
     images: [
       { src: '/gallery/SciNapse_USCC_2023-2024/20240309-DSCF0377.jpg', alt: 'USCC 2023-2024 - 1', aspectRatio: 1.33 },
-      { src: '/gallery/SciNapse_USCC_2023-2024/20240309-DSCF0402.jpg', alt: 'USCC 2023-2024 - 2', aspectRatio: 1.33 },
-      { src: '/gallery/SciNapse_USCC_2023-2024/20240309-DSCF0404.jpg', alt: 'USCC 2023-2024 - 3', aspectRatio: 1.33 },
-      { src: '/gallery/SciNapse_USCC_2023-2024/20240309-DSCF0409.jpg', alt: 'USCC 2023-2024 - 4', aspectRatio: 1.33 },
-      { src: '/gallery/SciNapse_USCC_2023-2024/20240309-DSCF0414.jpg', alt: 'USCC 2023-2024 - 5', aspectRatio: 1.33 },
-      { src: '/gallery/SciNapse_USCC_2023-2024/20240309-DSCF0422.jpg', alt: 'USCC 2023-2024 - 6', aspectRatio: 1.33 },
-      { src: '/gallery/SciNapse_USCC_2023-2024/20240309-DSCF0425.jpg', alt: 'USCC 2023-2024 - 7', aspectRatio: 1.33 },
-      { src: '/gallery/SciNapse_USCC_2023-2024/20240309-DSCF0430.jpg', alt: 'USCC 2023-2024 - 8', aspectRatio: 1.33 },
-      { src: '/gallery/SciNapse_USCC_2023-2024/20240309-DSCF0446.jpg', alt: 'USCC 2023-2024 - 9', aspectRatio: 1.33 },
-      { src: '/gallery/SciNapse_USCC_2023-2024/20240309-DSCF0452.jpg', alt: 'USCC 2023-2024 - 10', aspectRatio: 1.33 },
-      { src: '/gallery/SciNapse_USCC_2023-2024/20240309-DSCF0467.jpg', alt: 'USCC 2023-2024 - 11', aspectRatio: 1.33 },
-      { src: '/gallery/SciNapse_USCC_2023-2024/20240309-DSCF0476.jpg', alt: 'USCC 2023-2024 - 12', aspectRatio: 1.33 },
-      { src: '/gallery/SciNapse_USCC_2023-2024/20240309-DSCF0496.jpg', alt: 'USCC 2023-2024 - 13', aspectRatio: 1.33 },
-      { src: '/gallery/SciNapse_USCC_2023-2024/20240309-DSCF0503.jpg', alt: 'USCC 2023-2024 - 14', aspectRatio: 1.33 },
-      { src: '/gallery/SciNapse_USCC_2023-2024/20240309-DSCF0521.jpg', alt: 'USCC 2023-2024 - 15', aspectRatio: 1.33 },
-      { src: '/gallery/SciNapse_USCC_2023-2024/20240309-DSCF0527.jpg', alt: 'USCC 2023-2024 - 16', aspectRatio: 1.33 },
-      { src: '/gallery/SciNapse_USCC_2023-2024/20240309-DSCF0548.jpg', alt: 'USCC 2023-2024 - 17', aspectRatio: 1.33 },
+      
     ],
   },
 ]; 
