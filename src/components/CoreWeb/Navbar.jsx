@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import RippleButton from "../UI/RippleButton";
+import { FaInstagram, FaLinkedin, FaDiscord, FaFacebook } from "react-icons/fa";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -125,23 +126,40 @@ export default function Navbar() {
           </li>
         </ul>
 
-        {/* Buttons */}
-        <div className="hidden md:flex gap-3">
-          <RippleButton
-            href="/get-invovled"
-            size="sm"
-            className="bg-brand-cyanBlue text-brand-black px-4 py-2 rounded text-center font-semibold hover:bg-brand-darkCyan transition"
-          >
-            Get Involved
-          </RippleButton>
-
-          <RippleButton
-            href="/uscc"
-            size="sm"
-            className="border disabled: border-brand-white px-4 py-2 rounded text-center font-semibold hover:border-brand-cyanBlue hover:text-brand-cyanBlue transition"
-          >
-            USCC
-          </RippleButton>
+        {/* Buttons and Social Media Icons (Desktop Only, Grouped) */}
+        <div className="hidden md:flex items-center gap-6 ml-6">
+          {/* CTA Buttons */}
+          <div className="flex gap-3">
+            <RippleButton
+              href="/get-invovled"
+              size="sm"
+              className="bg-brand-cyanBlue text-brand-black px-4 py-2 rounded text-center font-semibold hover:bg-brand-darkCyan transition"
+            >
+              Get Involved
+            </RippleButton>
+            <RippleButton
+              href="/uscc"
+              size="sm"
+              className="border disabled: border-brand-white px-4 py-2 rounded text-center font-semibold hover:border-brand-cyanBlue hover:text-brand-cyanBlue transition"
+            >
+              USCC
+            </RippleButton>
+          </div>
+          {/* Social Media Icons */}
+          <div className="flex items-center space-x-4 text-xl">
+            <a href="https://www.instagram.com/scinapsequ/" target="_blank" rel="noopener noreferrer">
+              <FaInstagram className="hover:text-brand-cyanBlue transition" />
+            </a>
+            <a href="https://www.linkedin.com/company/scinapse-queen-s-university/" target="_blank" rel="noopener noreferrer">
+              <FaLinkedin className="hover:text-brand-cyanBlue transition" />
+            </a>
+            <a href="https://discord.com/invite/rxreXNFhEa" target="_blank" rel="noopener noreferrer">
+              <FaDiscord className="hover:text-brand-cyanBlue transition" />
+            </a>
+            <a href="https://www.facebook.com/scinapseuscc/" target="_blank" rel="noopener noreferrer">
+              <FaFacebook className="hover:text-brand-cyanBlue transition" />
+            </a>
+          </div>
         </div>
 
         {/* Hamburger (Mobile) */}
