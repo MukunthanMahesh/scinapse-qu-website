@@ -50,9 +50,8 @@ const EventsSection = () => {
       <div className="mb-10">
         <div className="flex items-center">
         <p className="text-brand-teal text-sm uppercase tracking-widest mb-2">
-          Grab Your Front Row Seat to Undergraduate Research and mentorship at
+          Grab Your Front Row Seat to Undergraduate Research and mentorship at Queen's
         </p>
-        <img src="/assets/queenslogo.jpg" alt="SciNapse Logo" className="h-6 w-auto ml-4 mb-2 hover:scale-125 transition-transform duration-300" />
         </div>
         <h2 className="text-brand-black font-sans text-4xl font-bold mt-2 mb-4 ">Mark Your Calendar</h2>
         <p className="font-sans text-lg max-w-2xl text-gray-800">
