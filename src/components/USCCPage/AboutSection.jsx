@@ -14,16 +14,16 @@ export default function AboutSection() {
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.2 }}
-        className="max-w-7xl mx-auto px-4 py-12"
+        className="max-w-7xl mx-auto px-4 pt-8 pb-0"
       >
       {/* Info Box */}
       <div className="flex justify-center mb-10">
-        <div className="bg-gradient-to-r from-brand-cyanBlue/20 via-white to-brand-cyanBlue/10 border border-brand-cyanBlue rounded-2xl shadow-md px-6 py-4 max-w-2xl w-full text-center flex items-center gap-4 hover:bg-brand-cyanBlue/30 transition">
+        <div className="bg-gradient-to-r from-brand-cyanBlue/20 via-white to-brand-cyanBlue/10 border border-brand-cyanBlue rounded-2xl shadow-md px-6 py-4 max-w-2xl w-full text-center flex items-center gap-4 hover:bg-brand-cyanBlue/20 transition">
           <span className="inline-flex items-center justify-center w-9 h-9 rounded-full text-brand-cyanBlue text-2xl">
             <FiInfo />
           </span>
           <p className="text-brand-black text-lg text-left">
-          This page provides detailed information on the next steps of getting involved with the Undergraduate Science Case Competition (USCC) hosted by SciNapse  Canada.
+          This page provides detailed information on the next steps of getting involved with the Undergraduate Science Case Competition (USCC).<strong> NOTE: The final date to register is September 28, 2025 @ 11:59 PM.</strong>
           </p>
         </div>
       </div>
