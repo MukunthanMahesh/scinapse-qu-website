@@ -9,6 +9,7 @@ import About from "./pages/About";
 import Team from "./pages/Team";
 import Navbar from "./components/CoreWeb/Navbar";
 import Footer from "./components/CoreWeb/Footer";
+import ScrollToTop from "./components/CoreWeb/ScrollToTop";
 import { Analytics } from "@vercel/analytics/react";
 
 export default function App() {
@@ -17,6 +18,8 @@ export default function App() {
   const [minTimeDone, setMinTimeDone] = useState(false);
   const [fadeOut, setFadeOut] = useState(false);
   const [hideLoader, setHideLoader] = useState(false);
+
+
 
   // Track DOM ready
   useEffect(() => {
@@ -50,6 +53,7 @@ export default function App() {
       
       <div className="min-h-screen flex flex-col bg-brand-white text-white">
         <BrowserRouter>
+          <ScrollToTop />
           <Navbar />
           <main className="flex-1 pt-[72px]">
             <Routes>
