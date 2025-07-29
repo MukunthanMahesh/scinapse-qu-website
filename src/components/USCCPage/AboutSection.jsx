@@ -22,8 +22,11 @@ export default function AboutSection() {
           <span className="inline-flex items-center justify-center w-9 h-9 rounded-full text-brand-cyanBlue text-2xl">
             <FiInfo />
           </span>
-          <p className="text-brand-black text-lg text-left">
+          <p className="lg:block hidden text-brand-black text-lg text-left">
           This page provides detailed information on the next steps of getting involved with the Undergraduate Science Case Competition (USCC).<strong> NOTE: The final date to register is September 28, 2025 @ 11:59 PM.</strong>
+          </p>
+          <p className="md:hidden text-brand-black text-sm text-left">
+          <strong> NOTE: The final date to register is September 28, 2025 @ 11:59 PM.</strong>
           </p>
         </div>
       </div>
