@@ -1,4 +1,5 @@
 import AboutSection from "../components/USCCPage/AboutSection";
+import FAQSection from "../components/USCCPage/FAQSection";
 import TimelineSection from "../components/USCCPage/TimelineSection";
 
 export default function USCC() {
@@ -6,6 +7,7 @@ export default function USCC() {
     <>
     <AboutSection />
     <TimelineSection />
+    <FAQSection />
     </>
   );
   }
