@@ -12,9 +12,9 @@ const presentation_round_start_date = new Date('2026-03-07T23:59:59Z'); // Prese
 const presentation_round_end_date = new Date('2026-03-09T23:59:59Z'); // Presentation round end date
 
 const stepImages = [
-  "/assets/gallery/SciNapse_USCC_2023-2024/20240309-DSCF0377.jpg",
-  "/assets/gallery/SciNapse_USCC_2023-2024/20240309-DSCF0458.jpg",
-  "/assets/gallery/SciNapse_USCC_2023-2024/20240310-DSCF7670.jpg",
+  "/uscc/undraw_email-consent_j36b.svg", // Registration step
+  "/uscc/undraw_engineering-team_13ax.svg", // Written round step
+  "/uscc/undraw_presentation_qn18.svg", // Presentation round step
 ];
 
 const now = new Date();
@@ -102,7 +102,7 @@ export default function TimelineSection() {
               <img
                 src={stepImages[idx]}
                 alt={step.title}
-                className="rounded-xl shadow-md object-cover w-full h-48 md:h-56"
+                className="w-full h-48 md:h-56"
                 loading="lazy"
               />
             </div>
