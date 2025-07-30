@@ -7,12 +7,15 @@
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "generate:gallery": "node scripts/generateEvents.cjs"
   },
   "dependencies": {
     "@fontsource/crimson-text": "^5.2.6",
     "@fontsource/inter": "^5.2.6",
     "@vercel/analytics": "^1.5.0",
+    "@vercel/blob": "^1.1.1",
+    "dotenv": "^17.2.1",
     "framer-motion": "^12.19.1",
     "ldrs": "^1.1.7",
     "lucide-react": "^0.525.0",
@@ -21,10 +24,12 @@
     "react-icons": "^5.5.0",
     "react-masonry-css": "^1.0.16",
     "react-router-dom": "^7.5.3",
-    "typewriter-effect": "^2.22.0"
+    "typewriter-effect": "^2.22.0",
+    "vercel": "^44.6.4"
   },
   "devDependencies": {
     "@eslint/js": "^9.22.0",
+    "@types/node": "^24.1.0",
     "@types/react": "^19.0.10",
     "@types/react-dom": "^19.0.4",
     "@vitejs/plugin-react": "^4.3.4",
@@ -35,6 +40,8 @@
     "globals": "^16.0.0",
     "postcss": "^8.5.3",
     "tailwindcss": "^3.4.17",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.8.3",
     "vite": "^6.3.5",
     "vite-plugin-compression": "^0.5.1"
   }
