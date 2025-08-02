@@ -74,7 +74,9 @@ export default function EventSection({ event }) {
             const element = document.querySelector(`[data-event="${event.title}"]`);
             if (element) {
               if (showAll) {
+                // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
                 // !!!!!! Removing the scrollIntoView to avoid jumping because it was proving to be disruptive
+                // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
                 // Scroll to show the newly revealed content
                 // element.scrollIntoView({ 
                 //   behavior: 'smooth', 
