@@ -3,12 +3,12 @@ import { FaLinkedin } from "react-icons/fa";
 
 export default function TeamCard({ name, role, image, linkedin }) {
   return (
-    <div className="group bg-brand-white rounded-xl shadow-md border flex flex-col items-center px-6 py-8 transition-all duration-200 hover:shadow-2xl hover:-translate-y-1">
+    <div className="group bg-brand-white rounded-xl shadow-md border flex flex-col items-center px-4 py-6 sm:px-6 sm:py-8 transition-all duration-200 hover:shadow-2xl hover:-translate-y-1 w-full max-w-xs mx-auto">
       <div className="relative">
         <img
           src={image}
           alt={name}
-          className="w-28 h-28 rounded-full object-cover border-2 border-white shadow-md"
+          className="w-28 h-28 rounded-full object-cover border border-brand-black shadow-md"
           draggable={false}
         />
         {linkedin && (
