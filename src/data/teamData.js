@@ -13,20 +13,20 @@ export const teamMembers = [
   },
   {
     name: "Mukunthan Mahesh",
-    role: "Web & Systems Lead",
+    role: "Software Director",
     image: "/team/mukunthanmahesh.jpg",
     linkedin: "https://www.linkedin.com/in/mukunthan-mahesh/"
   },
   {
     name: "Hiring in Progress",
-    role: "Finance Director",
-    image: "/team/placeholder-hiring-m.svg",
+    role: "Conference Coordinator",
+    image: "/team/placeholder-hiring-f.svg",
     linkedin: null
   },
   {
     name: "Hiring in Progress",
-    role: "Conference Coordinator",
-    image: "/team/placeholder-hiring-f.svg",
+    role: "Finance Director",
+    image: "/team/placeholder-hiring-m.svg",
     linkedin: null
   },
   {
@@ -55,25 +55,25 @@ export const teamMembers = [
   },
   {
     name: "Hiring in Progress",
-    role: "First-Year Representative",
+    role: "Logistics Coordinator",
     image: "/team/placeholder-hiring-m.svg",
     linkedin: null
   },
   {
     name: "Hiring in Progress",
-    role: "First-Year Representative",
+    role: "Logistics Coordinator",
     image: "/team/placeholder-hiring-f.svg",
     linkedin: null
   },
   {
     name: "Hiring in Progress",
-    role: "Logistics Coordinator",
+    role: "First-Year Representative",
     image: "/team/placeholder-hiring-m.svg",
     linkedin: null
   },
   {
     name: "Hiring in Progress",
-    role: "Logistics Coordinator",
+    role: "First-Year Representative",
     image: "/team/placeholder-hiring-f.svg",
     linkedin: null
   },
