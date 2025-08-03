@@ -20,7 +20,7 @@ export default function Team() {
         <div className="text-center">
           {/* Subtitle */}
           <p className="text-brand-teal text-sm uppercase tracking-widest mb-2">
-            Meet the SciNapse Neural Network.
+            The SciNapse Neural Network
           </p>
           {/* Main title */}
           <h1 className="text-brand-black font-sans text-4xl md:text-5xl font-bold mb-6">
