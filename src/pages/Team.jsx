@@ -20,7 +20,7 @@ export default function Team() {
         <div className="text-center">
           {/* Subtitle */}
           <p className="text-brand-teal text-sm uppercase tracking-widest mb-2">
-            The SciNapse Neural Network
+            The SciNapse Network
           </p>
           {/* Main title */}
           <h1 className="text-brand-black font-sans text-4xl md:text-5xl font-bold mb-6">
@@ -28,7 +28,7 @@ export default function Team() {
           </h1>
           {/* Description */}
           <p className="text-md text-gray-800 max-w-3xl mx-auto">
-            Like neurons in a network, our team syncs leadership, logistics,
+            Our team syncs leadership, logistics,
             outreach, development, and finance to empower undergraduate research at
             Queen’s.
           </p>
