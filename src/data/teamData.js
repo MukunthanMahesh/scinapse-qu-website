@@ -12,6 +12,12 @@ export const teamMembers = [
     linkedin: "https://www.linkedin.com/in/soha-kar/"
   },
   {
+    name: "Hiring in Progress",
+    role: "Conference Coordinator",
+    image: "/team/placeholder-hiring-f.svg",
+    linkedin: null
+  },
+  {
     name: "Mukunthan Mahesh",
     role: "Software Director",
     image: "/team/mukunthanmahesh.jpg",
@@ -19,14 +25,8 @@ export const teamMembers = [
   },
   {
     name: "Hiring in Progress",
-    role: "Conference Coordinator",
-    image: "/team/placeholder-hiring-f.svg",
-    linkedin: null
-  },
-  {
-    name: "Hiring in Progress",
     role: "Finance Director",
-    image: "/team/placeholder-hiring-m.svg",
+    image: "/team/placeholder-hiring-f.svg",
     linkedin: null
   },
   {
