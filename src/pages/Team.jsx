@@ -5,9 +5,6 @@ import { teamMembers } from "../data/teamData.js";
 
 export default function Team() {
   // Separate the first two (co-presidents) from the rest
-  const coPresidents = teamMembers.slice(0, 2);
-  const restOfTeam = teamMembers.slice(2);
-
   return (
     <div className="min-h-screen bg-brand-white">
       <motion.section
@@ -35,16 +32,9 @@ export default function Team() {
         </div>
       </motion.section>
 
-      {/* Co-Presidents Section */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-xl mx-auto mb-12">
-        {coPresidents.map((member) => (
-          <TeamCard key={member.name} {...member} />
-        ))}
-      </div>
-
-      {/* Rest of Team */}
+      {/* The Team */}
       <div className="grid grid-cols-1 md:grid-cols-4 gap-8 max-w-6xl mx-auto ">
-        {restOfTeam.map((member, idx) => (
+        {teamMembers.map((member, idx) => (
           <TeamCard key={member.name + idx} {...member} />
         ))}
       </div>
