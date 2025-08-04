@@ -95,7 +95,7 @@ export default function Navbar() {
               to="/team"
               className={`hover:text-brand-cyanBlue transition-colors duration-300 ${currentPath === "/team" ? "text-brand-cyanBlue" : ""} pb-1`}
             >
-              Our Team
+              Team
               <span
                 className={`
                   absolute left-0 -bottom-1 h-1 w-full bg-brand-cyanBlue rounded
@@ -112,7 +112,7 @@ export default function Navbar() {
               to="/about"
               className={`hover:text-brand-cyanBlue transition-colors duration-300 ${currentPath === "/about" ? "text-brand-cyanBlue" : ""} pb-1`}
             >
-              About Us
+              About
               <span
                 className={`
                   absolute left-0 -bottom-1 h-1 w-full bg-brand-cyanBlue rounded
@@ -191,8 +191,8 @@ export default function Navbar() {
             <Link to="/" className={`hover:text-brand-darkCyan pb-1 border-b-2 transition ${currentPath === "/" ? "border-brand-cyanBlue text-brand-cyanBlue" : "border-transparent"}`}>Home</Link>
             <Link to="/uscc" className={`hover:text-brand-darkCyan pb-1 border-b-2 transition ${currentPath === "/uscc" ? "border-brand-cyanBlue text-brand-cyanBlue" : "border-transparent"}`}>USCC</Link>
             <Link to="/gallery" className={`hover:text-brand-darkCyan pb-1 border-b-2 transition ${currentPath === "/gallery" ? "border-brand-cyanBlue text-brand-cyanBlue" : "border-transparent"}`}>Gallery</Link>
-            <Link to="/team" className={`hover:text-brand-darkCyan pb-1 border-b-2 transition ${currentPath === "/team" ? "border-brand-cyanBlue text-brand-cyanBlue" : "border-transparent"}`}>Our Team</Link>
-            <Link to="/about" className={`hover:text-brand-darkCyan pb-1 border-b-2 transition ${currentPath === "/about" ? "border-brand-cyanBlue text-brand-cyanBlue" : "border-transparent"}`}>About Us</Link>
+            <Link to="/team" className={`hover:text-brand-darkCyan pb-1 border-b-2 transition ${currentPath === "/team" ? "border-brand-cyanBlue text-brand-cyanBlue" : "border-transparent"}`}>Team</Link>
+            <Link to="/about" className={`hover:text-brand-darkCyan pb-1 border-b-2 transition ${currentPath === "/about" ? "border-brand-cyanBlue text-brand-cyanBlue" : "border-transparent"}`}>About</Link>
           </nav>
 
           {/* Call to Action Buttons */}
