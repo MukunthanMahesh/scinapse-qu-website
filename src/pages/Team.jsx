@@ -4,8 +4,7 @@ import { slideUpVariant } from "../utils/motionVariants";
 import { teamMembers } from "../data/teamData.js";
 
 export default function Team() {
-  // Separate the first two (co-presidents) from the rest
-  return (
+    return (
     <div className="min-h-screen bg-brand-white">
       <motion.section
         variants={slideUpVariant}
@@ -17,15 +16,15 @@ export default function Team() {
         <div className="text-center">
           {/* Subtitle */}
           <p className="text-brand-teal text-sm uppercase tracking-widest mb-2">
-            The SciNapse Network
+            The SciNapse Network's
           </p>
           {/* Main title */}
           <h1 className="text-brand-black font-sans text-4xl md:text-5xl font-bold mb-6">
-            Our Executive Team
+            Executive Team
           </h1>
           {/* Description */}
           <p className="text-md text-gray-800 max-w-3xl mx-auto">
-            Our team syncs leadership, logistics,
+            Our team syncs Team, logistics,
             outreach, development, and finance to empower undergraduate research at
             Queen’s.
           </p>
