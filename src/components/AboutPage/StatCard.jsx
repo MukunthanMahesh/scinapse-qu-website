@@ -37,7 +37,7 @@ export default function StatCard({ value, label, icon: IconComponent, suffix = "
     >
       {/* Interactive Background Icon */}
       {IconComponent && (
-        <IconComponent className="absolute top-4 right-4 text-3xl md:text-5xl text-brand-cyanBlue transition-transform duration-500 group-hover:text-brand-cyanBlue/90 group-hover:rotate-12" />
+        <IconComponent className="absolute top-4 right-4 text-3xl md:text-5xl text-brand-cyanBlue transition-transform duration-500 group-hover:text-brand-cyanBlue/90 group-hover:rotate-12 group-hover:hue-rotate-15" />
       )}
 
       <span className="text-5xl font-bold text-brand-white z-10">

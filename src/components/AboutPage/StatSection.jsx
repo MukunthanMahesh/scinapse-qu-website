@@ -5,7 +5,7 @@ import StatCard from "./StatCard";
 import { stats } from "../../data/statData";
 
 const StatSection = () => (
-  <div className="relative min-h-screen bg-brand-white overflow-hidden">
+  <div className="relative bg-brand-white overflow-hidden mb-12">
     {/* Content */}
     <motion.section
       variants={slideUpVariant}
