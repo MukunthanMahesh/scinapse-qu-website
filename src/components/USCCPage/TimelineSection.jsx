@@ -98,7 +98,7 @@ export default function TimelineSection() {
             className={`flex flex-col md:flex-row items-center md:items-stretch gap-6 md:gap-10 ${idx % 2 === 1 ? 'md:flex-row-reverse' : ''}`}
           >
             {/* Step Image */}
-            <div className="w-full md:w-1/3 flex-shrink-0">
+            <div className="w-full md:w-1/3 flex-shrink-0 hover:rotate-3 hover:hue-rotate-30 transition">
               <img
                 src={stepImages[idx]}
                 alt={step.title}
