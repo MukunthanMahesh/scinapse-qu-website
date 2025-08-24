@@ -14,7 +14,7 @@ const MissionStatement = () => {
       <div className="grid md:grid-cols-2 gap-10 items-center">
         {/* Left - Image / Graphic */}
         <div className="w-full">
-          <div className="relative w-full pt-[75%] rounded-lg  overflow-hidden hover:scale-95 hover:rotate-6 hover:hue-rotate-15 transition">
+          <div className="relative w-full pt-[75%] rounded-lg  overflow-hidden hover:scale-95 hover:rotate-3 transition">
             <img
               src="/about/ideas.svg"
               alt="Man looking at a light bulb"
