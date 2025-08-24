@@ -25,7 +25,7 @@ const formatDate = (date) => {
     month: 'long', 
     day: 'numeric', 
     year: 'numeric' 
-  });
+});
 };
 
 // Helper function to format dates without year

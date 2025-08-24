@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import RippleButton from "../UI/RippleButton";
-import { FaInstagram, FaLinkedin, FaDiscord, FaFacebook } from "react-icons/fa";
+import { FaInstagram, FaLinkedin } from "react-icons/fa";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -31,14 +31,14 @@ export default function Navbar() {
 
   return (
     <nav className={`fixed top-0 left-0 w-full z-40 bg-brand-black text-brand-white px-4 md:px-6 py-3 shadow-md transition-transform duration-300 ${showNavbar ? "translate-y-0" : "-translate-y-full"}`}>
-      <div className="max-w-screen-xl mx-auto flex justify-between items-center">
+      <div className="max-w-screen-xl mx-auto flex justify-between md:justify-start items-center">
         {/* Logo */}
         <Link to="/">
           <img src="/assets/logo.png" alt="SciNapse Logo" className="h-12 w-auto" />
         </Link>
 
-        {/* Desktop Links */}
-        <ul className="hidden md:flex gap-10 text-sm font-medium">
+        {/* Desktop Links - Left justified (desktop only) */}
+        <ul className="hidden md:flex gap-10 text-sm font-medium ml-16">
           <li className="relative">
             <Link
               to="/"
@@ -126,8 +126,8 @@ export default function Navbar() {
           </li>
         </ul>
 
-        {/* Buttons and Social Media Icons (Desktop Only, Grouped) */}
-        <div className="hidden md:flex items-center gap-6 ml-6">
+        {/* Buttons and Social Media Icons (Desktop Only, Grouped) - Right aligned */}
+        <div className="hidden md:flex items-center gap-6 ml-auto">
           {/* CTA Buttons */}
           <div className="flex gap-3">
             <RippleButton
@@ -153,12 +153,7 @@ export default function Navbar() {
             <a href="https://www.linkedin.com/company/scinapse-queen-s-university/" target="_blank" rel="noopener noreferrer">
               <FaLinkedin className="hover:text-brand-cyanBlue transition" />
             </a>
-            <a href="https://discord.com/invite/rxreXNFhEa" target="_blank" rel="noopener noreferrer">
-              <FaDiscord className="hover:text-brand-cyanBlue transition" />
-            </a>
-            <a href="https://www.facebook.com/scinapseuscc/" target="_blank" rel="noopener noreferrer">
-              <FaFacebook className="hover:text-brand-cyanBlue transition" />
-            </a>
+
           </div>
         </div>
 
