@@ -40,7 +40,7 @@ export default function Footer() {
               <p className="text-sm text-brand-white/60 mb-4">Did you miss anything?</p>
               <li><a href="/about" className="hover:underline">About Us</a></li>
               <li><a href="/events" className="hover:underline">Events</a></li>
-              <li><a href="/get-involved" className="hover:underline">Get Involved</a></li>
+              <li><a href="/links" className="hover:underline">Get Involved</a></li>
               <li><a href="/contact" className="hover:underline">Contact</a></li>
             </ul>
           </div>

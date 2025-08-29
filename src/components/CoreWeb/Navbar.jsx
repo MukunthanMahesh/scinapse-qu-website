@@ -131,7 +131,7 @@ export default function Navbar() {
           {/* CTA Buttons */}
           <div className="flex gap-3">
             <RippleButton
-              href="/get-invovled"
+              href="/links"
               size="sm"
               className="bg-brand-cyanBlue text-brand-black px-4 py-2 rounded text-center font-semibold hover:bg-brand-darkCyan transition"
             >
