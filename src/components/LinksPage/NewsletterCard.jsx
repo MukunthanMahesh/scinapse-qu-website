@@ -17,7 +17,7 @@ const NewsletterCard = () => {
   };
 
   return (
-    <div className="bg-brand-black text-brand-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 flex flex-col h-80">
+    <div className="bg-brand-black text-brand-white rounded-xl p-6 shadow-lg hover:bg-brand-black/90 hover:shadow-xl transition-all duration-300 hover:-translate-y-1 flex flex-col h-80">
       <div className="flex items-center gap-3 mb-4">
         <div className="p-2 bg-brand-cyanBlue rounded-lg">
           <Mail className="w-6 h-6 text-brand-black" />
