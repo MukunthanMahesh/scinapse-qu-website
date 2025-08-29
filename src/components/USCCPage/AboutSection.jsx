@@ -55,7 +55,7 @@ export default function AboutSection() {
           </p>
           <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mt-6">
             <RippleButton
-              href="/register"
+              href="/links"
               className="bg-brand-cyanBlue text-brand-black px-4 py-2 rounded text-center font-semibold hover:bg-brand-darkCyan transition"
             >
               Register Your Team
