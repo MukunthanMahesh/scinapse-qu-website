@@ -26,7 +26,7 @@ const events = [
     location: "The University of Ottawa",
     // description: "Do you want an opportunity to explore your scientific creativity?",
     fullDetails:
-      "The Undergraduate Science Case Competition is a chance to solve research problems and network with peers. Open to all undergraduates.",
+      "The Undergraduate Science Case Competition is a chance to solve research problems and network with peers. Open to all undergraduates. Registration ends September 8th!",
     imageUrl: "/landing/event_images/uscc.jpg",
     link: "#"
   },

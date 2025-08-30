@@ -32,7 +32,7 @@ Students from any background are encouraged to participate, as interdisciplinary
   },
   {
     question: "When and how can I register?",
-    answer: "The registration period is now closed.",
+    answer: "Registration is currently open! The deadline to register is September 8th, 2025 at 11:59 PM. You can register your team through our registration portal.",
   },
   {
     question: "Is there a competition fee?",

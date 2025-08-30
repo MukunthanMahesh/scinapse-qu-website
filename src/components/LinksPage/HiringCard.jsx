@@ -1,8 +1,9 @@
 import { ArrowRight, Briefcase } from "lucide-react";
+import RippleButton from "../UI/RippleButton";
 
 const HiringCard = () => {
   return (
-    <div className="bg-brand-black text-brand-white rounded-xl p-6 shadow-lg hover:bg-brand-black/90 hover:shadow-xl transition-all duration-300 hover:-translate-y-1 flex flex-col h-auto relative">
+    <div className="bg-brand-black text-brand-white rounded-xl p-6 shadow-lg hover:bg-brand-black/90 hover:shadow-xl transition-all duration-300 flex flex-col h-auto relative">
       
       {/* Blinking Green Light - Hiring Open */}
       <div className="absolute top-3 right-3">
@@ -19,23 +20,25 @@ const HiringCard = () => {
       </div>
       
       <p className="text-gray-300 mb-6 flex-grow">
-        Join the SciNapse Team and help shape our community! We're looking for passionate students to fill various roles.
+        <strong>Hiring is Now Open!</strong> We're looking for passionate students to fill various roles in our 2025 Executive Team.
       </p>
       
       <div className="space-y-3 mb-6">
-        <div className="text-sm text-brand-cyanBlue">• Logistics Team</div>
-        <div className="text-sm text-brand-cyanBlue">• Conference Team</div>
-        <div className="text-sm text-brand-cyanBlue">• Outreach Team</div>
-        <div className="text-sm text-brand-cyanBlue">• First Year Representative</div>
+        <div className="text-sm text-brand-cyanBlue">• Outreach Coordinator</div>
+        <div className="text-sm text-brand-cyanBlue">• Marketing Intern</div>
+        <div className="text-sm text-brand-cyanBlue">• Finance Intern</div>
+        <div className="text-sm text-brand-cyanBlue">• First Year Representative (Multiple Roles)</div>
+        <div className="text-sm text-brand-cyanBlue">• Ambassadors (Multiple Roles)</div>
 
       </div>
       
-      <a
-        href="#"
+      <RippleButton
+        href="#" // Replace '#' with actual application link
         className="inline-flex items-center justify-center gap-2 bg-brand-cyanBlue text-brand-black px-6 py-3 rounded-lg font-semibold hover:bg-brand-darkCyan transition-colors duration-200 mt-auto"
       >
         Apply Now <ArrowRight className="w-4 h-4" />
-      </a>
+      </RippleButton>
+ 
     </div>
   );
 };

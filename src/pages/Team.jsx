@@ -20,11 +20,11 @@ export default function Team() {
           </p>
           {/* Main title */}
           <h1 className="text-brand-black font-sans text-4xl md:text-5xl font-bold mb-6">
-            Executive Team
+            2025 Executive Team
           </h1>
           {/* Description */}
           <p className="text-md text-gray-800 max-w-3xl mx-auto">
-            Our team syncs Team, logistics,
+            We sync teamwork, logistics,
             outreach, development, and finance to empower undergraduate research at
             Queen’s.
           </p>

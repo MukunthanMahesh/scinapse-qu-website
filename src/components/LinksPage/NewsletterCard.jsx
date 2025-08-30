@@ -17,16 +17,16 @@ const NewsletterCard = () => {
   };
 
   return (
-    <div className="bg-brand-black text-brand-white rounded-xl p-6 shadow-lg hover:bg-brand-black/90 hover:shadow-xl transition-all duration-300 hover:-translate-y-1 flex flex-col h-80">
+    <div className="bg-brand-black text-brand-white rounded-xl p-6 shadow-lg hover:bg-brand-black/90 hover:shadow-xl transition-all duration-300 flex flex-col h-80">
       <div className="flex items-center gap-3 mb-4">
         <div className="p-2 bg-brand-cyanBlue rounded-lg">
           <Mail className="w-6 h-6 text-brand-black" />
         </div>
-        <h3 className="text-xl font-bold">Newsletter</h3>
+        <h3 className="text-xl font-bold">SciNapse Newsletter</h3>
       </div>
       
       <p className="text-gray-300 mb-6 flex-grow">
-        Stay in the loop with our monthly newsletter featuring events, opportunities, and tech insights from the computing community.
+        Stay in the loop with our periodic newsletter featuring events, opportunities, and insights from the SciNapse community.
       </p>
       
       <form onSubmit={handleNewsletterSubmit} className="mt-auto">
