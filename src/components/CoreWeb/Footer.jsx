@@ -55,7 +55,7 @@ export default function Footer() {
               <p className="text-sm text-brand-white/60 mb-4">Explore our resources</p>
               <li><a href="https://scinapsescience.com/about" className="hover:underline">USCC - Scinapse Science</a></li>
               <li><a href="/uscc-registration" className="hover:underline">USCC Registration</a></li>
-              <li><a href="https://scinapsescience.com/" className="hover:underline">Official Scinapse Website</a></li>
+              <li><a href="https://scinapsescience.com/" className="hover:underline">USCC - Official Website</a></li>
             </ul>
           </div>
         </div>
