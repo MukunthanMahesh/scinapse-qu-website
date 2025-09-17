@@ -15,15 +15,21 @@ export default function Navbar() {
 
   useEffect(() => {
     const handleScroll = () => {
-      const currentScrollY = window.scrollY;
-      if (currentScrollY < hideThreshold) {
-        setShowNavbar(true);
-      } else if (currentScrollY > lastScrollY) {
-        setShowNavbar(false); // scrolling down
+      // Only hide navbar on desktop (md and up)
+      if (window.innerWidth >= 768) {
+        const currentScrollY = window.scrollY;
+        if (currentScrollY < hideThreshold) {
+          setShowNavbar(true);
+        } else if (currentScrollY > lastScrollY) {
+          setShowNavbar(false); // scrolling down
+        } else {
+          setShowNavbar(true); // scrolling up
+        }
+        setLastScrollY(currentScrollY);
       } else {
-        setShowNavbar(true); // scrolling up
+        // Always show navbar on mobile
+        setShowNavbar(true);
       }
-      setLastScrollY(currentScrollY);
     };
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
