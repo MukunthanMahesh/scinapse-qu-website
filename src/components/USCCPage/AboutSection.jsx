@@ -23,10 +23,10 @@ export default function AboutSection() {
             <FiInfo />
           </span>
           <p className="lg:block hidden text-brand-black text-lg text-left">
-          This page provides detailed information on the next steps of getting involved with the Undergraduate Science Case Competition (USCC).<strong> NOTE: The final date to register is September 8th, 2025 @ 11:59 PM.</strong>
+          <h2>USCC dates are being finalized at the moment. Stay tuned!</h2>
           </p>
           <p className="md:hidden text-brand-black text-sm text-left">
-          <strong> NOTE: The final date to register is September 8th, 2025 @ 11:59 PM.</strong>
+          <strong> NOTE: USCC dates are being finalized at the moment. Stay tuned!</strong>
           </p>
         </div>
       </div>
