@@ -36,8 +36,39 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, [lastScrollY]);
 
+  // Close mobile menu when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (isOpen) {
+        // Check if click is on the hamburger button
+        const hamburgerButton = event.target.closest('button[class*="md:hidden"]');
+        if (hamburgerButton) {
+          return; // Don't close if clicking the hamburger button
+        }
+        
+        // Check if click is on the mobile menu
+        const mobileMenu = event.target.closest('.md\\:hidden');
+        if (!mobileMenu) {
+          setIsOpen(false);
+        }
+      }
+    };
+
+    if (isOpen) {
+      // Add a small delay to prevent immediate closing when opening
+      const timeoutId = setTimeout(() => {
+        document.addEventListener("mousedown", handleClickOutside);
+      }, 100);
+      
+      return () => {
+        clearTimeout(timeoutId);
+        document.removeEventListener("mousedown", handleClickOutside);
+      };
+    }
+  }, [isOpen]);
+
   return (
-    <nav className={`fixed top-0 left-0 w-full z-40 bg-brand-black text-brand-white px-4 md:px-6 py-3 shadow-md transition-transform duration-300 ${showNavbar ? "translate-y-0" : "-translate-y-full"}`}>
+    <nav ref={navRef} className={`fixed top-0 left-0 w-full z-40 bg-brand-black text-brand-white px-4 md:px-6 py-3 shadow-md transition-transform duration-300 ${showNavbar ? "translate-y-0" : "-translate-y-full"}`}>
       <div className="max-w-screen-xl mx-auto flex justify-between md:justify-start items-center">
         {/* Logo */}
         <Link to="/">
@@ -192,27 +223,31 @@ export default function Navbar() {
 
       {/* Mobile Menu */}
       {isOpen && (
-        <div className="md:hidden bg-brand-black text-brand-white px-6 pt-6 pb-8 space-y-6 rounded-b-lg shadow-lg z-40">
+        <div className="md:hidden bg-brand-black text-brand-white px-6 pt-6 pb-8 space-y-6 rounded-b-lg shadow-2xl z-40 relative border-b-2 border-brand-cyanBlue/30">
+          {/* Bottom indicator line */}
+          <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-16 h-0.5 bg-brand-cyanBlue rounded-full"></div>
 
           {/* Navigation Links */}
           <nav className="flex flex-col items-center space-y-6 text-base font-medium">
-            <Link to="/" className={`hover:text-brand-darkCyan pb-1 border-b-2 transition ${currentPath === "/" ? "border-brand-cyanBlue text-brand-cyanBlue" : "border-transparent"}`}>Home</Link>
-            <Link to="/uscc" className={`hover:text-brand-darkCyan pb-1 border-b-2 transition ${currentPath === "/uscc" ? "border-brand-cyanBlue text-brand-cyanBlue" : "border-transparent"}`}>USCC</Link>
-            <Link to="/gallery" className={`hover:text-brand-darkCyan pb-1 border-b-2 transition ${currentPath === "/gallery" ? "border-brand-cyanBlue text-brand-cyanBlue" : "border-transparent"}`}>Gallery</Link>
-            <Link to="/team" className={`hover:text-brand-darkCyan pb-1 border-b-2 transition ${currentPath === "/team" ? "border-brand-cyanBlue text-brand-cyanBlue" : "border-transparent"}`}>Team</Link>
-            <Link to="/about" className={`hover:text-brand-darkCyan pb-1 border-b-2 transition ${currentPath === "/about" ? "border-brand-cyanBlue text-brand-cyanBlue" : "border-transparent"}`}>About</Link>
+            <Link to="/" onClick={() => setIsOpen(false)} className={`hover:text-brand-darkCyan pb-1 border-b-2 transition ${currentPath === "/" ? "border-brand-cyanBlue text-brand-cyanBlue" : "border-transparent"}`}>Home</Link>
+            <Link to="/uscc" onClick={() => setIsOpen(false)} className={`hover:text-brand-darkCyan pb-1 border-b-2 transition ${currentPath === "/uscc" ? "border-brand-cyanBlue text-brand-cyanBlue" : "border-transparent"}`}>USCC</Link>
+            <Link to="/gallery" onClick={() => setIsOpen(false)} className={`hover:text-brand-darkCyan pb-1 border-b-2 transition ${currentPath === "/gallery" ? "border-brand-cyanBlue text-brand-cyanBlue" : "border-transparent"}`}>Gallery</Link>
+            <Link to="/team" onClick={() => setIsOpen(false)} className={`hover:text-brand-darkCyan pb-1 border-b-2 transition ${currentPath === "/team" ? "border-brand-cyanBlue text-brand-cyanBlue" : "border-transparent"}`}>Team</Link>
+            <Link to="/about" onClick={() => setIsOpen(false)} className={`hover:text-brand-darkCyan pb-1 border-b-2 transition ${currentPath === "/about" ? "border-brand-cyanBlue text-brand-cyanBlue" : "border-transparent"}`}>About</Link>
           </nav>
 
           {/* Call to Action Buttons */}
           <div className="flex flex-col gap-3">
             <Link
               to="/links"
+              onClick={() => setIsOpen(false)}
               className="text-center bg-brand-cyanBlue hover:bg-brand-darkCyan text-brand-black font-semibold px-4 py-2 rounded hover:brightness-110 transition"
             >
               Get Involved
             </Link>
             <Link
               to="/uscc"
+              onClick={() => setIsOpen(false)}
               className="text-center border border-brand-white text-brand-white font-semibold px-4 py-2 rounded hover:bg-brand-white hover:text-brand-black transition"
             >
               USCC

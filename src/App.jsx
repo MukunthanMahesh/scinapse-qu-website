@@ -52,7 +52,7 @@ export default function App() {
     <>
       {!hideLoader && <Loader fadingOut={fadeOut} />}
       
-      <div className="min-h-screen flex flex-col bg-brand-white text-white">
+      <div className="min-h-screen flex flex-col bg-brand-white text-brand-black">
         <BrowserRouter>
           <ScrollToTop />
           <Navbar />

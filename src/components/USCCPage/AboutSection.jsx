@@ -11,7 +11,7 @@ export default function AboutSection() {
   return (
     <motion.section
         variants={slideUpVariant}
-        initial="hidden"
+        initial="visible"
         whileInView="visible"
         viewport={{ once: true, amount: 0.2 }}
         className="max-w-7xl mx-auto px-4 pt-8 pb-0"
