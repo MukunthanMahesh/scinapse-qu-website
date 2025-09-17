@@ -33,8 +33,10 @@ const HiringCard = () => {
       </div>
       
       <RippleButton
-        href="#" // Replace '#' with actual application link
+        href="https://forms.gle/3CsrJsjAFx6wETQ9A" // Replace '#' with actual application link
         className="inline-flex items-center justify-center gap-2 bg-brand-cyanBlue text-brand-black px-6 py-3 rounded-lg font-semibold hover:bg-brand-darkCyan transition-colors duration-200 mt-auto"
+        target="_blank"
+        rel="noopener noreferrer"
       >
         Apply Now <ArrowRight className="w-4 h-4" />
       </RippleButton>
