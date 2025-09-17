@@ -1,9 +1,7 @@
-import React from "react";
 import RippleButton from "../UI/RippleButton";
 import { motion } from "framer-motion";
 import FluidText from "../CoreWeb/FluidText";
-import { MapPin } from "lucide-react";
-import { slideUpVariant } from "../../utils/motionVariants"; // assumed path
+import { slideUpVariant } from "../../utils/motionVariants";
 
 export default function HeroBanner() {
   return (
@@ -56,15 +54,13 @@ export default function HeroBanner() {
 
       {/* Other Chapters Section */}
       {/* White Chapter Bar */}
-      <motion.section className="bg-brandw-white text-brand-black py-2 px-4" variants={slideUpVariant} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }}>
+      <motion.section className="bg-brand-white text-brand-black py-2 px-4" variants={slideUpVariant} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }}>
         <div className="max-w-screen-xl mx-auto text-center">
-          <h2 className="text-sm sm:text-base font-medium font-serif mb-4">
-            We Have Chapters Across Ontario!
-          </h2>
 
           {/* Mobile scroll */}
           <div className="sm:hidden overflow-x-auto whitespace-nowrap">
             <div className="inline-flex gap-6 items-center justify-start px-2">
+              <h2 className="text-sm sm:text-base font-medium font-serif mb-4"></h2>
               <img src="/landing/other_chapters/western.png" alt="Western" className="h-8" />
               <img src="/landing/other_chapters/uoftsc.png" alt="UofT Scarborough" className="h-8" />
               <img src="/landing/other_chapters/mcmaster.png" alt="McMaster" className="h-6" />
@@ -75,11 +71,11 @@ export default function HeroBanner() {
 
           {/* Desktop inline logos */}
           <div className="hidden sm:flex justify-center items-center gap-10 pb-2">
-            <img src="/landing/other_chapters/western.png" alt="Western" className="hover:scale-125 transition-transform max-h-12 sm:max-h-16 object-contain" />
-            <img src="/landing/other_chapters/uoftsc.png" alt="UofT Scarborough" className="hover:scale-125 transition-transform  max-h-12 sm:max-h-16 object-contain" />
-            <img src="/landing/other_chapters/mcmaster.png" alt="McMaster" className="hover:scale-125 transition-transform  max-h-12 sm:max-h-13 object-contain" />
-            <img src="/landing/other_chapters/uoft.png" alt="UofT" className="hover:scale-125 transition-transform max-h-12 sm:max-h-16 object-contain" />
-            <img src="/landing/other_chapters/uofg.png" alt="Guelph" className="hover:scale-125 transition-transform  max-h-12 sm:max-h-16 object-contain" />
+            <img src="/landing/other_chapters/western.png" alt="Western" className="hover:scale-105 transition-transform max-h-12 sm:max-h-16 object-contain" />
+            <img src="/landing/other_chapters/uoftsc.png" alt="UofT Scarborough" className="hover:scale-105 transition-transform  max-h-12 sm:max-h-16 object-contain" />
+            <img src="/landing/other_chapters/mcmaster.png" alt="McMaster" className="hover:scale-105 transition-transform  max-h-12 sm:max-h-13 object-contain" />
+            <img src="/landing/other_chapters/uoft.png" alt="UofT" className="hover:scale-105 transition-transform max-h-12 sm:max-h-16 object-contain" />
+            <img src="/landing/other_chapters/uofg.png" alt="Guelph" className="hover:scale-105 transition-transform  max-h-12 sm:max-h-16 object-contain" />
           </div>
 
           { /*Seperate Hero and 'Event Section' with Line*/}
