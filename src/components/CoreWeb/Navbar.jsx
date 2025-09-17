@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Link, useLocation } from "react-router-dom";
 import RippleButton from "../UI/RippleButton";
 import { FaInstagram, FaLinkedin } from "react-icons/fa";
@@ -7,6 +7,7 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const location = useLocation();
   const currentPath = location.pathname;
+  const navRef = useRef(null);
 
   // Scroll direction state for navbar visibility
   const [showNavbar, setShowNavbar] = useState(true);
@@ -137,7 +138,7 @@ export default function Navbar() {
           {/* Hiring Indicator */}
           <div className="flex items-center gap-2 bg-green-500/20 text-green-400 px-3 py-1 rounded-full text-sm font-semibold">
             <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
-            <span>Hiring Live</span>
+            <span>Hiring Open</span>
           </div>
           
           {/* CTA Buttons */}
