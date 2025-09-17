@@ -50,13 +50,20 @@ const EventsSection = () => {
       <div className="mb-10">
         <div className="flex items-center">
         <p className="text-brand-teal text-sm uppercase tracking-widest mb-2">
-          Grab Your Front Row Seat to Undergraduate Research and mentorship at Queen's
+          Discover what's happening at SciNapse
         </p>
         </div>
-        <h2 className="text-brand-black font-sans text-4xl font-bold mt-2 mb-4 ">Mark Your Calendar</h2>
-        <p className="font-sans text-lg max-w-2xl text-gray-800">
-          Connect, collaborate, and kickstart your research journey with SciNapse events all year round. Whether you’re here to make friends, find a mentor, or launch your first research project. From casual socials to hands-on workshops, faculty panels, and the USCC case competition, there’s something for every stage of your journey.
-          {/* Hide Calendar Link Till Implemented */}
+        <h2 className="text-brand-black font-sans text-4xl font-bold mt-2 mb-4 ">
+          Upcoming Events
+        </h2>
+        <p className="font-sans text-lg max-auto text-gray-800 justify-center">
+          From fun hangouts to challenging competitions, SciNapse hosts events that bring
+          students together all year long. Whether you’re looking to meet new people,
+          connect with mentors, or dive into your first project, there’s always
+          something happening. Join us for workshops, socials, panels, and our flagship
+          USCC competition—your chance to learn, collaborate, and take the next step in
+          your research journey.          
+        {/* Hide Calendar Link Till Implemented */}
           {/* <span className="block mt-4">
             Want reminders? {" "} 
             <a
