@@ -43,7 +43,7 @@ const TestimonialsSection = () => {
           WORDS FROM OUR COMMUNITY
         </p>
         <h2 className="text-brand-black font-sans text-4xl font-bold mt-2 mb-4">
-          Alumni Reflections
+          What Our Members Say
         </h2>
         <p className="font-sans text-lg max-w-2xl text-gray-800">
           Discover how SciNapse shaped the journeys of our students and alumni — from presenting at research showcases and organizing campus-wide events, to finding mentorship, building lifelong skills, and unlocking new academic and career opportunities. 
