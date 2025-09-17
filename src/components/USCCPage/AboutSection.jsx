@@ -23,10 +23,10 @@ export default function AboutSection() {
             <FiInfo />
           </span>
           <p className="lg:block hidden text-brand-black text-lg text-left">
-          This page provides detailed information on the next steps of getting involved with the Undergraduate Science Case Competition (USCC).<strong> NOTE: The final date to register is September 28, 2025 @ 11:59 PM.</strong>
+          This page provides detailed information on the next steps of getting involved with the Undergraduate Science Case Competition (USCC).<strong> NOTE: The final date to register is September 8th, 2025 @ 11:59 PM.</strong>
           </p>
           <p className="md:hidden text-brand-black text-sm text-left">
-          <strong> NOTE: The final date to register is September 28, 2025 @ 11:59 PM.</strong>
+          <strong> NOTE: The final date to register is September 8th, 2025 @ 11:59 PM.</strong>
           </p>
         </div>
       </div>
@@ -55,7 +55,7 @@ export default function AboutSection() {
           </p>
           <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mt-6">
             <RippleButton
-              href="/register"
+              href="/links"
               className="bg-brand-cyanBlue text-brand-black px-4 py-2 rounded text-center font-semibold hover:bg-brand-darkCyan transition"
             >
               Register Your Team

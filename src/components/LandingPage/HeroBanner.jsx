@@ -33,7 +33,7 @@ export default function HeroBanner() {
 
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 w-full sm:w-auto">
               <RippleButton
-                href="/get-involved"
+                href="/links"
                 className="bg-brand-cyanBlue text-brand-black px-4 py-2 rounded text-center font-semibold hover:bg-brand-darkCyan transition"
               >
                 Get Involved
