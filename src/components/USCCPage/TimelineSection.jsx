@@ -5,11 +5,11 @@ import FluidText from "../CoreWeb/FluidText";
 
 // These dates are used to determine the status of each step in the timeline
 // Format: YYYY-MM-DDTHH:mm:ssZ
-const uscc_registration_end_date = new Date('2025-09-08T23:59:59Z'); // USCC registration end date
-const written_round_start_date = new Date('2025-11-01T23:59:59Z'); // Written round start date
-const written_round_submission_date = new Date('2025-11-22T23:59:59Z'); // Written round submission date
-const presentation_round_start_date = new Date('2026-03-07T23:59:59Z'); // Presentation round start date
-const presentation_round_end_date = new Date('2026-03-09T23:59:59Z'); // Presentation round end date
+const uscc_registration_end_date = new Date('2024-09-08T23:59:59Z'); // USCC registration end date
+const written_round_start_date = new Date('2024-11-01T23:59:59Z'); // Written round start date
+const written_round_submission_date = new Date('2024-11-22T23:59:59Z'); // Written round submission date
+const presentation_round_start_date = new Date('2024-03-07T23:59:59Z'); // Presentation round start date
+const presentation_round_end_date = new Date('2024-03-09T23:59:59Z'); // Presentation round end date
 
 const stepImages = [
   "/uscc/undraw_email-consent_j36b.svg", // Registration step
