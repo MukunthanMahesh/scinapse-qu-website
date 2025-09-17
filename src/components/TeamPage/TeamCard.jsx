@@ -4,9 +4,9 @@ import { FaLinkedin } from "react-icons/fa";
 export default function TeamCard({ name, role, image, linkedin }) {
   return (
     <div className="relative group">
-      {/* Gradient shadow background - only visible on hover */}
-      <div className="absolute -inset-2 rounded-xl bg-gradient-to-r from-cyan-300 via-cyan-500 to-cyan-800 opacity-0 blur transition-opacity duration-200 group-hover:opacity-75"></div>
-      
+      {/* Gradient shadow background - only visible on hover, hidden on phone screens */}
+      <div className="hidden md:block absolute -inset-2 rounded-xl bg-gradient-to-r from-cyan-300 via-cyan-500 to-cyan-800 opacity-0 blur transition-opacity duration-200 group-hover:opacity-75"></div>
+
       {/* Card content */}
       <div className="relative bg-brand-white rounded-xl shadow-md border flex flex-col items-center px-4 py-6 sm:px-6 sm:py-8 transition-all duration-200 hover:-translate-y-1 w-full max-w-xs mx-auto">
         <div className="relative">

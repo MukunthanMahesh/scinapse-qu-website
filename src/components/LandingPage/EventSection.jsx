@@ -16,7 +16,6 @@ const events = [
     fullDetails:
       "Come join us for an evening of Nintendo games, featuring Super Smash Bros, Mario Kart Deluxe, and more! Free snacks, no registration needed.",
     imageUrl: "/landing/event_images/nintendo.jpg",
-    link: "#"
   },
   {
     day: "07",
@@ -28,7 +27,6 @@ const events = [
     fullDetails:
       "The Undergraduate Science Case Competition is a chance to solve research problems and network with peers. Open to all undergraduates. Registration ends September 8th!",
     imageUrl: "/landing/event_images/uscc.jpg",
-    link: "#"
   },
   {
     day: "23",
@@ -40,7 +38,6 @@ const events = [
     fullDetails:
       "Whether you're passionate about AI, medicine, or research, this event is for you. Join industry experts and students for a full day of innovation.",
     imageUrl: "/landing/event_images/stem-horizons.jpg",
-    link: "#"
   }
 ];
 
@@ -50,13 +47,21 @@ const EventsSection = () => {
       <div className="mb-10">
         <div className="flex items-center">
         <p className="text-brand-teal text-sm uppercase tracking-widest mb-2">
-          Grab Your Front Row Seat to Undergraduate Research and mentorship at Queen's
+          Discover what's happening at SciNapse
         </p>
         </div>
-        <h2 className="text-brand-black font-sans text-4xl font-bold mt-2 mb-4 ">Mark Your Calendar</h2>
-        <p className="font-sans text-lg max-w-2xl text-gray-800">
-          Connect, collaborate, and kickstart your research journey with SciNapse events all year round. Whether you’re here to make friends, find a mentor, or launch your first research project. From casual socials to hands-on workshops, faculty panels, and the USCC case competition, there’s something for every stage of your journey.
-          <span className="block mt-4">
+        <h2 className="text-brand-black font-sans text-4xl font-bold mt-2 mb-4 ">
+          Upcoming Events
+        </h2>
+        <p className="font-sans text-lg max-auto text-gray-800 justify-center">
+          From fun hangouts to challenging competitions, SciNapse hosts events that bring
+          students together all year long. Whether you’re looking to meet new people,
+          connect with mentors, or dive into your first project, there’s always
+          something happening. Join us for workshops, socials, panels, and our flagship
+          USCC competition—your chance to learn, collaborate, and take the next step in
+          your research journey.          
+        {/* Hide Calendar Link Till Implemented */}
+          {/* <span className="block mt-4">
             Want reminders? {" "} 
             <a
               href="https://calendar.google.com/calendar/u/0/r/eventedit?text=SciNapse+Events&dates=20250723T180000Z/20250723T190000Z&location=Queen's+University&pli=1&sf=true&output=xml#eventpage_6"
@@ -67,7 +72,7 @@ const EventsSection = () => {
               <strong>Add our Google Calendar</strong>
             </a>
             .
-          </span>
+          </span> */}
         </p>
       </div>
 
