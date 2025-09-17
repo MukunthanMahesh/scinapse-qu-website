@@ -134,6 +134,12 @@ export default function Navbar() {
 
         {/* Buttons and Social Media Icons (Desktop Only, Grouped) - Right aligned */}
         <div className="hidden md:flex items-center gap-6 ml-auto">
+          {/* Hiring Indicator */}
+          <div className="flex items-center gap-2 bg-green-500/20 text-green-400 px-3 py-1 rounded-full text-sm font-semibold">
+            <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
+            <span>Hiring Live</span>
+          </div>
+          
           {/* CTA Buttons */}
           <div className="flex gap-3">
             <RippleButton
@@ -146,7 +152,7 @@ export default function Navbar() {
             <RippleButton
               href="/uscc"
               size="sm"
-              className="border disabled: border-brand-white px-4 py-2 rounded text-center font-semibold hover:border-brand-cyanBlue hover:text-brand-cyanBlue transition"
+              className="border border-brand-white px-4 py-2 rounded text-center font-semibold hover:border-brand-cyanBlue hover:text-brand-cyanBlue transition"
             >
               USCC
             </RippleButton>
@@ -199,16 +205,16 @@ export default function Navbar() {
           {/* Call to Action Buttons */}
           <div className="flex flex-col gap-3">
             <Link
-              to="/get-involved"
+              to="/links"
               className="text-center bg-brand-cyanBlue hover:bg-brand-darkCyan text-brand-black font-semibold px-4 py-2 rounded hover:brightness-110 transition"
             >
               Get Involved
             </Link>
             <Link
-              to="/contact"
+              to="/uscc"
               className="text-center border border-brand-white text-brand-white font-semibold px-4 py-2 rounded hover:bg-brand-white hover:text-brand-black transition"
             >
-              Contact Us!
+              USCC
             </Link>
           </div>
         </div>
