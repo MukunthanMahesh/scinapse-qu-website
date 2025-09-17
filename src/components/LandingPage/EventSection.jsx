@@ -16,7 +16,6 @@ const events = [
     fullDetails:
       "Come join us for an evening of Nintendo games, featuring Super Smash Bros, Mario Kart Deluxe, and more! Free snacks, no registration needed.",
     imageUrl: "/landing/event_images/nintendo.jpg",
-    link: "#"
   },
   {
     day: "07",
@@ -28,7 +27,6 @@ const events = [
     fullDetails:
       "The Undergraduate Science Case Competition is a chance to solve research problems and network with peers. Open to all undergraduates. Registration ends September 8th!",
     imageUrl: "/landing/event_images/uscc.jpg",
-    link: "#"
   },
   {
     day: "23",
@@ -40,7 +38,6 @@ const events = [
     fullDetails:
       "Whether you're passionate about AI, medicine, or research, this event is for you. Join industry experts and students for a full day of innovation.",
     imageUrl: "/landing/event_images/stem-horizons.jpg",
-    link: "#"
   }
 ];
 

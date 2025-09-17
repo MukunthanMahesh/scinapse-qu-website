@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { ArrowRight } from "lucide-react";
 
 const EventCard = ({
@@ -11,6 +11,25 @@ const EventCard = ({
   link
 }) => {
   const [showModal, setShowModal] = useState(false);
+
+  // Handle escape key and body scroll lock
+  useEffect(() => {
+    const handleEscape = (e) => {
+      if (e.key === 'Escape') {
+        setShowModal(false);
+      }
+    };
+
+    if (showModal) {
+      document.addEventListener('keydown', handleEscape);
+      document.body.style.overflow = 'hidden';
+    }
+
+    return () => {
+      document.removeEventListener('keydown', handleEscape);
+      document.body.style.overflow = 'auto';
+    };
+  }, [showModal]);
 
   return (
     <>
@@ -52,10 +71,16 @@ const EventCard = ({
 
       {/* Modal */}
       {showModal && (
-        <div className="fixed inset-0 bg-black bg-opacity-60 z-50 flex items-center justify-center px-4">
-          <div className="bg-brand-white text-black p-6 max-w-lg w-full rounded shadow-lg relative">
+        <div 
+          className="fixed inset-0 bg-black bg-opacity-60 z-50 flex items-center justify-center px-4"
+          onClick={() => setShowModal(false)}
+        >
+          <div 
+            className="bg-brand-white text-black p-6 max-w-lg w-full rounded shadow-lg relative"
+            onClick={(e) => e.stopPropagation()}
+          >
             <button
-              className="absolute top-2 right-3 text-black text-xl"
+              className="absolute top-2 right-3 text-black text-xl hover:text-gray-600 transition-colors"
               onClick={() => setShowModal(false)}
             >
               &times;
@@ -63,14 +88,6 @@ const EventCard = ({
             <h3 className="text-2xl font-bold mb-2">{title}</h3>
             <p className="text-sm text-gray-700 mb-4"> Location: {location}</p>
             <p className="text-base text-gray-800">{fullDetails}</p>
-            <a
-              href={link}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="mt-4 inline-block text-brand-black hover:underline text-sm"
-            >
-              Learn more →
-            </a>
           </div>
         </div>
       )}
