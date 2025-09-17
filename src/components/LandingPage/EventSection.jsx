@@ -56,7 +56,8 @@ const EventsSection = () => {
         <h2 className="text-brand-black font-sans text-4xl font-bold mt-2 mb-4 ">Mark Your Calendar</h2>
         <p className="font-sans text-lg max-w-2xl text-gray-800">
           Connect, collaborate, and kickstart your research journey with SciNapse events all year round. Whether you’re here to make friends, find a mentor, or launch your first research project. From casual socials to hands-on workshops, faculty panels, and the USCC case competition, there’s something for every stage of your journey.
-          <span className="block mt-4">
+          {/* Hide Calendar Link Till Implemented */}
+          {/* <span className="block mt-4">
             Want reminders? {" "} 
             <a
               href="https://calendar.google.com/calendar/u/0/r/eventedit?text=SciNapse+Events&dates=20250723T180000Z/20250723T190000Z&location=Queen's+University&pli=1&sf=true&output=xml#eventpage_6"
@@ -67,7 +68,7 @@ const EventsSection = () => {
               <strong>Add our Google Calendar</strong>
             </a>
             .
-          </span>
+          </span> */}
         </p>
       </div>
 
