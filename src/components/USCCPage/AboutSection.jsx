@@ -16,6 +16,7 @@ export default function AboutSection() {
         viewport={{ once: true, amount: 0.2 }}
         className="max-w-7xl mx-auto px-4 pt-8 pb-0"
       >
+        
       {/* Info Box */}
       <div className="flex justify-center mb-10">
         <div className="bg-gradient-to-r from-brand-cyanBlue/20 via-white to-brand-cyanBlue/10 border border-brand-cyanBlue rounded-2xl shadow-md px-6 py-4 max-w-2xl w-full text-center flex items-center gap-4 hover:bg-brand-cyanBlue/20 transition">
