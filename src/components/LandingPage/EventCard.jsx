@@ -50,11 +50,18 @@ const EventCard = ({
         <div className="font-sans p-4 flex flex-col gap-2 text-white">
           <h3 className="text-xl font-bold leading-snug">{title}</h3>
 
-          {/* Location */}
-          <p className="text-sm text-gray-400 flex items-center gap-1">
-            <span role="img" aria-label="location">📍</span>
+        {/* Location */}
+        <p className="text-sm text-gray-400 flex items-center gap-1">
+          <span role="img" aria-label="location">📍</span>
+          <a
+            href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(location)}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:underline text-blue-400"
+          >
             {location}
-          </p>
+          </a>
+        </p>
 
           {/* Description */}
           <p className="text-md text-gray-300 line-clamp-3">{fullDetails}</p>
@@ -86,7 +93,19 @@ const EventCard = ({
               &times;
             </button>
             <h3 className="text-2xl font-bold mb-2">{title}</h3>
-            <p className="text-sm text-gray-700 mb-4"> Location: {location}</p>
+            <p className="text-sm text-gray-700 mb-4">
+              <span className="font-semibold">Location: </span>
+              <a
+                href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(location)}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-blue-500 hover:underline"
+              >
+                {location}
+              </a>
+            </p>
+
+
             <p className="text-base text-gray-800">{fullDetails}</p>
           </div>
         </div>
