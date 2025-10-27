@@ -11,9 +11,9 @@ const ResourcesSection = () => {
     {
       category: "USCC Resources",
       items: [
-        { name: "USCC - SciNapse Science", link: "https://scinapsescience.com/about", icon: <MdScience className="w-4 h-4" /> },
-        { name: "USCC - Team Registration", link: "#", icon: <GiArchiveRegister className="w-4 h-4" /> },
-        { name: "USCC - Official Website", link: "https://scinapsescience.com/", icon: <Cpu className="w-4 h-4" /> }
+        { name: "USCC - Team Registration", link: "https://scinapsescience.com/register/uscc-2020-2021-ht3be-cejga-p5ykc-w4w45-nt6e7", icon: <GiArchiveRegister className="w-4 h-4" /> },
+        { name: "USCC - Queen's Teams Form", link: "https://docs.google.com/forms/d/e/1FAIpQLSfUvGPWO3LaxsORkjUR8gKOA62MR-DFbmsEK2OPvucHQkTbSg/viewform", icon: <MdScience className="w-4 h-4" /> },
+        { name: "USCC - Information Document", link: "https://docs.google.com/document/d/1ZcS2f30aCVFR0AkIWIk8e19w3OSCb7uD41DSuajMPss/edit?tab=t.0", icon: <Cpu className="w-4 h-4" /> }
       ]
     },
     {

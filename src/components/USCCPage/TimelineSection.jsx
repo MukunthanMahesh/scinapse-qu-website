@@ -45,7 +45,7 @@ const steps = [
     desc: (
     <>
       Any undergraduate student interested in STEM research is encouraged to apply in teams of 2–4. <strong>
-        Register through the <a className="underline" href="https://uscc.example.com" target="_blank" rel="noopener noreferrer">official USCC site</a>
+        Register through the <a className="underline" href="https://scinapsescience.com/register/uscc-2020-2021-ht3be-cejga-p5ykc-w4w45-nt6e7" target="_blank" rel="noopener noreferrer">official USCC site</a>
       </strong>, not through SciNapse Queen's. Registration closes on {formatDateNoYear(uscc_registration_end_date)} @ 11:59 PM EDT with a fee of $80 per group (Catering + Hotel Expenses included). 
       <p>
         <br />

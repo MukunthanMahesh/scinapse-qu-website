@@ -16,13 +16,13 @@ const USCCCard = () => {
       </p>
       
       <div className="space-y-3 mb-6">
-        <div className="text-sm text-brand-cyanBlue">• Team of 1-4 members</div>
-        <div className="text-sm text-brand-cyanBlue">• Written Round and Presentation Round</div>
-        <div className="text-sm text-red-400 font-semibold">• Registration ends September 8th</div>
+        <div className="text-sm text-brand-cyanBlue">• Team of 2-4 members</div>
+        <div className="text-sm text-brand-cyanBlue">• Chance for a publication on the URNCT Journal</div>
+        <div className="text-sm text-red-400 font-semibold">• Registration ends on 30th October</div>
       </div>
       
       <RippleButton
-        href="#" // Replace '#' with actual application link
+        href="https://scinapsescience.com/register/uscc-2020-2021-ht3be-cejga-p5ykc-w4w45-nt6e7"
         className="inline-flex items-center justify-center gap-2 bg-brand-cyanBlue text-brand-black px-6 py-3 rounded-lg font-semibold hover:bg-brand-darkCyan transition-colors duration-200 mt-auto"
       >
         Register Team <ArrowRight className="w-4 h-4" />
