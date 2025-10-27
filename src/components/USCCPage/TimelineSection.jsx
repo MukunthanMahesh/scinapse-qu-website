@@ -5,11 +5,11 @@ import FluidText from "../CoreWeb/FluidText";
 
 // These dates are used to determine the status of each step in the timeline
 // Format: YYYY-MM-DDTHH:mm:ssZ
-const uscc_registration_end_date = new Date('2024-09-08T23:59:59Z'); // USCC registration end date
-const written_round_start_date = new Date('2024-11-01T23:59:59Z'); // Written round start date
-const written_round_submission_date = new Date('2024-11-22T23:59:59Z'); // Written round submission date
-const presentation_round_start_date = new Date('2024-03-07T23:59:59Z'); // Presentation round start date
-const presentation_round_end_date = new Date('2024-03-09T23:59:59Z'); // Presentation round end date
+const uscc_registration_end_date = new Date('2025-10-30T23:59:59Z'); // USCC registration end date
+const written_round_start_date = new Date('2025-11-01T23:59:59Z'); // Written round start date
+const written_round_submission_date = new Date('2025-11-22T23:59:59Z'); // Written round submission date
+const presentation_round_start_date = new Date('2026-03-20T23:59:59Z'); // Presentation round start date
+const presentation_round_end_date = new Date('2026-03-22T23:59:59Z'); // Presentation round end date
 
 const stepImages = [
   "/uscc/undraw_email-consent_j36b.svg", // Registration step
@@ -42,18 +42,33 @@ const steps = [
     status: now > uscc_registration_end_date
       ? "Registration for this year's USCC is closed."
       : `Registration for this year's USCC is now open! (Ends ${formatDate(uscc_registration_end_date)})`,
-    desc: `Register for the competition in teams of 1-4. We highly encourage participating in teams to develop collaboration skills which are an important part of scientific research! You can find potential team mates using our Discord partner-finding channels (more information below). Registration closes on ${formatDateNoYear(uscc_registration_end_date)}.`,
+    desc: (
+    <>
+      Any undergraduate student interested in STEM research is encouraged to apply in teams of 2–4. <strong>
+        Register through the <a className="underline" href="https://uscc.example.com" target="_blank" rel="noopener noreferrer">official USCC site</a>
+      </strong>, not through SciNapse Queen's. Registration closes on {formatDateNoYear(uscc_registration_end_date)} @ 11:59 PM EDT with a fee of $80 per group (Catering + Hotel Expenses included). 
+      <p>
+        <br />
+      </p>
+      After registering for USCC as a team OR if you are looking for potential team members, please fill in this <a className="text-brand-cyanHue" href="https://docs.google.com/forms/d/e/1FAIpQLSfUvGPWO3LaxsORkjUR8gKOA62MR-DFbmsEK2OPvucHQkTbSg/viewform">form</a> to let SciNapse Queen’s know! 
+    </>
+    ),
     closed: now > uscc_registration_end_date,
   },
   {
     title: "Step Two: Written Round",
     status:
       now < written_round_start_date
-        ? `Written round case details will be announced on ${formatDate(written_round_start_date)}`
+        ? `Written rounds will officially begin on ${formatDate(written_round_start_date)}`
         : now > written_round_submission_date
         ? "Written rounds have ended. Thank you for participating!"
         : `Written round submissions are due on ${formatDate(written_round_submission_date)}`,
-    desc: `Propose an original research idea to tackle a real-world issue, supported by current scientific literature. The first round is a written round submitted online, to be completed in 3 weeks. The case will be released on ${formatDateNoYear(written_round_start_date)} and team submissions will be due on ${formatDateNoYear(written_round_submission_date)} at midnight EST. Registered teams will receive the case booklet.`,
+    desc: (
+    <>
+      Come up with a novel research proposal within this year’s topic: <strong>reproductive health</strong>! 
+      Conduct a literature search and try your best to find any gaps in areas that interest you. With the help of your group, you will complete a written research proposal (abstract, rationale, methodology, etc.) which will be submitted online. Teams will have until {formatDate(written_round_submission_date)} @ 11:59PM EDT to complete their proposal. Feel free to reach out to the SciNapse Queen’s executive team for any support!
+    </>
+    ),
     closed: now > written_round_submission_date,
   },
   {
@@ -64,7 +79,11 @@ const steps = [
         : now > presentation_round_end_date
         ? "Presentation rounds have closed. Thank you for joining us this year!"
         : `Presentation rounds will finish on ${formatDate(presentation_round_end_date)} @ The University of Ottawa`,
-    desc: `Top scoring teams from each division will advance to the next round and present their novel research proposal to judges at our scientific conference. The second round will take place between ${formatDateNoYear(presentation_round_start_date)}-${formatDateNoYear(presentation_round_end_date)} in person at the University of Ottawa! The weekend includes poster sessions, presentations, workshops, and an awards ceremony. The exact schedule will be released to finalists in January.`,
+    desc: (
+    <>
+      The top 10%-15% of teams per university will qualify for Round 2 which consists of a scientific poster presentation at the University of Ottawa from {formatDate(presentation_round_start_date)} - {formatDate(presentation_round_end_date)}. The weekend will consist of poster presentations, workshops, networking, and an award ceremony! The top 10 teams will have their abstracts published, and the overall winner in each division will have their proposals published in the URNCT Journal. If you need more clarification, check out this <a className="text-brand-cyanHue" href="https://docs.google.com/document/d/1ZcS2f30aCVFR0AkIWIk8e19w3OSCb7uD41DSuajMPss/edit?tab=t.0">information doc!</a>
+    </>
+    ),
     closed: now > presentation_round_end_date,
   },
 ];
