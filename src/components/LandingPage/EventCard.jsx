@@ -57,7 +57,7 @@ const EventCard = ({
             href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(location)}`}
             target="_blank"
             rel="noopener noreferrer"
-            className="hover:underline text-blue-400"
+            className="hover:underline text-brand-cyanHue"
           >
             {location}
           </a>
