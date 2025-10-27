@@ -35,7 +35,7 @@ const MissionStatement = () => {
           </p>
 
           <RippleButton
-            href="/get-involved"
+            href="/links"
             size="lg"
             className="bg-brand-black text-brand-white px-4 py-2 rounded text-center hover:bg-brand-cyanBlue transition"
           >
