@@ -15,7 +15,7 @@ const events = [
     // description: "Join us for Nintendo games like Smash Bros...",
     fullDetails:
       " Looking for a research team? Or just want to meet some awesome science students? Join us for SciNapse Queen’s USCC Social Night!",
-    imageUrl: "/landing/event_images/nintendo.jpg",
+    imageUrl: "/landing/event_images/uscc-social-night-2025.png",
   },
   {
     day: "20",
