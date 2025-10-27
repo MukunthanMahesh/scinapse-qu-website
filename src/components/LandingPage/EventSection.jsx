@@ -7,31 +7,31 @@ import { slideUpVariant } from "../../utils/motionVariants";
 
 const events = [
   {
-    day: "04",
-    weekday: "Tue",
-    monthYear: "Feb 2024",
-    title: "Nintendo Game Night",
-    location: "Jefferey Room 204, Queen's University",
+    day: "27",
+    weekday: "Mon",
+    monthYear: "Oct 2025",
+    title: "USCC Social Night",
+    location: "BioSciences Complex, Room 2109",
     // description: "Join us for Nintendo games like Smash Bros...",
     fullDetails:
-      "Come join us for an evening of Nintendo games, featuring Super Smash Bros, Mario Kart Deluxe, and more! Free snacks, no registration needed.",
-    imageUrl: "/landing/event_images/nintendo.jpg",
+      " Looking for a research team? Or just want to meet some awesome science students? Join us for SciNapse Queen’s USCC Social Night!",
+    imageUrl: "/landing/event_images/uscc-social-night-2025.png",
   },
   {
-    day: "07",
+    day: "20",
     weekday: "Mon",
-    monthYear: "March 2025",
+    monthYear: "March 2026",
     title: "The Undergraduate Science Case Competition (USCC)",
     location: "The University of Ottawa",
     // description: "Do you want an opportunity to explore your scientific creativity?",
     fullDetails:
-      "The Undergraduate Science Case Competition is a chance to solve research problems and network with peers. Open to all undergraduates. Registration ends September 8th!",
+      "The Undergraduate Science Case Competition (USCC) is a student-led research competition organized to help undergraduates gain early experience within the STEM research field. It’s structured into 2 rounds, involving a written research proposal and a poster presentation in Ottawa! The goal is to foster curiosity and offer mentorship, feedback, and experience similar to professional academic conferences. Registration ends October 30th!",
     imageUrl: "/landing/event_images/uscc.jpg",
   },
   {
-    day: "23",
-    weekday: "Sun",
-    monthYear: "March 2025",
+    day: "To be announced",
+    weekday: "",
+    monthYear: "",
     title: "STEM Horizons: AI & Healthcare Summit",
     location: "Queen`s University",
     // description: "SciNapse is teaming up with QMind for STEM Horizons!",
@@ -43,7 +43,7 @@ const events = [
 
 const EventsSection = () => {
   return (
-    <motion.section variants={slideUpVariant} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }} className="max-w-7xl mx-auto px-4 py-12">
+    <motion.section variants={slideUpVariant} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }} className="max-w-7xl mx-auto px-4 py-12" id="events">
       <div className="mb-10">
         <div className="flex items-center">
         <p className="text-brand-teal text-sm uppercase tracking-widest mb-2">

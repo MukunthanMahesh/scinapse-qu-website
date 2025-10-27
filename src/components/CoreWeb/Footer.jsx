@@ -39,9 +39,9 @@ export default function Footer() {
             <ul className="space-y-4 text-sm">
               <p className="text-sm text-brand-white/60 mb-4">Did you miss anything?</p>
               <li><a href="/about" className="hover:underline">About Us</a></li>
-              <li><a href="/events" className="hover:underline">Events</a></li>
+              <li><a href="/team" className="hover:underline">Our Team</a></li>
               <li><a href="/links" className="hover:underline">Get Involved</a></li>
-              <li><a href="/contact" className="hover:underline">Contact</a></li>
+              <li><a href="mailto:scinapse@clubs.queensu.ca?subject=Inquiry%20from%20Website" className="hover:underline">Contact</a></li>
             </ul>
           </div>
 
@@ -54,8 +54,8 @@ export default function Footer() {
             <ul className="space-y-4 text-sm">
               <p className="text-sm text-brand-white/60 mb-4">Explore our resources</p>
               <li><a href="https://scinapsescience.com/about" className="hover:underline">USCC - Scinapse Science</a></li>
-              <li><a href="/uscc-registration" className="hover:underline">USCC Registration</a></li>
-              <li><a href="https://scinapsescience.com/" className="hover:underline">USCC - Official Website</a></li>
+              <li><a href="https://scinapsescience.com/register/uscc-2020-2021-ht3be-cejga-p5ykc-w4w45-nt6e7" className="hover:underline">USCC - Team Registration</a></li>
+              <li><a href="https://docs.google.com/document/d/1ZcS2f30aCVFR0AkIWIk8e19w3OSCb7uD41DSuajMPss/edit?tab=t.0" className="hover:underline">USCC - Information Document</a></li>
             </ul>
           </div>
         </div>
