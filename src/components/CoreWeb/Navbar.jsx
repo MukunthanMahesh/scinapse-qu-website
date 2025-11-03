@@ -173,11 +173,11 @@ export default function Navbar() {
             <span>Hiring Open</span>
           </div> */}
         
-          {/* USE WHEN USCC IS OPEN -- USCC Indicator */}
+          {/* USE WHEN USCC IS OPEN -- USCC Indicator
           <div className="flex items-center gap-2 bg-green-500/20 text-green-400 px-3 py-1 rounded-full text-sm font-semibold">
             <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
             <span>USCC Open</span>
-          </div>
+          </div> */}
           
           {/* CTA Buttons */}
           <div className="flex gap-3">
