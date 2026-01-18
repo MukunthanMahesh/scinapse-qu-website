@@ -85,7 +85,7 @@ export default function Navbar() {
               Home
               <span
                 className={`
-                  absolute left-0 -bottom-1 h-1 w-full bg-brand-cyanBlue rounded
+                  absolute left-0 -bottom-1 h-0.5 w-full bg-brand-cyanBlue rounded
                   transition-transform duration-300 ease-in-out
                   ${currentPath === "/" ? "scale-x-100" : "scale-x-0"}
                   origin-left
@@ -102,9 +102,26 @@ export default function Navbar() {
               USCC
               <span
                 className={`
-                  absolute left-0 -bottom-1 h-1 w-full bg-brand-cyanBlue rounded
+                  absolute left-0 -bottom-1 h-0.5 w-full bg-brand-cyanBlue rounded
                   transition-transform duration-300 ease-in-out
                   ${currentPath === "/uscc" ? "scale-x-100" : "scale-x-0"}
+                  origin-left
+                  block
+                `}
+              />
+            </Link>
+          </li>
+          <li className="relative">
+            <Link
+              to="/stem-horizons"
+              className={`hover:text-brand-cyanBlue transition-colors duration-300 ${currentPath === "/uscc" ? "text-brand-cyanBlue" : ""} pb-1`}
+            >
+              STEM Horizons 2026 
+              <span
+                className={`
+                  absolute left-0 -bottom-1 h-0.5 w-full bg-brand-cyanBlue rounded
+                  transition-transform duration-300 ease-in-out
+                  ${currentPath === "/stem-horizons" ? "scale-x-100" : "scale-x-0"}
                   origin-left
                   block
                 `}
@@ -119,7 +136,7 @@ export default function Navbar() {
               Gallery
               <span
                 className={`
-                  absolute left-0 -bottom-1 h-1 w-full bg-brand-cyanBlue rounded
+                  absolute left-0 -bottom-1 h-0.5 w-full bg-brand-cyanBlue rounded
                   transition-transform duration-300 ease-in-out
                   ${currentPath === "/gallery" ? "scale-x-100" : "scale-x-0"}
                   origin-left
@@ -136,7 +153,7 @@ export default function Navbar() {
               Team
               <span
                 className={`
-                  absolute left-0 -bottom-1 h-1 w-full bg-brand-cyanBlue rounded
+                  absolute left-0 -bottom-1 h-0.5 w-full bg-brand-cyanBlue rounded
                   transition-transform duration-300 ease-in-out
                   ${currentPath === "/team" ? "scale-x-100" : "scale-x-0"}
                   origin-left
@@ -153,7 +170,7 @@ export default function Navbar() {
               About
               <span
                 className={`
-                  absolute left-0 -bottom-1 h-1 w-full bg-brand-cyanBlue rounded
+                  absolute left-0 -bottom-1 h-0.5 w-full bg-brand-cyanBlue rounded
                   transition-transform duration-300 ease-in-out
                   ${currentPath === "/about" ? "scale-x-100" : "scale-x-0"}
                   origin-left
