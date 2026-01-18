@@ -114,7 +114,7 @@ export default function Navbar() {
           <li className="relative">
             <Link
               to="/stem-horizons"
-              className={`hover:text-brand-cyanBlue transition-colors duration-300 ${currentPath === "/uscc" ? "text-brand-cyanBlue" : ""} pb-1`}
+              className={`hover:text-brand-cyanBlue transition-colors duration-300 ${currentPath === "/stem-horizons" ? "text-brand-cyanBlue" : ""} pb-1`}
             >
               STEM Horizons 2026 
               <span

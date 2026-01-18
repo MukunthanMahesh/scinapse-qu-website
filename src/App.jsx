@@ -8,6 +8,7 @@ import USCC from "./pages/USCC";
 import About from "./pages/About";
 import Team from "./pages/Team";
 import Links from "./pages/Links";
+import Horizons from "./pages/Horizons";
 import Navbar from "./components/CoreWeb/Navbar";
 import Footer from "./components/CoreWeb/Footer";
 import ScrollToTop from "./components/CoreWeb/ScrollToTop";
@@ -61,6 +62,7 @@ export default function App() {
               <Route path="/" element={<Home />} />
               <Route path="/gallery" element={<Gallery />} />
               <Route path="/uscc" element={<USCC />} />
+              <Route path="/stem-horizons" element={<Horizons />} />
               <Route path="/about" element={<About />} />
               <Route path="/team" element={<Team />} />
               <Route path="/links" element={<Links />} />
