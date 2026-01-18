@@ -109,8 +109,11 @@ export default function Footer() {
                 placeholder="Your email"
                 className="px-3 py-2 rounded-md text-sm bg-brand-black text-white border border-brand-white/20 w-full sm:w-auto mb-4 sm:mb-0 focus:outline-none focus:ring-2 focus:ring-brand-white/60 transition"
               />
-              
-              <RippleButton type="submit" className="px-4 py-2 text-sm bg-brand-cyanBlue text-brand-black rounded hover:bg-brand-white/60 transition">
+              <RippleButton
+                type="submit"
+                size="sm"
+                variant="primary"
+              >
                 Subscribe
               </RippleButton>
             </form>

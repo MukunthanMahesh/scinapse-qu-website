@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import MasonryGrid from './MasonryGrid.jsx';
 import FluidText from '../CoreWeb/FluidText.jsx';
+import RippleButton from '../UI/RippleButton.jsx';
 
 // Hook to detect mobile screens
 function useIsMobile() {
@@ -102,13 +103,14 @@ export default function EventSection({ event }) {
       {/* Show toggle button if there are more images to display */}
       {hasMoreImages && (
         <div className="text-center mt-8 md:mt-4">
-          <button
+          <RippleButton
+            type="button"
             onClick={handleToggle}
             disabled={buttonDisabled}
-            className="bg-brand-black text-brand-white px-4 py-2 rounded text-center hover:bg-brand-cyanBlue disabled:opacity-50 transition relative overflow-hidden select-none"
+            variant="dark"
           >
             {showAll ? 'Show Less' : `View All Photos`}
-          </button>
+          </RippleButton>
         </div>
       )}
     </section>

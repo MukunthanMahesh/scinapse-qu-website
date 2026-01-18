@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { ArrowRight } from "lucide-react";
+import RippleButton from "../UI/RippleButton";
 
 const EventCard = ({
   day,
@@ -67,12 +68,14 @@ const EventCard = ({
           <p className="text-md text-gray-300 line-clamp-3">{fullDetails}</p>
 
           {/* Read More CTA */}
-          <button
+          <RippleButton
+            type="button"
             onClick={() => setShowModal(true)}
-            className="mt-auto flex items-center gap-1 text-md text-brand-cyanBlue hover:underline"
+            variant="link"
+            className="mt-auto flex items-center gap-1"
           >
             Read more <ArrowRight className="w-4 h-4" />
-          </button>
+          </RippleButton>
         </div>
       </div>
 

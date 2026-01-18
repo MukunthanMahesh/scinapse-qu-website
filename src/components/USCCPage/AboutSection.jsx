@@ -57,13 +57,13 @@ export default function AboutSection() {
           <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mt-6">
             <RippleButton
               href="/links"
-              className="bg-brand-cyanBlue text-brand-black px-4 py-2 rounded text-center font-semibold hover:bg-brand-darkCyan transition"
+              variant="primary"
             >
               Register Your Team
             </RippleButton>
             <RippleButton
               href="https://scinapsescience.com/"
-              className="border border-brand-black text-brand-black px-4 py-2 rounded text-center font-semibold hover:border-brand-cyanBlue hover:text-brand-cyanBlue transition"
+              variant="outlineLight"
             >
               Official USCC Website
             </RippleButton>

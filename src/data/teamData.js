@@ -19,7 +19,7 @@ export const teamMembers = [
   },
   {
     name: "Mukunthan Mahesh",
-    role: "Software Development Lead",
+    role: "Web Developer",
     image: "/team/mukunthanmahesh.jpg",
     linkedin: "https://www.linkedin.com/in/mukunthan-mahesh/"
   },

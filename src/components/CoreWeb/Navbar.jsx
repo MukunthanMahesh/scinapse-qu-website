@@ -201,14 +201,14 @@ export default function Navbar() {
             <RippleButton
               href="/links"
               size="sm"
-              className="bg-brand-cyanBlue text-brand-black px-4 py-2 rounded text-center font-semibold hover:bg-brand-darkCyan transition"
+              variant="primary"
             >
               Get Involved
             </RippleButton>
             <RippleButton
               href="/uscc"
               size="sm"
-              className="border border-brand-white px-4 py-2 rounded text-center font-semibold hover:border-brand-cyanBlue hover:text-brand-cyanBlue transition"
+              variant="outlineLight"
             >
               USCC
             </RippleButton>

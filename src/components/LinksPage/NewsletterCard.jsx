@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Mail } from "lucide-react";
+import RippleButton from "../UI/RippleButton";
 
 const NewsletterCard = () => {
   const [email, setEmail] = useState("");
@@ -40,13 +41,15 @@ const NewsletterCard = () => {
             className="w-full px-4 py-3 rounded-lg bg-gray-800 text-white border border-gray-600 focus:border-brand-cyanBlue focus:outline-none transition-colors"
           />
         </div>
-        <button
+        <RippleButton
           type="submit"
           disabled={isSubmitting}
-          className="w-full bg-brand-cyanBlue text-brand-black px-6 py-3 rounded-lg font-semibold hover:bg-brand-darkCyan transition-colors duration-200 disabled:opacity-50"
+          size="lg"
+          variant="primary"
+          className="w-full"
         >
           {isSubmitting ? "Subscribing..." : "Subscribe"}
-        </button>
+        </RippleButton>
       </form>
     </div>
   );
