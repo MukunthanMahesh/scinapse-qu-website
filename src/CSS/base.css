@@ -1,6 +1,14 @@
 @layer base {
+  html {
+    overflow-x: hidden;
+    overscroll-behavior-x: none;
+    overscroll-behavior-y: none
+  }
+
   body {
     @apply font-sans;
+    overflow-x: hidden;
+    overscroll-behavior-x: none;
   }
   
   /* Change default text selection highlight color to branded blue */
