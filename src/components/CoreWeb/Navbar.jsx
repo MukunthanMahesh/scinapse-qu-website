@@ -184,17 +184,11 @@ export default function Navbar() {
         {/* Buttons and Social Media Icons (Desktop Only, Grouped) - Right aligned */}
         <div className="hidden md:flex items-center gap-6 ml-auto">
 
-          {/* USE WHEN HIRING IS OPEN -- Hiring Indicator */}
-          {/* <div className="flex items-center gap-2 bg-green-500/20 text-green-400 px-3 py-1 rounded-full text-sm font-semibold">
-            <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
-            <span>Hiring Open</span>
-          </div> */}
-        
-          {/* USE WHEN USCC IS OPEN -- USCC Indicator
+          {/* USE WHEN HIRING/EVENTS ARE HAPPENING -- All Purpose Indicator */}
           <div className="flex items-center gap-2 bg-green-500/20 text-green-400 px-3 py-1 rounded-full text-sm font-semibold">
             <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
-            <span>USCC Open</span>
-          </div> */}
+            <span>Horizons Tickets on Sale!</span>
+          </div>
           
           {/* CTA Buttons */}
           <div className="flex gap-3">

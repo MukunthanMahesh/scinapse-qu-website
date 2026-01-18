@@ -89,7 +89,7 @@ export default function HeroBanner() {
                   size="md"
                   variant="primary"
                 >
-                  Get Pass
+                  Get Tickets
                 </RippleButton>
                 <RippleButton
                   href="/uscc"
