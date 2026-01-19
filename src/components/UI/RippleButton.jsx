@@ -64,16 +64,21 @@ export default function RippleButton({
 
     if (e.defaultPrevented) return;
 
-    if (href) {
-      e.preventDefault();
-      setTimeout(() => {
-        if (href.startsWith("/")) {
-          navigate(href);
-        } else {
-          window.location.href = href;
-        }
-      }, 150);
+    if (!href) return;
+
+    // For links that should open in a new tab, let the browser handle navigation
+    if (props.target === "_blank") {
+      return;
     }
+
+    e.preventDefault();
+    setTimeout(() => {
+      if (href.startsWith("/")) {
+        navigate(href);
+      } else {
+        window.location.href = href;
+      }
+    }, 150);
   };
 
   return (
