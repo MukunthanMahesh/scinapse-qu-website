@@ -10,8 +10,7 @@ export default function Team() {
       <motion.section
         variants={slideUpVariant}
         initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, amount: 0.2 }}
+        animate="visible"
         className="max-w-7xl mx-auto px-6 py-16"
       >
         <div className="text-center mb-16">

@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
-import { ScrollSmoother } from "gsap/all";
+import { ScrollSmoother, ScrollTrigger } from "gsap/all";
 
 export default function ScrollToTop() {
   const location = useLocation();
@@ -42,6 +42,19 @@ export default function ScrollToTop() {
         window.scrollTo({ top: 0, behavior: "smooth" });
       }
     }
+
+    // After route change, refresh GSAP so content/layout (especially on mobile) is correctly measured
+    setTimeout(() => {
+      try {
+        const currentSmoother = ScrollSmoother.get();
+        if (currentSmoother) {
+          currentSmoother.refresh();
+        }
+        ScrollTrigger.refresh();
+      } catch {
+        // Fail silently if GSAP isn't ready
+      }
+    }, 100);
   }, [location.pathname, location.hash]);
 
   return null;
