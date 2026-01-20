@@ -37,12 +37,12 @@ const steps = [
     desc: (
     <>
       Any undergraduate student interested in STEM research is encouraged to apply in teams of 2–4. <strong>
-        Register through the <a className="underline" href="https://scinapsescience.com/register/uscc-2020-2021-ht3be-cejga-p5ykc-w4w45-nt6e7" target="_blank" rel="noopener noreferrer">official USCC site</a>
+        Register through the <a className="text-brand-cyanHue" href="https://scinapsescience.com/register/uscc-2020-2021-ht3be-cejga-p5ykc-w4w45-nt6e7" target="_blank" rel="noopener noreferrer">official USCC site</a>
       </strong>, not through SciNapse Queen's. Registration closes on {formatDateNoYear(uscc_registration_end_date)} @ 11:59 PM EDT with a fee of $80 per group (Catering + Hotel Expenses included). 
       <p>
         <br />
       </p>
-      After registering for USCC as a team OR if you are looking for potential team members, please fill in this <a className="text-brand-cyanHue" href="https://docs.google.com/forms/d/e/1FAIpQLSfUvGPWO3LaxsORkjUR8gKOA62MR-DFbmsEK2OPvucHQkTbSg/viewform">form</a> to let SciNapse Queen’s know! 
+      After registering for USCC as a team OR if you are looking for potential team members, please fill in this <a className="text-brand-cyanHue" target="_blank" href="https://docs.google.com/forms/d/e/1FAIpQLSfUvGPWO3LaxsORkjUR8gKOA62MR-DFbmsEK2OPvucHQkTbSg/viewform">form</a> to let SciNapse Queen’s know! 
     </>
     ),
     // Registration acts like an "open until" phase, so we only track the end.
@@ -83,7 +83,7 @@ const steps = [
         : `Presentation rounds will finish on ${formatDate(presentation_round_end_date)} @ The University of Ottawa`,
     desc: (
     <>
-      The top 10%-15% of teams per university will qualify for Round 2 which consists of a scientific poster presentation at the University of Ottawa from {formatDate(presentation_round_start_date)} - {formatDate(presentation_round_end_date)}. The weekend will consist of poster presentations, workshops, networking, and an award ceremony! The top 10 teams will have their abstracts published, and the overall winner in each division will have their proposals published in the URNCT Journal. If you need more clarification, check out this <a className="text-brand-cyanHue" href="https://docs.google.com/document/d/1ZcS2f30aCVFR0AkIWIk8e19w3OSCb7uD41DSuajMPss/edit?tab=t.0">information doc!</a>
+      The top 10%-15% of teams per university will qualify for Round 2 which consists of a scientific poster presentation at the University of Ottawa from {formatDate(presentation_round_start_date)} - {formatDate(presentation_round_end_date)}. The weekend will consist of poster presentations, workshops, networking, and an award ceremony! The top 10 teams will have their abstracts published, and the overall winner in each division will have their proposals published in the URNCT Journal. If you need more clarification, check out this <a className="text-brand-cyanHue" target="_blank" href="https://docs.google.com/document/d/1ZcS2f30aCVFR0AkIWIk8e19w3OSCb7uD41DSuajMPss/edit?tab=t.0">information doc!</a>
     </>
     ),
     // Presentation weekend also has a start and end.
