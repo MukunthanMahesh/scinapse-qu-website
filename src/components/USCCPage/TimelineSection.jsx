@@ -106,7 +106,7 @@ export default function TimelineSection() {
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.2 }}
-        className="max-w-7xl mx-auto px-8 md:px-4 py-16"
+        className="max-w-7xl mx-auto px-6 md:px-4 py-16"
       >
         {/* Section heading */}
         <div className="text-center mb-16">

@@ -12,7 +12,7 @@ export default function HeroBanner() {
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.2 }}
-        className="min-h-[calc(100vh-72px)] max-w-8xl mx-auto flex flex-col-reverse md:flex-row items-stretch px-4 lg:px-8"
+        className="min-h-[calc(100vh-72px)] max-w-8xl mx-auto flex flex-col-reverse md:flex-row items-stretch px-6 lg:px-8"
       >
         {/* Image side */}
         <div className="w-full md:w-1/2 flex-shrink-0 flex items-stretch md:mb-0">
@@ -57,7 +57,7 @@ export default function HeroBanner() {
               </span>
             </h1>
  
-            <p className="text-sm sm:text-base md:text-lg text-brand-white text-center md:text-left">
+            <p className="text-sm sm:text-base md:text-lg text-brand-white/80 text-center md:text-left">
               Join us for a conference dedicated to exploring the interdisciplinary intersections of STEM through space and astronomy, bringing together expert speakers from engineering, physics, and medicine alongside a competitive case competition with opportunities for an abstract publication and cash prizes.  
             </p>
 
