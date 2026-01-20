@@ -38,7 +38,7 @@ const AboutSection = () => {
         <div className="grid md:grid-cols-2 gap-10 items-start mb-12">
           {/* Left: Text + CTAs */}
           <div className="max-w-xl">
-            <p className="font-sans text-lg text-gray-200 mb-12 md:mb-6 text-justify md:text-left">
+            <p className="font-sans text-sm sm:text-base md:text-lg text-brand-white/80 mb-12 md:mb-6 text-justify md:text-left">
               SciNapse Queen’s leads Queen’s University’s participation in the Undergraduate Science Case Competition (USCC), an Ontario-wide initiative where teams of 2 to 4 students design interdisciplinary research proposals.
               <br /><br />
               SciNapse coordinates Queen’s Round 1 internal review by faculty members and doctoral researchers, supports participants through year-round programming, and advances top teams to the provincial finals in Ottawa.

@@ -38,7 +38,7 @@ const AboutSection = () => {
         <div className="grid md:grid-cols-2 gap-10 items-start mb-12">
           {/* Left: Text + CTAs */}
           <div className="max-w-xl">
-            <p className="font-sans text-lg text-gray-200 mb-12 md:mb-6 text-justify md:text-left">
+            <p className="font-sans text-sm sm:text-base md:text-lg text-brand-white/80 mb-12 md:mb-6 text-justify md:text-left">
               The Undergraduate Science Case Competition (USCC) is a student-led research competition that gives undergraduates structured experience in designing and communicating research. Teams of 2–4 students work together to develop interdisciplinary proposals that respond to a real scientific challenge.
               <br /><br />
               USCC combines mentorship, feedback, and presentation experience to mirror the expectations of academic conferences and research environments—while remaining accessible to students at all levels of prior research experience.
