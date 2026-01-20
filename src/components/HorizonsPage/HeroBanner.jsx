@@ -42,9 +42,10 @@ export default function HeroBanner() {
                 />
               </a>
             </div>
-            <p className="text-[11px] sm:text-xs uppercase tracking-widest text-brand-white text-center md:text-left">
+            <p className="text-[11px] sm:text-xs uppercase text-brand-cyanBlue text-center md:text-left">
               March 7, 2026 • Queen&apos;s University
             </p>
+
             <div className="hidden md:block">
               <FluidText
                 text="STEM Horizons: Space & Medicine"

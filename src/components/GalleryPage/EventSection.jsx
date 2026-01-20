@@ -51,13 +51,13 @@ export default function EventSection({ event }) {
       {/* Event title and date */}
       <div>
         <span className="hidden md:block">
-          <FluidText text={event.title} baseColor="text-brand-black" size="text-3xl" />
+          <FluidText text={event.title} baseColor="text-brand-white" size="text-3xl" />
         </span>
         <span className="block md:hidden">
-          <h2 className="text-2xl font-bold text-brand-black leading-tight mb-1">{event.title}</h2>
+          <h2 className="text-2xl font-bold text-brand-white leading-tight mb-1">{event.title}</h2>
         </span>
       </div>
-      <div className="text-gray-500 mb-3">{event.date}</div>
+      <div className="text-brand-white/60 mb-3">{event.date}</div>
       <div className="relative">
         {/* Animate the height of the image grid when toggling showAll */}
         <motion.div
@@ -107,7 +107,7 @@ export default function EventSection({ event }) {
             type="button"
             onClick={handleToggle}
             disabled={buttonDisabled}
-            variant="dark"
+            variant="primary"
           >
             {showAll ? 'Show Less' : `View All Photos`}
           </RippleButton>
