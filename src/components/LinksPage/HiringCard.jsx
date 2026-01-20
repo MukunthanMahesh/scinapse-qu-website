@@ -25,10 +25,12 @@ const HiringCard = () => {
       
       
       <RippleButton
-        className="inline-flex items-center justify-center gap-2 bg-brand-cyanBlue text-brand-black px-6 py-3 rounded-lg font-semibold transition-colors duration-200 mt-auto opacity-50 cursor-not-allowed pointer-events-none"
+        size="lg"
+        variant="primary"
         disabled={true}
         aria-disabled="true"
         tabIndex={-1}
+        className="mt-auto"
       >
         See you next year! 
         {/* <ArrowRight className="w-4 h-4" /> */}

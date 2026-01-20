@@ -85,7 +85,7 @@ export default function Navbar() {
               Home
               <span
                 className={`
-                  absolute left-0 -bottom-1 h-1 w-full bg-brand-cyanBlue rounded
+                  absolute left-0 -bottom-1 h-0.5 w-full bg-brand-cyanBlue rounded
                   transition-transform duration-300 ease-in-out
                   ${currentPath === "/" ? "scale-x-100" : "scale-x-0"}
                   origin-left
@@ -102,9 +102,26 @@ export default function Navbar() {
               USCC
               <span
                 className={`
-                  absolute left-0 -bottom-1 h-1 w-full bg-brand-cyanBlue rounded
+                  absolute left-0 -bottom-1 h-0.5 w-full bg-brand-cyanBlue rounded
                   transition-transform duration-300 ease-in-out
                   ${currentPath === "/uscc" ? "scale-x-100" : "scale-x-0"}
+                  origin-left
+                  block
+                `}
+              />
+            </Link>
+          </li>
+          <li className="relative">
+            <Link
+              to="/stem-horizons"
+              className={`hover:text-brand-cyanBlue transition-colors duration-300 ${currentPath === "/stem-horizons" ? "text-brand-cyanBlue" : ""} pb-1`}
+            >
+              STEM Horizons 2026 
+              <span
+                className={`
+                  absolute left-0 -bottom-1 h-0.5 w-full bg-brand-cyanBlue rounded
+                  transition-transform duration-300 ease-in-out
+                  ${currentPath === "/stem-horizons" ? "scale-x-100" : "scale-x-0"}
                   origin-left
                   block
                 `}
@@ -119,7 +136,7 @@ export default function Navbar() {
               Gallery
               <span
                 className={`
-                  absolute left-0 -bottom-1 h-1 w-full bg-brand-cyanBlue rounded
+                  absolute left-0 -bottom-1 h-0.5 w-full bg-brand-cyanBlue rounded
                   transition-transform duration-300 ease-in-out
                   ${currentPath === "/gallery" ? "scale-x-100" : "scale-x-0"}
                   origin-left
@@ -136,26 +153,9 @@ export default function Navbar() {
               Team
               <span
                 className={`
-                  absolute left-0 -bottom-1 h-1 w-full bg-brand-cyanBlue rounded
+                  absolute left-0 -bottom-1 h-0.5 w-full bg-brand-cyanBlue rounded
                   transition-transform duration-300 ease-in-out
                   ${currentPath === "/team" ? "scale-x-100" : "scale-x-0"}
-                  origin-left
-                  block
-                `}
-              />
-            </Link>
-          </li>
-          <li className="relative">
-            <Link
-              to="/about"
-              className={`hover:text-brand-cyanBlue transition-colors duration-300 ${currentPath === "/about" ? "text-brand-cyanBlue" : ""} pb-1`}
-            >
-              About
-              <span
-                className={`
-                  absolute left-0 -bottom-1 h-1 w-full bg-brand-cyanBlue rounded
-                  transition-transform duration-300 ease-in-out
-                  ${currentPath === "/about" ? "scale-x-100" : "scale-x-0"}
                   origin-left
                   block
                 `}
@@ -167,31 +167,30 @@ export default function Navbar() {
         {/* Buttons and Social Media Icons (Desktop Only, Grouped) - Right aligned */}
         <div className="hidden md:flex items-center gap-6 ml-auto">
 
-          {/* USE WHEN HIRING IS OPEN -- Hiring Indicator */}
-          {/* <div className="flex items-center gap-2 bg-green-500/20 text-green-400 px-3 py-1 rounded-full text-sm font-semibold">
-            <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
-            <span>Hiring Open</span>
-          </div> */}
-        
-          {/* USE WHEN USCC IS OPEN -- USCC Indicator
+          {/* USE WHEN HIRING/EVENTS ARE HAPPENING -- All Purpose Indicator */}
           <div className="flex items-center gap-2 bg-green-500/20 text-green-400 px-3 py-1 rounded-full text-sm font-semibold">
             <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
-            <span>USCC Open</span>
-          </div> */}
+            <a
+              href="https://www.bouncelife.com/events/696846047c69da5d5990e8eb"
+              target="_blank"
+              rel="noopener noreferrer">
+              <span>Horizons Tickets on Sale!</span>
+            </a>
+          </div>
           
           {/* CTA Buttons */}
           <div className="flex gap-3">
             <RippleButton
-              href="/links"
+              href="/contact"
               size="sm"
-              className="bg-brand-cyanBlue text-brand-black px-4 py-2 rounded text-center font-semibold hover:bg-brand-darkCyan transition"
+              variant="primary"
             >
-              Get Involved
+              Contact
             </RippleButton>
             <RippleButton
               href="/uscc"
               size="sm"
-              className="border border-brand-white px-4 py-2 rounded text-center font-semibold hover:border-brand-cyanBlue hover:text-brand-cyanBlue transition"
+              variant="outlineLight"
             >
               USCC
             </RippleButton>
@@ -238,19 +237,19 @@ export default function Navbar() {
           <nav className="flex flex-col items-center space-y-6 text-base font-medium">
             <Link to="/" onClick={() => setIsOpen(false)} className={`hover:text-brand-darkCyan pb-1 border-b-2 transition ${currentPath === "/" ? "border-brand-cyanBlue text-brand-cyanBlue" : "border-transparent"}`}>Home</Link>
             <Link to="/uscc" onClick={() => setIsOpen(false)} className={`hover:text-brand-darkCyan pb-1 border-b-2 transition ${currentPath === "/uscc" ? "border-brand-cyanBlue text-brand-cyanBlue" : "border-transparent"}`}>USCC</Link>
+            <Link to="/stem-horizons" onClick={() => setIsOpen(false)} className={`hover:text-brand-darkCyan pb-1 border-b-2 transition ${currentPath === "/stem-horizons" ? "border-brand-cyanBlue text-brand-cyanBlue" : "border-transparent"}`}>STEM Horizons 2026</Link>
             <Link to="/gallery" onClick={() => setIsOpen(false)} className={`hover:text-brand-darkCyan pb-1 border-b-2 transition ${currentPath === "/gallery" ? "border-brand-cyanBlue text-brand-cyanBlue" : "border-transparent"}`}>Gallery</Link>
             <Link to="/team" onClick={() => setIsOpen(false)} className={`hover:text-brand-darkCyan pb-1 border-b-2 transition ${currentPath === "/team" ? "border-brand-cyanBlue text-brand-cyanBlue" : "border-transparent"}`}>Team</Link>
-            <Link to="/about" onClick={() => setIsOpen(false)} className={`hover:text-brand-darkCyan pb-1 border-b-2 transition ${currentPath === "/about" ? "border-brand-cyanBlue text-brand-cyanBlue" : "border-transparent"}`}>About</Link>
           </nav>
 
           {/* Call to Action Buttons */}
           <div className="flex flex-col gap-3">
             <Link
-              to="/links"
+              to="/contact"
               onClick={() => setIsOpen(false)}
               className="text-center bg-brand-cyanBlue hover:bg-brand-darkCyan text-brand-black font-semibold px-4 py-2 rounded hover:brightness-110 transition"
             >
-              Get Involved
+              Contact
             </Link>
             <Link
               to="/uscc"

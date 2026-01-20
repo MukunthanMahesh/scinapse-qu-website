@@ -7,11 +7,14 @@ import Gallery from "./pages/Gallery";
 import USCC from "./pages/USCC";
 import About from "./pages/About";
 import Team from "./pages/Team";
+import Contact from "./pages/Contact";
 import Links from "./pages/Links";
+import Horizons from "./pages/Horizons";
 import Navbar from "./components/CoreWeb/Navbar";
 import Footer from "./components/CoreWeb/Footer";
 import ScrollToTop from "./components/CoreWeb/ScrollToTop";
 import { Analytics } from "@vercel/analytics/react";
+import SmoothScroll from "./components/Layout/SmoothScroller";
 
 export default function App() {
   const bootDone = useAppBoot(); // preload fonts/assets
@@ -55,19 +58,24 @@ export default function App() {
       <div className="min-h-screen flex flex-col bg-brand-white text-brand-black">
         <BrowserRouter>
           <ScrollToTop />
-          <Navbar />
-          <main className="flex-1 pt-[72px]">
-            <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/gallery" element={<Gallery />} />
-              <Route path="/uscc" element={<USCC />} />
-              <Route path="/about" element={<About />} />
-              <Route path="/team" element={<Team />} />
-              <Route path="/links" element={<Links />} />
-            </Routes>
-            <Analytics />
-          </main>
-          <Footer />
+            <Navbar />
+            <SmoothScroll>
+
+              <main className="flex-1 pt-[72px]">
+                <Routes>
+                  <Route path="/" element={<Home />} />
+                  <Route path="/gallery" element={<Gallery />} />
+                  <Route path="/uscc" element={<USCC />} />
+                  <Route path="/stem-horizons" element={<Horizons />} />
+                  <Route path="/about" element={<About />} />
+                  <Route path="/team" element={<Team />} />
+                  <Route path="/links" element={<Links />} />
+                  <Route path="/contact" element={<Contact />} />
+                </Routes>
+                <Analytics />
+              </main>
+              <Footer />
+            </SmoothScroll>
         </BrowserRouter>
       </div>
     </>

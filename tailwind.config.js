@@ -19,6 +19,8 @@ export default {
       fontFamily: {
         sans: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
         crimson: ['Crimson Text', 'ui-serif', 'Georgia', 'serif'],
+        'times-condensed': ['"Times Condensed"', 'Times', 'serif'],
+        'editorial-new': ['"Editorial New"', 'serif'],
       },
       SPACING: {
         navbar: "72px"

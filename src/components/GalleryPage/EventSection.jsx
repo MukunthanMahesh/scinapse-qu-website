@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import MasonryGrid from './MasonryGrid.jsx';
 import FluidText from '../CoreWeb/FluidText.jsx';
+import RippleButton from '../UI/RippleButton.jsx';
 
 // Hook to detect mobile screens
 function useIsMobile() {
@@ -50,13 +51,13 @@ export default function EventSection({ event }) {
       {/* Event title and date */}
       <div>
         <span className="hidden md:block">
-          <FluidText text={event.title} baseColor="text-brand-black" size="text-3xl" />
+          <FluidText text={event.title} baseColor="text-brand-white" size="text-3xl" />
         </span>
         <span className="block md:hidden">
-          <h2 className="text-2xl font-bold text-brand-black leading-tight mb-1">{event.title}</h2>
+          <h2 className="text-2xl font-bold text-brand-white leading-tight mb-1">{event.title}</h2>
         </span>
       </div>
-      <div className="text-gray-500 mb-3">{event.date}</div>
+      <div className="text-brand-white/60 mb-3">{event.date}</div>
       <div className="relative">
         {/* Animate the height of the image grid when toggling showAll */}
         <motion.div
@@ -102,13 +103,14 @@ export default function EventSection({ event }) {
       {/* Show toggle button if there are more images to display */}
       {hasMoreImages && (
         <div className="text-center mt-8 md:mt-4">
-          <button
+          <RippleButton
+            type="button"
             onClick={handleToggle}
             disabled={buttonDisabled}
-            className="bg-brand-black text-brand-white px-4 py-2 rounded text-center hover:bg-brand-cyanBlue disabled:opacity-50 transition relative overflow-hidden select-none"
+            variant="primary"
           >
             {showAll ? 'Show Less' : `View All Photos`}
-          </button>
+          </RippleButton>
         </div>
       )}
     </section>

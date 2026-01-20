@@ -18,7 +18,7 @@
 
 /* Prevent layout shifts during image loading */
 .image-placeholder {
-  background: #f8fafc;
+  background: #020617; /* dark slate */
   animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
 }
 

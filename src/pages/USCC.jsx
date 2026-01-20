@@ -4,10 +4,10 @@ import TimelineSection from "../components/USCCPage/TimelineSection";
 
 export default function USCC() {
   return (
-    <>
-    <AboutSection />
-    <TimelineSection />
-    <FAQSection />
-    </>
+    <div className="bg-zinc-950 text-brand-white">
+      <AboutSection />
+      <TimelineSection />
+      <FAQSection />
+    </div>
   );
-  }
+}

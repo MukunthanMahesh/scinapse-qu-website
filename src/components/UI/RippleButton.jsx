@@ -1,57 +1,98 @@
-import React, { useRef, useEffect } from "react";
+import React, { useRef } from "react";
 import { useNavigate } from "react-router-dom"; 
 
-export default function RippleButton({ children, className = "", size = "md", href, ...props }) {
+export default function RippleButton({
+  children,
+  className = "",
+  size = "md",
+  variant = "primary",
+  href,
+  onClick,
+  type = "button",
+  ...props
+}) {
   const btnRef = useRef();
   const navigate = useNavigate();
 
   const sizeClasses = {
-  sm: "text-sm px-3 py-1",
-  md: "px-4 py-2 text-base",
-  lg: "text-lg px-6 py-3",
-  };    
+    sm: "text-sm px-3 py-1.5",
+    md: "text-sm md:text-base px-4 py-2",
+    lg: "text-base md:text-lg px-6 py-3",
+  };
 
-  useEffect(() => {
+  const baseClasses =
+    "relative overflow-hidden select-none inline-flex items-center justify-center rounded font-semibold transition focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-cyanBlue/70";
+
+  const variantClasses = {
+    // Cyan filled button on light/dark backgrounds
+    primary: "bg-brand-cyanBlue text-brand-black hover:bg-brand-darkCyan",
+    // Dark background button that highlights to cyan on hover
+    dark: "bg-brand-black text-brand-white hover:bg-brand-cyanBlue",
+    // Outline button for dark backgrounds (e.g., navbar)
+    outlineLight:
+      "border border-brand-white text-brand-white bg-transparent hover:border-brand-cyanBlue hover:text-brand-cyanBlue",
+    // Text-style button for inline CTAs (e.g., Read more)
+    link: "bg-transparent text-brand-cyanBlue hover:underline px-0 py-0",
+    // Disabled state (used when `disabled` prop is true)
+    disabled:
+      "bg-brand-cyanBlue text-brand-black opacity-50 cursor-not-allowed pointer-events-none",
+  };
+
+  const Element = href ? "a" : "button";
+  const isDisabled = props.disabled;
+  const resolvedVariant = isDisabled ? "disabled" : variant;
+
+  const handleClick = (e) => {
     const btn = btnRef.current;
+    if (!btn) return;
 
-    const handleClick = (e) => {
-      e.preventDefault(); // stop instant navigation
+    const ripple = document.createElement("span");
+    ripple.className = "ripple";
 
-      // Ripple
-      const ripple = document.createElement("span");
-      ripple.className = "ripple";
+    const rect = btn.getBoundingClientRect();
+    const rippleSize = Math.max(rect.width, rect.height);
+    ripple.style.width = ripple.style.height = `${rippleSize}px`;
+    ripple.style.left = `${e.clientX - rect.left - rippleSize / 2}px`;
+    ripple.style.top = `${e.clientY - rect.top - rippleSize / 2}px`;
 
-      const rect = btn.getBoundingClientRect();
-      const size = Math.max(rect.width, rect.height);
-      ripple.style.width = ripple.style.height = `${size}px`;
-      ripple.style.left = `${e.clientX - rect.left - size / 2}px`;
-      ripple.style.top = `${e.clientY - rect.top - size / 2}px`;
+    btn.appendChild(ripple);
+    setTimeout(() => ripple.remove(), 600);
 
-      btn.appendChild(ripple);
-      setTimeout(() => ripple.remove(), 600);
+    if (onClick) {
+      onClick(e);
+    }
 
-      // Delay navigation
-      setTimeout(() => {
-        if (href.startsWith("/")) {
-          navigate(href); // internal routing
-        } else {
-          window.location.href = href; // full page load
-        }
-      }, 150); // delay adjuster
-    };
+    if (e.defaultPrevented) return;
 
-    btn.addEventListener("click", handleClick);
-    return () => btn.removeEventListener("click", handleClick);
-  }, [href]);
+    if (!href) return;
+
+    // For links that should open in a new tab, let the browser handle navigation
+    if (props.target === "_blank") {
+      return;
+    }
+
+    e.preventDefault();
+    setTimeout(() => {
+      if (href.startsWith("/")) {
+        navigate(href);
+      } else {
+        window.location.href = href;
+      }
+    }, 150);
+  };
 
   return (
-    <a
+    <Element
       ref={btnRef}
       href={href}
-      className={`relative overflow-hidden select-none ${sizeClasses[size]} ${className}`}
+      type={!href ? type : undefined}
+      onClick={handleClick}
+      className={`${baseClasses} ${sizeClasses[size]} ${
+        variantClasses[resolvedVariant] || ""
+      } ${className}`}
       {...props}
     >
       {children}
-    </a>
+    </Element>
   );
 }

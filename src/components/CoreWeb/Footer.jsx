@@ -3,7 +3,7 @@ import RippleButton from "../UI/RippleButton";
 
 export default function Footer() {
   return (
-    <footer className="bg-brand-black text-brand-white py-8 px-2.5 mt-10">
+    <footer className="bg-brand-black text-brand-white py-8 px-2.5 mt-0">
       <div className="max-w-7xl mx-auto overflow-hidden grid grid-cols-1 sm:grid-cols-[1fr_2fr_1.5fr] gap-6">
         
         {/* COLUMN 1: Footer About Section */}
@@ -38,9 +38,7 @@ export default function Footer() {
             <h3 className="text-lg font-semibold mb-2">Quick Links</h3>
             <ul className="space-y-4 text-sm">
               <p className="text-sm text-brand-white/60 mb-4">Did you miss anything?</p>
-              <li><a href="/about" className="hover:underline">About Us</a></li>
               <li><a href="/team" className="hover:underline">Our Team</a></li>
-              <li><a href="/links" className="hover:underline">Get Involved</a></li>
               <li><a href="mailto:scinapse@clubs.queensu.ca?subject=Inquiry%20from%20Website" className="hover:underline">Contact</a></li>
             </ul>
           </div>
@@ -109,8 +107,11 @@ export default function Footer() {
                 placeholder="Your email"
                 className="px-3 py-2 rounded-md text-sm bg-brand-black text-white border border-brand-white/20 w-full sm:w-auto mb-4 sm:mb-0 focus:outline-none focus:ring-2 focus:ring-brand-white/60 transition"
               />
-              
-              <RippleButton type="submit" className="px-4 py-2 text-sm bg-brand-cyanBlue text-brand-black rounded hover:bg-brand-white/60 transition">
+              <RippleButton
+                type="submit"
+                size="sm"
+                variant="primary"
+              >
                 Subscribe
               </RippleButton>
             </form>

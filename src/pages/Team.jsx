@@ -4,39 +4,28 @@ import { slideUpVariant } from "../utils/motionVariants";
 import { teamMembers } from "../data/teamData.js";
 
 export default function Team() {
-    return (
-    <div className="min-h-screen bg-brand-white">
+
+  return (
+    <div className="min-h-screen bg-zinc-950 text-brand-white">
       <motion.section
         variants={slideUpVariant}
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.2 }}
-        className="max-w-7xl mx-auto px-4 py-16"
+        className="max-w-7xl mx-auto px-6 py-16"
       >
-        <div className="text-center">
-          {/* Subtitle */}
-          <p className="text-brand-teal text-sm uppercase tracking-widest mb-2">
-            The SciNapse Network's
-          </p>
-          {/* Main title */}
-          <h1 className="text-brand-black font-sans text-4xl md:text-5xl font-bold mb-6">
-            2025 Executive Team
+        <div className="text-center mb-16">
+          <h1 className="text-3xl md:text-4xl font-bold text-brand-white">
+            The 2025–2026 Executive Team
           </h1>
-          {/* Description */}
-          <p className="text-md text-gray-800 max-w-3xl mx-auto">
-            We sync teamwork, logistics,
-            outreach, development, and finance to empower undergraduate research at
-            Queen’s.
-          </p>
+        </div>
+
+        <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 items-stretch">
+          {teamMembers.map((member, idx) => (
+            <TeamCard key={member.name + idx} {...member} />
+          ))}
         </div>
       </motion.section>
-
-      {/* The Team */}
-      <div className="grid grid-cols-1 md:grid-cols-4 gap-8 max-w-6xl mx-auto ">
-        {teamMembers.map((member, idx) => (
-          <TeamCard key={member.name + idx} {...member} />
-        ))}
-      </div>
     </div>
   );
 }

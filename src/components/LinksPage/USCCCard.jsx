@@ -23,7 +23,9 @@ const USCCCard = () => {
       
       <RippleButton
         href="https://scinapsescience.com/register/uscc-2020-2021-ht3be-cejga-p5ykc-w4w45-nt6e7"
-        className="inline-flex items-center justify-center gap-2 bg-brand-cyanBlue text-brand-black px-6 py-3 rounded-lg font-semibold hover:bg-brand-darkCyan transition-colors duration-200 mt-auto"
+        size="lg"
+        variant="primary"
+        className="mt-auto"
       >
         Register Team <ArrowRight className="w-4 h-4" />
       </RippleButton>
