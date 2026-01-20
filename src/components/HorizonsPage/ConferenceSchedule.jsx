@@ -16,14 +16,14 @@ const scheduleItems = [
   },
   {
     time: "10:15 AM",
-    title: "Keynote 1 – Dr. Philippe Di Stefano",
-    description: "Keynote talk by Dr. Di Stefano.",
+    title: "Keynote 1",
+    description: "Keynote talk 1.",
     type: "keynote",
   },
   {
     time: "10:45 AM",
-    title: "Keynote 2 – Dr. Kristine Spekkens",
-    description: "Keynote talk by Dr. Spekkens.",
+    title: "Keynote 2",
+    description: "Keynote talk 2.",
     type: "keynote",
   },
   {
@@ -34,14 +34,14 @@ const scheduleItems = [
   },
   {
     time: "11:25 AM",
-    title: "Keynote 3 – Dr. Andrew Kerr",
-    description: "Keynote talk by Dr. Kerr.",
+    title: "Keynote 3",
+    description: "Keynote talk 3.",
     type: "keynote",
   },
   {
     time: "11:55 AM",
-    title: "Keynote 4 – TBA",
-    description: "Details to be confirmed closer to the event.",
+    title: "Keynote 4",
+    description: "Keynote talk 4.",
     type: "keynote",
   },
   {
