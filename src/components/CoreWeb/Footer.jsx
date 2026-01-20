@@ -3,7 +3,7 @@ import RippleButton from "../UI/RippleButton";
 
 export default function Footer() {
   return (
-    <footer className="bg-brand-black text-brand-white py-8 px-2.5 mt-10">
+    <footer className="bg-brand-black text-brand-white py-8 px-2.5 mt-0">
       <div className="max-w-7xl mx-auto overflow-hidden grid grid-cols-1 sm:grid-cols-[1fr_2fr_1.5fr] gap-6">
         
         {/* COLUMN 1: Footer About Section */}

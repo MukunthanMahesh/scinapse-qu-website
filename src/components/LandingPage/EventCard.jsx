@@ -1,4 +1,3 @@
-import { useState, useEffect } from "react";
 import { ArrowRight } from "lucide-react";
 import RippleButton from "../UI/RippleButton";
 
@@ -11,108 +10,60 @@ const EventCard = ({
   imageUrl,
   link
 }) => {
-  const [showModal, setShowModal] = useState(false);
-
-  // Handle escape key and body scroll lock
-  useEffect(() => {
-    const handleEscape = (e) => {
-      if (e.key === 'Escape') {
-        setShowModal(false);
-      }
-    };
-
-    if (showModal) {
-      document.addEventListener('keydown', handleEscape);
-      document.body.style.overflow = 'hidden';
-    }
-
-    return () => {
-      document.removeEventListener('keydown', handleEscape);
-      document.body.style.overflow = 'auto';
-    };
-  }, [showModal]);
 
   return (
     <>
-      {/* Card */}
-      <div className="overflow-hidden shadow rounded-xl bg-brand-black hover:bg-brand-black/90 text-brand-white border-brand-black hover:-translate-y-1 transition-transform duration-300 flex flex-col h-[400px]">
-
-        {/* Image + Date Badge */}
-        <div
-          className="relative h-48 bg-cover bg-center border border-brand-black"
-          style={{ backgroundImage: `url(${imageUrl})` }}
-        >
-          <div className="absolute top-2 right-2 rounded bg-brand-white text-brand-black px-2 py-1 text-sm font-semibold border border-brand-black">
-            {day} <span className="font-normal ml-1">{monthYear}</span>
+      {/* Row-style card (no image) */}
+      <div className="rounded-2xl bg-zinc-900/70 hover:bg-zinc-900 text-brand-white border border-white/10 hover:border-white/20 transition-colors duration-200 px-4 py-4 sm:px-5 sm:py-5">
+        <div className="flex gap-4 sm:gap-6 items-start">
+          {/* Date block */}
+          <div className="flex-shrink-0">
+            <div className="h-16 w-16 rounded-lg border border-white/25 bg-black/60 flex flex-col items-center justify-center text-[11px] sm:text-xs uppercase tracking-wide">
+              <span className="text-lg sm:text-xl font-semibold leading-none">
+                {day}
+              </span>
+              <span className="mt-1 text-[9px] sm:text-[10px] text-gray-400">
+                {monthYear}
+              </span>
+            </div>
           </div>
-        </div>
 
-        {/* Text */}
-        <div className="font-sans p-4 flex flex-col gap-2 text-white">
-          <h3 className="text-xl font-bold leading-snug">{title}</h3>
+          {/* Text content */}
+          <div className="flex-1 flex flex-col gap-1.5 sm:gap-2 font-sans">
+            <h3 className="text-base sm:text-lg font-semibold leading-snug">
+              {title}
+            </h3>
 
-        {/* Location */}
-        <p className="text-sm text-gray-400 flex items-center gap-1">
-          <span role="img" aria-label="location">📍</span>
-          <a
-            href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(location)}`}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hover:underline text-brand-cyanHue"
-          >
-            {location}
-          </a>
-        </p>
-
-          {/* Description */}
-          <p className="text-md text-gray-300 line-clamp-3">{fullDetails}</p>
-
-          {/* Read More CTA */}
-          <RippleButton
-            type="button"
-            onClick={() => setShowModal(true)}
-            variant="link"
-            className="mt-auto flex items-center gap-1"
-          >
-            Read more <ArrowRight className="w-4 h-4" />
-          </RippleButton>
-        </div>
-      </div>
-
-      {/* Modal */}
-      {showModal && (
-        <div 
-          className="fixed inset-0 bg-black bg-opacity-60 z-50 flex items-center justify-center px-4"
-          onClick={() => setShowModal(false)}
-        >
-          <div 
-            className="bg-brand-white text-black p-6 max-w-lg w-full rounded shadow-lg relative"
-            onClick={(e) => e.stopPropagation()}
-          >
-            <button
-              className="absolute top-2 right-3 text-black text-xl hover:text-gray-600 transition-colors"
-              onClick={() => setShowModal(false)}
-            >
-              &times;
-            </button>
-            <h3 className="text-2xl font-bold mb-2">{title}</h3>
-            <p className="text-sm text-gray-700 mb-4">
-              <span className="font-semibold">Location: </span>
+            <p className="text-xs sm:text-sm text-gray-400">
               <a
                 href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(location)}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-blue-500 hover:underline"
+                className="hover:text-brand-cyanBlue hover:underline transition-colors"
               >
                 {location}
               </a>
             </p>
 
+            <p className="text-xs sm:text-sm text-gray-300">
+              {fullDetails}
+            </p>
 
-            <p className="text-base text-gray-800">{fullDetails}</p>
+            {link && (
+              <div className="mt-3">
+                <RippleButton
+                  size="sm"
+                  href={link}
+                  variant="outlineLight"
+                  className="px-3 py-1 text-xs sm:text-sm inline-flex items-center gap-1 border-white/30"
+                >
+                  VIEW <ArrowRight className="w-3 h-3" />
+                </RippleButton>
+              </div>
+            )}
           </div>
         </div>
-      )}
+      </div>
     </>
   );
 };

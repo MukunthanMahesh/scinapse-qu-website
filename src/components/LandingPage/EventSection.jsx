@@ -7,82 +7,59 @@ import { slideUpVariant } from "../../utils/motionVariants";
 
 const events = [
   {
-    day: "27",
-    weekday: "Mon",
-    monthYear: "Oct 2025",
-    title: "USCC Social Night",
-    location: "BioSciences Complex, Room 2109",
-    // description: "Join us for Nintendo games like Smash Bros...",
+    day: "7",
+    weekday: "",
+    monthYear: "MAR 2026",
+    title: "STEM Horizons: Space & Medicine",
+    location: "Queen's University",
     fullDetails:
-      " Looking for a research team? Or just want to meet some awesome science students? Join us for SciNapse Queen’s USCC Social Night!",
-    imageUrl: "/landing/event_images/uscc-social-night-2025.png",
+      "Join us for a conference dedicated to exploring the interdisciplinary intersections of STEM through space and astronomy, bringing together expert speakers from engineering, physics, and medicine alongside a competitive case competition with opportunities for an abstract publication and cash prizes.",
+    imageUrl: "/landing/event_images/stem-horizons.jpg",
+    sortDate: new Date("2026-03-07"),
+    link: "/stem-horizons",
   },
   {
     day: "20",
     weekday: "Mon",
-    monthYear: "March 2026",
-    title: "The Undergraduate Science Case Competition (USCC)",
-    location: "The University of Ottawa",
-    // description: "Do you want an opportunity to explore your scientific creativity?",
+    monthYear: "MAR 2026",
+    title: "ROUND 2: The Undergraduate Science Case Competition (USCC)",
+    location: "University of Ottawa",
     fullDetails:
-      "The Undergraduate Science Case Competition (USCC) is a student-led research competition organized to help undergraduates gain early experience within the STEM research field. It’s structured into 2 rounds, involving a written research proposal and a poster presentation in Ottawa! The goal is to foster curiosity and offer mentorship, feedback, and experience similar to professional academic conferences. Registration ends October 30th!",
+      "The Undergraduate Science Case Competition (USCC) is a student-led research competition organized to help undergraduates gain early experience within the STEM research field. It’s structured into 2 rounds, involving a written research proposal and a poster presentation in Ottawa. The goal is to foster curiosity and offer mentorship, feedback, and experience similar to professional academic conferences.",
     imageUrl: "/landing/event_images/uscc.jpg",
+    sortDate: new Date("2026-03-20"),
+    link: "/uscc",
   },
-  {
-    day: "To be announced",
-    weekday: "",
-    monthYear: "",
-    title: "STEM Horizons: AI & Healthcare Summit",
-    location: "Queen`s University",
-    // description: "SciNapse is teaming up with QMind for STEM Horizons!",
-    fullDetails:
-      "Whether you're passionate about AI, medicine, or research, this event is for you. Join industry experts and students for a full day of innovation.",
-    imageUrl: "/landing/event_images/stem-horizons.jpg",
-  }
 ];
 
 const EventsSection = () => {
   return (
-    <motion.section variants={slideUpVariant} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }} className="max-w-7xl mx-auto px-4 py-12" id="events">
-      <div className="mb-10">
-        <div className="flex items-center">
-        <p className="text-brand-teal text-sm uppercase tracking-widest mb-2">
-          Discover what's happening at SciNapse
-        </p>
+    <section className="bg-zinc-950 text-brand-white">
+      <motion.div
+        variants={slideUpVariant}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.2 }}
+        className="max-w-7xl mx-auto px-8 md:px-4 pt-16 pb-8"
+        id="events"
+      >
+        {/* Section heading */}
+        <div className="text-center mb-16">
+          <h2 className="text-brand-white font-editorial-new text-4xl font-bold">
+            Upcoming Events
+          </h2>
         </div>
-        <h2 className="text-brand-black font-sans text-4xl font-bold mt-2 mb-4 ">
-          Upcoming Events
-        </h2>
-        <p className="font-sans text-lg max-auto text-gray-800 justify-center">
-          From fun hangouts to challenging competitions, SciNapse hosts events that bring
-          students together all year long. Whether you’re looking to meet new people,
-          connect with mentors, or dive into your first project, there’s always
-          something happening. Join us for workshops, socials, panels, and our flagship
-          USCC competition—your chance to learn, collaborate, and take the next step in
-          your research journey.          
-        {/* Hide Calendar Link Till Implemented */}
-          {/* <span className="block mt-4">
-            Want reminders? {" "} 
-            <a
-              href="https://calendar.google.com/calendar/u/0/r/eventedit?text=SciNapse+Events&dates=20250723T180000Z/20250723T190000Z&location=Queen's+University&pli=1&sf=true&output=xml#eventpage_6"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-brand-darkCyan hover:underline"
-            >
-              <strong>Add our Google Calendar</strong>
-            </a>
-            .
-          </span> */}
-        </p>
-      </div>
 
-      {/* Event Cards Grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        {events.map((event, idx) => (
-          <EventCard key={idx} {...event} />
-        ))}
-      </div>
-    </motion.section>
+        {/* Event Rows */}
+        <div className="flex flex-col gap-4">
+          {[...events]
+            .sort((a, b) => a.sortDate - b.sortDate)
+            .map((event, idx) => (
+              <EventCard key={idx} {...event} />
+            ))}
+        </div>
+      </motion.div>
+    </section>
   );
 };
 
