@@ -5,7 +5,7 @@ import { Instagram, Link2 } from "lucide-react";
 
 export default function PartnerSection() {
   return (
-    <section className="bg-brand-black text-brand-white">
+    <section className="bg-zinc-950 text-brand-white">
       <motion.div
         variants={slideUpVariant}
         initial="hidden"
@@ -22,7 +22,7 @@ export default function PartnerSection() {
             <h2 className="text-2xl md:text-3xl font-bold text-brand-white mb-3">
               Queen&apos;s Astro-Lens Club (QALC)
             </h2>
-            <p className="text-sm md:text-base text-brand-white/80 leading-relaxed">
+            <p className="text-sm md:text-base text-brand-white/80 text-justify md:text-left leading-relaxed">
               QALC is dedicated to promoting interest in astronomy, space, and physics through educational, hands-on, and social activities. The club provides access to telescopes and observational equipment, along with workshops designed to support students at all levels. Through outreach, collaboration, and community-building events, QALC aims to inspire curiosity, develop practical skills, and foster a safe, inclusive, and supportive community for science enthusiasts.
             </p>
             <div className="mt-4 flex flex-wrap gap-3">

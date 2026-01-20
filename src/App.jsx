@@ -7,6 +7,7 @@ import Gallery from "./pages/Gallery";
 import USCC from "./pages/USCC";
 import About from "./pages/About";
 import Team from "./pages/Team";
+import Contact from "./pages/Contact";
 import Links from "./pages/Links";
 import Horizons from "./pages/Horizons";
 import Navbar from "./components/CoreWeb/Navbar";
@@ -69,6 +70,7 @@ export default function App() {
                   <Route path="/about" element={<About />} />
                   <Route path="/team" element={<Team />} />
                   <Route path="/links" element={<Links />} />
+                  <Route path="/contact" element={<Contact />} />
                 </Routes>
                 <Analytics />
               </main>

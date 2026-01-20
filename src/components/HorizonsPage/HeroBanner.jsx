@@ -6,7 +6,7 @@ import FluidText from "../CoreWeb/FluidText";
 
 export default function HeroBanner() {
   return (
-    <section className="bg-brand-black text-brand-textMutedDark">
+    <section className="bg-zinc-950 text-brand-textMutedDark">
       <motion.div
         variants={slideUpVariant}
         initial="hidden"
@@ -58,7 +58,7 @@ export default function HeroBanner() {
               </span>
             </h1>
  
-            <p className="text-sm sm:text-base md:text-lg text-brand-white/80 text-center md:text-left">
+            <p className="text-sm sm:text-base md:text-lg text-brand-white/80 text-justify md:text-left">
               Join us for a conference dedicated to exploring the interdisciplinary intersections of STEM through space and astronomy, bringing together expert speakers from engineering, physics, and medicine alongside a competitive case competition with opportunities for an abstract publication and cash prizes.  
             </p>
 
@@ -72,7 +72,7 @@ export default function HeroBanner() {
               <li className="flex items-center gap-2 sm:gap-3 justify-center md:justify-start">
                 <Users className="w-4 h-4 text-brand-primary" />
                 <span>
-                  <span className="font-semibold">Speakers &amp; networking:</span> engineers, physicists, clinicians
+                  <span className="font-semibold">Networking:</span> Engineers, physicists, clinicians
                 </span>
               </li>
               <li className="flex items-center gap-2 sm:gap-3 justify-center md:justify-start">

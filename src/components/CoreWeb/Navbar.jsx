@@ -187,17 +187,22 @@ export default function Navbar() {
           {/* USE WHEN HIRING/EVENTS ARE HAPPENING -- All Purpose Indicator */}
           <div className="flex items-center gap-2 bg-green-500/20 text-green-400 px-3 py-1 rounded-full text-sm font-semibold">
             <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
-            <span>Horizons Tickets on Sale!</span>
+            <a
+              href="https://www.bouncelife.com/events/696846047c69da5d5990e8eb"
+              target="_blank"
+              rel="noopener noreferrer">
+              <span>Horizons Tickets on Sale!</span>
+            </a>
           </div>
           
           {/* CTA Buttons */}
           <div className="flex gap-3">
             <RippleButton
-              href="/links"
+              href="/contact"
               size="sm"
               variant="primary"
             >
-              Get Involved
+              Contact
             </RippleButton>
             <RippleButton
               href="/uscc"
@@ -258,11 +263,11 @@ export default function Navbar() {
           {/* Call to Action Buttons */}
           <div className="flex flex-col gap-3">
             <Link
-              to="/links"
+              to="/contact"
               onClick={() => setIsOpen(false)}
               className="text-center bg-brand-cyanBlue hover:bg-brand-darkCyan text-brand-black font-semibold px-4 py-2 rounded hover:brightness-110 transition"
             >
-              Get Involved
+              Contact
             </Link>
             <Link
               to="/uscc"

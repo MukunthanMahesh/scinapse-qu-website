@@ -84,7 +84,7 @@ const scheduleItems = [
 
 export default function ConferenceSchedule() {
   return (
-    <section className="bg-brand-black text-brand-white">
+    <section className="bg-zinc-950 text-brand-white">
       <motion.div
         variants={slideUpVariant}
         initial="hidden"
