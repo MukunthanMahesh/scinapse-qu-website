@@ -38,9 +38,7 @@ export default function Footer() {
             <h3 className="text-lg font-semibold mb-2">Quick Links</h3>
             <ul className="space-y-4 text-sm">
               <p className="text-sm text-brand-white/60 mb-4">Did you miss anything?</p>
-              <li><a href="/about" className="hover:underline">About Us</a></li>
               <li><a href="/team" className="hover:underline">Our Team</a></li>
-              <li><a href="/links" className="hover:underline">Get Involved</a></li>
               <li><a href="mailto:scinapse@clubs.queensu.ca?subject=Inquiry%20from%20Website" className="hover:underline">Contact</a></li>
             </ul>
           </div>

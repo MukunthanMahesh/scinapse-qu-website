@@ -162,23 +162,6 @@ export default function Navbar() {
               />
             </Link>
           </li>
-          <li className="relative">
-            <Link
-              to="/about"
-              className={`hover:text-brand-cyanBlue transition-colors duration-300 ${currentPath === "/about" ? "text-brand-cyanBlue" : ""} pb-1`}
-            >
-              About
-              <span
-                className={`
-                  absolute left-0 -bottom-1 h-0.5 w-full bg-brand-cyanBlue rounded
-                  transition-transform duration-300 ease-in-out
-                  ${currentPath === "/about" ? "scale-x-100" : "scale-x-0"}
-                  origin-left
-                  block
-                `}
-              />
-            </Link>
-          </li>
         </ul>
 
         {/* Buttons and Social Media Icons (Desktop Only, Grouped) - Right aligned */}
@@ -257,7 +240,6 @@ export default function Navbar() {
             <Link to="/stem-horizons" onClick={() => setIsOpen(false)} className={`hover:text-brand-darkCyan pb-1 border-b-2 transition ${currentPath === "/stem-horizons" ? "border-brand-cyanBlue text-brand-cyanBlue" : "border-transparent"}`}>STEM Horizons 2026</Link>
             <Link to="/gallery" onClick={() => setIsOpen(false)} className={`hover:text-brand-darkCyan pb-1 border-b-2 transition ${currentPath === "/gallery" ? "border-brand-cyanBlue text-brand-cyanBlue" : "border-transparent"}`}>Gallery</Link>
             <Link to="/team" onClick={() => setIsOpen(false)} className={`hover:text-brand-darkCyan pb-1 border-b-2 transition ${currentPath === "/team" ? "border-brand-cyanBlue text-brand-cyanBlue" : "border-transparent"}`}>Team</Link>
-            <Link to="/about" onClick={() => setIsOpen(false)} className={`hover:text-brand-darkCyan pb-1 border-b-2 transition ${currentPath === "/about" ? "border-brand-cyanBlue text-brand-cyanBlue" : "border-transparent"}`}>About</Link>
           </nav>
 
           {/* Call to Action Buttons */}

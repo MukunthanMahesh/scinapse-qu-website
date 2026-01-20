@@ -86,7 +86,9 @@ export default function HeroBanner() {
             <div className="space-y-2">
               <div className="flex flex-col sm:flex-row gap-3 pt-3 justify-center md:justify-start">
                 <RippleButton
-                  href="/links"
+                  href="https://www.bouncelife.com/events/696846047c69da5d5990e8eb"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   size="md"
                   variant="primary"
                 >

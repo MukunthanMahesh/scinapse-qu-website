@@ -35,7 +35,7 @@ const MissionStatement = () => {
           </p>
 
           <RippleButton
-            href="/links"
+            href="/contact"
             size="lg"
             variant="dark"
           >
