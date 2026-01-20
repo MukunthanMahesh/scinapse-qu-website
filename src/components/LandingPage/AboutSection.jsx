@@ -26,11 +26,11 @@ const AboutSection = () => {
       <div className="max-w-7xl mx-auto px-8 md:px-4 py-16">
         {/* Section heading */}
         <div className="text-center mb-16">
-          <h2 className="hidden md:block text-brand-white font-editorial-new text-4xl font-bold">
-            Undergraduate Science Case Competition (USCC)
+          <h2 className="hidden md:block text-brand-white  text-4xl font-bold">
+            Undergraduate Science Case Competition 2026
           </h2>
           <h2 className="md:hidden text-brand-white font-editorial-new text-4xl font-bold">
-            The USCC
+            USCC 2026
           </h2>
         </div>
 
@@ -45,10 +45,7 @@ const AboutSection = () => {
             </p>
 
             <div className="flex flex-wrap gap-3 justify-center md:justify-normal">
-              <RippleButton
-                href="/uscc"
-                variant="primary"
-              >
+              <RippleButton href="/uscc" variant="primary">
                 Learn More
               </RippleButton>
 

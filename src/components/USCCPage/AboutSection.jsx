@@ -1,87 +1,145 @@
-import FluidText from "../CoreWeb/FluidText";
-import RippleButton from "../UI/RippleButton";
-import TimelineSection from "./TimelineSection";
+import { useRef } from "react";
 import { motion } from "framer-motion";
 import { slideUpVariant } from "../../utils/motionVariants";
-import { FiInfo } from "react-icons/fi";
+import { Link } from "react-router-dom"; // Optional for CTA
+import RippleButton from "../UI/RippleButton";
+import { events as galleryEvents } from "../../data/galleryEvents";
 
-const USCC_VIDEO_URL = "https://www.youtube.com/embed/PRq35XYDBKE?start=2";
+const AboutSection = () => {
+  const galleryRef = useRef(null);
 
-export default function AboutSection() {
+  const usccEvent =
+    galleryEvents.find((event) =>
+      event.title.includes("Undergraduate Science Case Competition")
+    ) || galleryEvents[1];
+
+  const usccImages = usccEvent?.images || [];
+
   return (
     <motion.section
-        variants={slideUpVariant}
-        initial="visible"
-        whileInView="visible"
-        viewport={{ once: true, amount: 0.2 }}
-        className="max-w-7xl mx-auto px-4 pt-8 pb-0"
-      >
-        
-      {/* Info Box
-      <div className="flex justify-center mb-10">
-        <div className="bg-gradient-to-r from-brand-cyanBlue/20 via-white to-brand-cyanBlue/10 border border-brand-cyanBlue rounded-2xl shadow-md px-6 py-4 max-w-2xl w-full text-center flex items-center gap-4 hover:bg-brand-cyanBlue/20 transition">
-          <span className="inline-flex items-center justify-center w-9 h-9 rounded-full text-brand-cyanBlue text-2xl">
-            <FiInfo />
-          </span>
-          <p className="lg:block hidden text-brand-black text-lg text-left">
-          <h2>USCC dates are being finalized at the moment. Stay tuned!</h2>
-          </p>
-          <p className="md:hidden text-brand-black text-sm text-left">
-          <strong> NOTE: USCC dates are being finalized at the moment. Stay tuned!</strong>
-          </p>
+      variants={slideUpVariant}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.2 }}
+      className="bg-zinc-950 text-brand-white -mt-px"
+    >
+      <div className="max-w-7xl mx-auto px-8 md:px-4 py-16">
+        {/* Section heading */}
+        <div className="text-center mb-16">
+          <h2 className="hidden md:block text-brand-white  text-4xl font-bold">
+            Undergraduate Science Case Competition 2026
+          </h2>
+          <h2 className="md:hidden text-brand-white font-editorial-new text-4xl font-bold">
+            USCC 2026
+          </h2>
         </div>
-      </div> */}
 
-      {/* Intro Grid */}
-      <div className="grid md:grid-cols-2 gap-10 items-center mb-16">
-        {/* Left: Text & CTAs */}
-        <div>
-          <div className="mb-6 hidden md:block">
-            <FluidText
-              text="What is the USCC?"
-              breakAfterWords={["Science"]}
-              color="text-brand-cyanBlue"
-              size="text-xl md:text-3xl"
-              baseColor="text-brand-black"
-            />
+        {/* Text + Video in two columns on desktop */}
+        <div className="grid md:grid-cols-2 gap-10 items-start mb-12">
+          {/* Left: Text + CTAs */}
+          <div className="max-w-xl">
+            <p className="font-sans text-lg text-gray-200 mb-12 md:mb-6 text-justify md:text-left">
+              The Undergraduate Science Case Competition (USCC) is a student-led research competition that gives undergraduates structured experience in designing and communicating research. Teams of 2–4 students work together to develop interdisciplinary proposals that respond to a real scientific challenge.
+              <br /><br />
+              USCC combines mentorship, feedback, and presentation experience to mirror the expectations of academic conferences and research environments—while remaining accessible to students at all levels of prior research experience.
+            </p>
+
+            <div className="flex flex-wrap gap-3 justify-center md:justify-normal">
+              <RippleButton href="/uscc" variant="disabled">
+                Register Team
+              </RippleButton>
+
+              <RippleButton
+                href="https://scinapsescience.com/"
+                variant="outlineLight"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Official USCC Website
+              </RippleButton>
+            </div>
           </div>
 
-          {/* Mobile: Static heading */}
-          <h1 className="block md:hidden text-2xl font-bold text-brand-black mb-4 leading-tight">
-            What is the USCC?
-          </h1>
-
-          <p className="text-lg text-gray-800 mb-4 font-sans">
-            The <strong>Undergraduate Science Case Competition</strong> (USCC) is a student-led research competition organized to help undergraduates gain early experience within the STEM research field. It’s structured into 2 rounds, involving a written research proposal and a poster presentation in Ottawa! The goal is to foster curiosity and offer mentorship, feedback, and experience similar to professional academic conferences. 
-          </p>
-          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mt-6">
-            <RippleButton
-              href="/links"
-              variant="primary"
-            >
-              Register Your Team
-            </RippleButton>
-            <RippleButton
-              href="https://scinapsescience.com/"
-              variant="outlineLight"
-            >
-              Official USCC Website
-            </RippleButton>
+          {/* Right: Video */}
+          <div className="w-full">
+            <div className="relative w-full pt-[56.25%] rounded-2xl border border-white/10 shadow-lg overflow-hidden hover:shadow-xl transition">
+              <iframe
+                src="https://www.youtube.com/embed/PRq35XYDBKE?start=2"
+                title="USCC Overview"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+                className="absolute top-0 left-0 w-full h-full"
+              />
+            </div>
           </div>
         </div>
-        {/* Right: Video */}
-        <div className="w-full">
-          <div className="relative w-full pt-[56.25%] rounded-lg shadow-md overflow-hidden hover:shadow-lg transition">
-            <iframe
-              src={USCC_VIDEO_URL}
-              title="USCC Overview"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-              className="absolute top-0 left-0 w-full h-full"
-            />
+
+        {/* Horizontal highlight strip with parallax images */}
+        <div className="mt-12 overflow-x-auto pb-4">
+          <div className="flex gap-4 sm:gap-6 min-w-max">
+            <motion.div
+              className="relative w-64 h-40 sm:w-72 sm:h-44 rounded-2xl overflow-hidden border border-white/15 bg-zinc-900/70 flex-shrink-0"
+            >
+              <img
+                src="/landing/uscc_images/collaboration.png"
+                alt='USCC participants collaborating'
+                className="w-full h-full object-cover"
+                loading="lazy"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+              <div className="absolute bottom-3 left-3 text-sm font-semibold">
+                Collaborative research teams
+              </div>
+            </motion.div>
+
+            <motion.div
+              className="relative w-64 h-40 sm:w-72 sm:h-44 rounded-2xl overflow-hidden border border-white/15 bg-zinc-900/70 flex-shrink-0"
+            >
+              <img
+                src="/landing/uscc_images/uottawa.png"
+                alt="Picture of uOttawa, destination of final round"
+                className="w-full h-full object-cover"
+                loading="lazy"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+              <div className="absolute bottom-3 left-3 text-sm font-semibold">
+                Provincial presentations & finals
+              </div>
+            </motion.div>
+
+            <motion.div
+              className="relative w-64 h-40 sm:w-72 sm:h-44 rounded-2xl overflow-hidden border border-white/15 bg-zinc-900/70 flex-shrink-0"
+            >
+              <img
+                src="landing/uscc_images/feedback.png"
+                alt="Faculty member giving participant feedback"
+                className="w-full h-full object-cover"
+                loading="lazy"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+              <div className="absolute bottom-3 left-3 text-sm font-semibold">
+                Faculty & mentor feedback
+              </div>
+            </motion.div>
+
+            <motion.div
+              className="relative w-64 h-40 sm:w-72 sm:h-44 rounded-2xl overflow-hidden border border-white/15 bg-zinc-900/70 flex-shrink-0"
+            >
+              <img
+                src="landing/uscc_images/communication.jpg"
+                alt="Join the USCC to build your communication & presentation skills"
+                className="w-full h-full object-cover"
+                loading="lazy"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+              <div className="absolute bottom-3 left-3 text-sm font-semibold">
+                Communication & presentation skills
+              </div>
+            </motion.div>
           </div>
         </div>
       </div>
     </motion.section>
   );
-}
+};
+export default AboutSection;

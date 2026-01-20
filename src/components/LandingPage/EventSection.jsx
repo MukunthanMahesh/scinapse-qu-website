@@ -45,7 +45,7 @@ const EventsSection = () => {
       >
         {/* Section heading */}
         <div className="text-center mb-16">
-          <h2 className="text-brand-white font-editorial-new text-4xl font-bold">
+          <h2 className="text-brand-white text-4xl font-bold">
             Upcoming Events
           </h2>
         </div>
