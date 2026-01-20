@@ -8,8 +8,7 @@ export default function HeroBanner() {
       <motion.div
         variants={slideUpVariant}
         initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, amount: 0.2 }}
+        animate="visible"
         className="min-h-[calc(100vh-72px)] max-w-7xl mx-auto px-6 lg:px-8 py-12 md:py-16 flex flex-col-reverse md:flex-row items-stretch gap-10"
       >
         {/* Right: Image / collage on desktop */}

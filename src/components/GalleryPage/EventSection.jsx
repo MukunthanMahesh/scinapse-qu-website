@@ -6,8 +6,13 @@ import RippleButton from '../UI/RippleButton.jsx';
 
 // Hook to detect mobile screens
 function useIsMobile() {
-  const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
+  const isClient = typeof window !== "undefined";
+  const [isMobile, setIsMobile] = useState(
+    isClient ? window.innerWidth < 768 : false
+  );
   useEffect(() => {
+    if (!isClient) return;
+
     const onResize = () => setIsMobile(window.innerWidth < 768);
     window.addEventListener('resize', onResize);
     return () => window.removeEventListener('resize', onResize);
@@ -72,6 +77,9 @@ export default function EventSection({ event }) {
             ease: "easeInOut"
           }}
           onAnimationComplete={() => {
+            if (typeof window === "undefined" || typeof document === "undefined") {
+              return;
+            }
             const element = document.querySelector(`[data-event="${event.title}"]`);
             if (element) {
               if (showAll) {
