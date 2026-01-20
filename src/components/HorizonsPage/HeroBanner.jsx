@@ -3,6 +3,7 @@ import { slideUpVariant } from "../../utils/motionVariants";
 import RippleButton from "../UI/RippleButton";
 import { Rocket, Users, Trophy } from "lucide-react";
 import FluidText from "../CoreWeb/FluidText";
+import { ScrollSmoother } from "gsap/all";
 
 export default function HeroBanner() {
   return (
@@ -95,9 +96,21 @@ export default function HeroBanner() {
                   Get Tickets
                 </RippleButton>
                 <RippleButton
-                  href="/uscc"
                   size="md"
                   variant="outlineLight"
+                  onClick={() => {
+                    const target = document.getElementById("conference-schedule");
+                    if (!target) return;
+
+                    const smoother = ScrollSmoother.get();
+                    if (smoother) {
+                      smoother.scrollTo(target, true);
+                    } else {
+                      const rect = target.getBoundingClientRect();
+                      const offset = window.pageYOffset + rect.top - 80;
+                      window.scrollTo({ top: offset, behavior: "smooth" });
+                    }
+                  }}
                 >
                   Learn more
                 </RippleButton>

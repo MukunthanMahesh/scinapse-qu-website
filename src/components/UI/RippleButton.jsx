@@ -66,6 +66,16 @@ export default function RippleButton({
 
     if (!href) return;
 
+    // In-page anchor links: smooth scroll without route change
+    if (href.startsWith("#")) {
+      const target = document.querySelector(href);
+      if (target) {
+        e.preventDefault();
+        target.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+      return;
+    }
+
     // For links that should open in a new tab, let the browser handle navigation
     if (props.target === "_blank") {
       return;
