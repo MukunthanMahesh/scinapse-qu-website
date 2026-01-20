@@ -11,7 +11,7 @@ export const teamMembers = [
     role: "Co-President",
     image: "/team/2025-2026/sohakar.jpg",
     yearProgram: "3rd Year, Health Sciences",
-    funFact: "Has an ever-growing collection of astronomy-themed mugs."
+    funFact: "Wants a farm with hella dogs."
   },
   {
     name: "Rami Idris",
