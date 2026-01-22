@@ -67,7 +67,7 @@ export default function HeroBanner() {
               <li className="flex items-center gap-2 sm:gap-3 justify-center md:justify-start">
                 <Rocket className="w-4 h-4 text-brand-primary" />
                 <span>
-                  <span className="font-semibold">Case competition:</span> Poster &amp; Abstract Presentation
+                  <span className="font-semibold">Case competition:</span> Poster Presentation
                 </span>
               </li>
               <li className="flex items-center gap-2 sm:gap-3 justify-center md:justify-start">
