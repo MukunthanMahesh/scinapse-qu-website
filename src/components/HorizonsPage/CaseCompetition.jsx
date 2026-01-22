@@ -98,7 +98,7 @@ const timelineSteps = [
     title: "Case prompt released",
     highlight: "1 week to prepare",
     description:
-      "Teams receive the case prompt and have one week to develop their approach, abstract, and poster concept.",
+      "Teams receive the case prompt in advance and have one week to develop their approach, abstract, and poster concept.",
   },
   {
     title: "Abstract submission",
@@ -132,16 +132,6 @@ function TimelineCard({ title, highlight, description }) {
 
 const breakdownItems = [
   {
-    label: "Teams",
-    icon: Users,
-    text: "2–4 students per team; interdisciplinary groups from any STEM background are welcome.",
-  },
-  {
-    label: "Prompt & prep",
-    icon: FileText,
-    text: "Case prompts are released in advance so teams can use the week to plan and develop their ideas.",
-  },
-  {
     label: "Approach",
     icon: Lightbulb,
     text: "Choose either a physics/engineering/technology-based approach or a medicine/healthcare-based approach.",
@@ -157,16 +147,6 @@ const breakdownItems = [
     text: "Abstracts are due March 5, 2026. Only the abstract is submitted; teams can keep editing their poster until conference day.",
   },
   {
-    label: "Capacity",
-    icon: Users,
-    text: "The first 10–15 teams will be selected on a first-come, first-served basis.",
-  },
-  {
-    label: "Conference day",
-    icon: CalendarClock,
-    text: "On March 7, 2026, teams attend the conference, hear our speaker presentations, and give 5-minute poster presentations to 4–5 judges, one team at a time.",
-  },
-  {
     label: "Judging",
     icon: ClipboardList,
     text: "Judges score all teams using a standard rubric similar to USCC, approved by SciNapse and QALC.",
@@ -174,6 +154,6 @@ const breakdownItems = [
   {
     label: "Awards",
     icon: Award,
-    text: "The top 3 teams receive QSURJ abstract publication and a DOI; certificates are awarded to all teams that participate.",
+    text: "The top 3 teams receive QSURJ abstract publication with a DOI; certificates are awarded to all teams that participate.",
   },
 ];
