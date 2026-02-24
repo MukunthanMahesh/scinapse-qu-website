@@ -16,14 +16,21 @@ export default function PartnerSection() {
         <div className="grid md:grid-cols-[1.1fr_minmax(0,1fr)] gap-8 md:gap-10 items-center">
           {/* Text content */}
           <div>
-              <p className="text-[11px] uppercase tracking-[0.2em] text-brand-cyanBlue mb-2 text-center md:text-left">
-                Meet our Partner!
-              </p>
+            <p className="text-[11px] uppercase tracking-[0.2em] text-brand-cyanBlue mb-2 text-center md:text-left">
+              Meet our Partner!
+            </p>
             <h2 className="text-3xl md:text-4xl font-bold text-brand-white mb-3 text-center md:text-left">
               Queen&apos;s Astro-Lens Club (QALC)
             </h2>
             <p className="text-sm md:text-base text-brand-white/80 text-justify md:text-left leading-relaxed">
-              QALC is dedicated to promoting interest in astronomy, space, and physics through educational, hands-on, and social activities. The club provides access to telescopes and observational equipment, along with workshops designed to support students at all levels. Through outreach, collaboration, and community-building events, QALC aims to inspire curiosity, develop practical skills, and foster a safe, inclusive, and supportive community for science enthusiasts.
+              QALC is dedicated to promoting interest in astronomy, space, and
+              physics through educational, hands-on, and social activities. The
+              club provides access to telescopes and observational equipment,
+              along with workshops designed to support students at all levels.
+              Through outreach, collaboration, and community-building events,
+              QALC aims to inspire curiosity, develop practical skills, and
+              foster a safe, inclusive, and supportive community for science
+              enthusiasts.
             </p>
             <div className="mt-4 flex flex-wrap gap-3 justify-center md:justify-normal">
               <RippleButton

@@ -5,9 +5,7 @@ import ResourcesSection from "../components/LinksPage/ResourcesSection";
 import { motion } from "framer-motion";
 import { slideUpVariant } from "../utils/motionVariants";
 
-
 export default function Links() {
-
   return (
     <div className="min-h-screen bg-brand-white pt-16 pb-8">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -27,7 +25,8 @@ export default function Links() {
             Links, Resources & Opportunities
           </h1>
           <p className="text-lg text-gray-600">
-            Explore our key resources and opportunities to get involved with SciNapse.
+            Explore our key resources and opportunities to get involved with
+            SciNapse.
           </p>
         </motion.div>
         {/* Three Main Cards */}

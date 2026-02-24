@@ -9,7 +9,7 @@ const testimonials = [
     affiliation: "YouTube / Twitch",
     quote:
       "SciNapse gave me the opportunity to explore AI in medicine in a way that lectures never could. It’s been a game-changer for my career path.",
-    imageUrl: "/landing/testimonial_images/darren.jpg"
+    imageUrl: "/landing/testimonial_images/darren.jpg",
   },
   {
     name: "Donald Glover",
@@ -17,7 +17,7 @@ const testimonials = [
     affiliation: "FX / Childish Gambino",
     quote:
       "The USCC was the most exciting and intense academic event I’ve attended. Our team walked away more connected and inspired.",
-    imageUrl: "/landing/testimonial_images/donald.jpg"
+    imageUrl: "/landing/testimonial_images/donald.jpg",
   },
   {
     name: "Timothée Chalamet",
@@ -25,8 +25,8 @@ const testimonials = [
     affiliation: "Dune",
     quote:
       "I never thought I’d be this involved in undergrad research. SciNapse helped me find the confidence and the community to grow.",
-    imageUrl: "/landing/testimonial_images/timothee.jpg"
-  }
+    imageUrl: "/landing/testimonial_images/timothee.jpg",
+  },
 ];
 
 const TestimonialsSection = () => {
@@ -46,8 +46,13 @@ const TestimonialsSection = () => {
           What Our Members Say
         </h2>
         <p className="font-sans text-lg max-w-2xl text-gray-800">
-          Discover how SciNapse shaped the journeys of our students and alumni — from presenting at research showcases and organizing campus-wide events, to finding mentorship, building lifelong skills, and unlocking new academic and career opportunities. 
-          <strong>These experiences weren’t just memorable — they were transformative.</strong>
+          Discover how SciNapse shaped the journeys of our students and alumni —
+          from presenting at research showcases and organizing campus-wide
+          events, to finding mentorship, building lifelong skills, and unlocking
+          new academic and career opportunities.
+          <strong>
+            These experiences weren’t just memorable — they were transformative.
+          </strong>
         </p>
       </div>
 
@@ -58,7 +63,7 @@ const TestimonialsSection = () => {
           ))}
         </div>
       </div>
-      </motion.section>
+    </motion.section>
   );
 };
 

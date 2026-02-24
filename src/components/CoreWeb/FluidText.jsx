@@ -2,20 +2,20 @@ import { useState, useMemo } from "react";
 
 /**
  * FluidText Component
- * 
+ *
  * Renders a heading (`<h1>`) where each letter is individually wrapped in a <span>
  * with hover effects. Hovering a letter highlights it and its adjacent letters
  * (within the same visual line) by scaling and changing their color.
- * 
+ *
  * Supports manual line breaks after specific words via the `breakAfterWords` prop.
- * 
+ *
  * Props:
  * - text: string (required) - the full sentence/phrase to render.
  * - breakAfterWords: array of words (optional) - each word after which a <br /> will be inserted.
  * - color: string (optional) - Tailwind color class for hover (default: 'text-brand-cyanBlue')
  * - size: string (optional) - Tailwind text size classes for the base text (default: 'text-2xl sm:text-3xl md:text-5xl')
  * - baseColor: string (optional) - Tailwind color class for the base text (default: 'text-white')
- * 
+ *
  * Example usage:
  * <FluidText
  *   text="We prepare undergraduates to lead through research and innovation."
@@ -26,7 +26,13 @@ import { useState, useMemo } from "react";
  * />
  */
 
-export default function FluidText({ text, breakAfterWords = [], color = "text-brand-cyanBlue", size = "text-2xl sm:text-3xl md:text-5xl", baseColor = "text-white" }) {
+export default function FluidText({
+  text,
+  breakAfterWords = [],
+  color = "text-brand-cyanBlue",
+  size = "text-2xl sm:text-3xl md:text-5xl",
+  baseColor = "text-white",
+}) {
   // Tracks which character index is currently being hovered
   const [hoverIndex, setHoverIndex] = useState(null);
 
@@ -61,12 +67,13 @@ export default function FluidText({ text, breakAfterWords = [], color = "text-br
   });
 
   // Use a wide max-w if no manual breaks, else use the default
-  const widthClass = breakAfterWords.length === 0
-    ? "w-full max-w-4xl"
-    : "max-w-md sm:max-w-lg";
+  const widthClass =
+    breakAfterWords.length === 0 ? "w-full max-w-4xl" : "max-w-md sm:max-w-lg";
 
   return (
-    <h1 className={`${size} ${baseColor} font-bold leading-tight ${widthClass} text-center sm:text-left`}>
+    <h1
+      className={`${size} ${baseColor} font-bold leading-tight ${widthClass} text-center sm:text-left`}
+    >
       {words.map((word, wordIndex) => (
         <span key={wordIndex}>
           {/* Render each letter in the word */}
@@ -77,7 +84,8 @@ export default function FluidText({ text, breakAfterWords = [], color = "text-br
                 i ===
                 words
                   .slice(0, wordIndex)
-                  .reduce((acc, w) => acc + w.letters.length, 0) + charIndex
+                  .reduce((acc, w) => acc + w.letters.length, 0) +
+                  charIndex,
             );
 
             const thisLine = charMeta[globalIndex].line;
@@ -107,8 +115,8 @@ export default function FluidText({ text, breakAfterWords = [], color = "text-br
                   hoverType === "main"
                     ? `${color} scale-125`
                     : hoverType === "adjacent"
-                    ? `${color} scale-110`
-                    : ""
+                      ? `${color} scale-110`
+                      : ""
                 }`}
               >
                 {char}
@@ -120,7 +128,7 @@ export default function FluidText({ text, breakAfterWords = [], color = "text-br
           {word.breakAfter ? (
             <br />
           ) : wordIndex < words.length - 1 ? (
-            <span className="inline-block w-[0.25em]">{'\u00A0'}</span>
+            <span className="inline-block w-[0.25em]">{"\u00A0"}</span>
           ) : null}
         </span>
       ))}

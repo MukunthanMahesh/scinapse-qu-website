@@ -5,49 +5,61 @@ import { slideUpVariant } from "../../utils/motionVariants";
 const faqs = [
   {
     question: "Who judges the competition?",
-    answer: "Faculty members, researchers, and graduate students from relevant universities, hospitals, and research institutes.",
+    answer:
+      "Faculty members, researchers, and graduate students from relevant universities, hospitals, and research institutes.",
   },
   {
     question: "What is the competition topic and challenge like?",
-    answer: "The topic changes annually and does not require prior expertise. All participants have equal opportunity, with topics spanning diverse scientific and global challenges. Past competition topics: Mycology, Neuroscience, Climate Crisis, Antimicrobial Resistance, Augmented Biology, Cannabis, Hydrofracturing, Zika Virus, The Global Food Crisis & Nutrition, Epilepsy, and Cystic Fibrosis.",
+    answer:
+      "The topic changes annually and does not require prior expertise. All participants have equal opportunity, with topics spanning diverse scientific and global challenges. Past competition topics: Mycology, Neuroscience, Climate Crisis, Antimicrobial Resistance, Augmented Biology, Cannabis, Hydrofracturing, Zika Virus, The Global Food Crisis & Nutrition, Epilepsy, and Cystic Fibrosis.",
   },
   {
     question: "Who is eligible for the competition?",
-    answer: "All undergraduate students in North America are eligible. Lower and Upper Divisions are determined by year and coursework and are judged separately. Students from all disciplines may participate, and teams may be audited for eligibility.",
+    answer:
+      "All undergraduate students in North America are eligible. Lower and Upper Divisions are determined by year and coursework and are judged separately. Students from all disciplines may participate, and teams may be audited for eligibility.",
   },
   {
-    question: "I’ve already participated in the USCC in a previous year, can I participate again this year?",
+    question:
+      "I’ve already participated in the USCC in a previous year, can I participate again this year?",
     answer: "Yes.",
   },
   {
     question: "Is there a competition fee?",
-    answer: "Yes. One registration fee applies per team of one to four members.",
+    answer:
+      "Yes. One registration fee applies per team of one to four members.",
   },
   {
-    question: "I’ve never written a research proposal or created a scientific poster before, can I still participate? Do you offer any guidance?",
-    answer: "Yes. No prior experience is required. Mentorship, information sessions, and Q and A support are provided.",
+    question:
+      "I’ve never written a research proposal or created a scientific poster before, can I still participate? Do you offer any guidance?",
+    answer:
+      "Yes. No prior experience is required. Mentorship, information sessions, and Q and A support are provided.",
   },
   {
-    question: "How are Round 1 submissions scored to select the finalist teams?",
-    answer: "The top performing teams overall are selected, typically 10 to 25 percent, depending on participation. Divisions are judged separately.",
+    question:
+      "How are Round 1 submissions scored to select the finalist teams?",
+    answer:
+      "The top performing teams overall are selected, typically 10 to 25 percent, depending on participation. Divisions are judged separately.",
   },
   {
     question: "What happens to our submissions?",
-    answer: "Submissions remain the intellectual property of participants. Permission is required for any publication use.",
+    answer:
+      "Submissions remain the intellectual property of participants. Permission is required for any publication use.",
   },
   {
     question: "What is the discord channel used for?",
-    answer: "It is used for announcements, updates, general questions, and partner matching.",
+    answer:
+      "It is used for announcements, updates, general questions, and partner matching.",
   },
   {
     question: "Can I request a refund?",
-    answer: "Refunds are available before the registration deadline. Later requests are considered only in exceptional circumstances.",
+    answer:
+      "Refunds are available before the registration deadline. Later requests are considered only in exceptional circumstances.",
   },
 ];
 
 const ChevronIcon = ({ open }) => (
   <svg
-    className={`w-5 h-5 inline-block transition-transform duration-300 ${open ? 'rotate-180 text-brand-cyanBlue' : 'text-gray-400'}`}
+    className={`w-5 h-5 inline-block transition-transform duration-300 ${open ? "rotate-180 text-brand-cyanBlue" : "text-gray-400"}`}
     fill="none"
     stroke="currentColor"
     strokeWidth="2"
@@ -90,7 +102,9 @@ export default function FAQSection() {
                   onClick={() => setOpenIdx(isOpen ? null : idx)}
                   aria-expanded={isOpen}
                 >
-                  <span className="flex-1 break-words text-left">{faq.question}</span>
+                  <span className="flex-1 break-words text-left">
+                    {faq.question}
+                  </span>
                   <span className="ml-4 flex-shrink-0 flex items-center">
                     <ChevronIcon open={isOpen} />
                   </span>

@@ -41,13 +41,15 @@ export default function Navbar() {
     const handleClickOutside = (event) => {
       if (isOpen) {
         // Check if click is on the hamburger button
-        const hamburgerButton = event.target.closest('button[class*="md:hidden"]');
+        const hamburgerButton = event.target.closest(
+          'button[class*="md:hidden"]',
+        );
         if (hamburgerButton) {
           return; // Don't close if clicking the hamburger button
         }
-        
+
         // Check if click is on the mobile menu
-        const mobileMenu = event.target.closest('.md\\:hidden');
+        const mobileMenu = event.target.closest(".md\\:hidden");
         if (!mobileMenu) {
           setIsOpen(false);
         }
@@ -59,7 +61,7 @@ export default function Navbar() {
       const timeoutId = setTimeout(() => {
         document.addEventListener("mousedown", handleClickOutside);
       }, 100);
-      
+
       return () => {
         clearTimeout(timeoutId);
         document.removeEventListener("mousedown", handleClickOutside);
@@ -68,11 +70,18 @@ export default function Navbar() {
   }, [isOpen]);
 
   return (
-    <nav ref={navRef} className={`fixed top-0 left-0 w-full z-40 bg-brand-black text-brand-white px-4 md:px-6 py-3 shadow-md transition-transform duration-300 ${showNavbar ? "translate-y-0" : "-translate-y-full"}`}>
+    <nav
+      ref={navRef}
+      className={`fixed top-0 left-0 w-full z-40 bg-brand-black text-brand-white px-4 md:px-6 py-3 shadow-md transition-transform duration-300 ${showNavbar ? "translate-y-0" : "-translate-y-full"}`}
+    >
       <div className="max-w-screen-xl mx-auto flex justify-between md:justify-start items-center">
         {/* Logo */}
         <Link to="/">
-          <img src="/assets/logo.png" alt="SciNapse Logo" className="h-12 w-auto" />
+          <img
+            src="/assets/logo.png"
+            alt="SciNapse Logo"
+            className="h-12 w-auto"
+          />
         </Link>
 
         {/* Desktop Links - Left justified (desktop only) */}
@@ -116,7 +125,7 @@ export default function Navbar() {
               to="/stem-horizons"
               className={`hover:text-brand-cyanBlue transition-colors duration-300 ${currentPath === "/stem-horizons" ? "text-brand-cyanBlue" : ""} pb-1`}
             >
-              STEM Horizons 2026 
+              STEM Horizons 2026
               <span
                 className={`
                   absolute left-0 -bottom-1 h-0.5 w-full bg-brand-cyanBlue rounded
@@ -166,52 +175,48 @@ export default function Navbar() {
 
         {/* Buttons and Social Media Icons (Desktop Only, Grouped) - Right aligned */}
         <div className="hidden md:flex items-center gap-6 ml-auto">
-
           {/* USE WHEN HIRING/EVENTS ARE HAPPENING -- All Purpose Indicator */}
           <div className="flex items-center gap-2 bg-green-500/20 text-green-400 px-3 py-1 rounded-full text-sm font-semibold">
             <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
             <a
               href="https://www.bouncelife.com/events/696846047c69da5d5990e8eb"
               target="_blank"
-              rel="noopener noreferrer">
+              rel="noopener noreferrer"
+            >
               <span>Horizons Tickets on Sale!</span>
             </a>
           </div>
-          
+
           {/* CTA Buttons */}
           <div className="flex gap-3">
-            <RippleButton
-              href="/contact"
-              size="sm"
-              variant="primary"
-            >
+            <RippleButton href="/contact" size="sm" variant="primary">
               Contact
             </RippleButton>
-            <RippleButton
-              href="/uscc"
-              size="sm"
-              variant="outlineLight"
-            >
+            <RippleButton href="/uscc" size="sm" variant="outlineLight">
               USCC
             </RippleButton>
           </div>
           {/* Social Media Icons */}
           <div className="flex items-center space-x-4 text-xl">
-            <a href="https://www.instagram.com/scinapsequ/" target="_blank" rel="noopener noreferrer">
+            <a
+              href="https://www.instagram.com/scinapsequ/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <FaInstagram className="hover:text-brand-cyanBlue transition" />
             </a>
-            <a href="https://www.linkedin.com/company/scinapse-queen-s-university/" target="_blank" rel="noopener noreferrer">
+            <a
+              href="https://www.linkedin.com/company/scinapse-queen-s-university/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <FaLinkedin className="hover:text-brand-cyanBlue transition" />
             </a>
-
           </div>
         </div>
 
         {/* Hamburger (Mobile) */}
-        <button
-          className="md:hidden"
-          onClick={() => setIsOpen(!isOpen)}
-        >
+        <button className="md:hidden" onClick={() => setIsOpen(!isOpen)}>
           <svg
             className="w-6 h-6"
             fill="none"
@@ -219,9 +224,19 @@ export default function Navbar() {
             viewBox="0 0 24 24"
           >
             {isOpen ? (
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M6 18L18 6M6 6l12 12"
+              />
             ) : (
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 8h16M4 16h16" />
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M4 8h16M4 16h16"
+              />
             )}
           </svg>
         </button>
@@ -235,11 +250,41 @@ export default function Navbar() {
 
           {/* Navigation Links */}
           <nav className="flex flex-col items-center space-y-6 text-base font-medium">
-            <Link to="/" onClick={() => setIsOpen(false)} className={`hover:text-brand-darkCyan pb-1 border-b-2 transition ${currentPath === "/" ? "border-brand-cyanBlue text-brand-cyanBlue" : "border-transparent"}`}>Home</Link>
-            <Link to="/uscc" onClick={() => setIsOpen(false)} className={`hover:text-brand-darkCyan pb-1 border-b-2 transition ${currentPath === "/uscc" ? "border-brand-cyanBlue text-brand-cyanBlue" : "border-transparent"}`}>USCC</Link>
-            <Link to="/stem-horizons" onClick={() => setIsOpen(false)} className={`hover:text-brand-darkCyan pb-1 border-b-2 transition ${currentPath === "/stem-horizons" ? "border-brand-cyanBlue text-brand-cyanBlue" : "border-transparent"}`}>STEM Horizons 2026</Link>
-            <Link to="/gallery" onClick={() => setIsOpen(false)} className={`hover:text-brand-darkCyan pb-1 border-b-2 transition ${currentPath === "/gallery" ? "border-brand-cyanBlue text-brand-cyanBlue" : "border-transparent"}`}>Gallery</Link>
-            <Link to="/team" onClick={() => setIsOpen(false)} className={`hover:text-brand-darkCyan pb-1 border-b-2 transition ${currentPath === "/team" ? "border-brand-cyanBlue text-brand-cyanBlue" : "border-transparent"}`}>Team</Link>
+            <Link
+              to="/"
+              onClick={() => setIsOpen(false)}
+              className={`hover:text-brand-darkCyan pb-1 border-b-2 transition ${currentPath === "/" ? "border-brand-cyanBlue text-brand-cyanBlue" : "border-transparent"}`}
+            >
+              Home
+            </Link>
+            <Link
+              to="/uscc"
+              onClick={() => setIsOpen(false)}
+              className={`hover:text-brand-darkCyan pb-1 border-b-2 transition ${currentPath === "/uscc" ? "border-brand-cyanBlue text-brand-cyanBlue" : "border-transparent"}`}
+            >
+              USCC
+            </Link>
+            <Link
+              to="/stem-horizons"
+              onClick={() => setIsOpen(false)}
+              className={`hover:text-brand-darkCyan pb-1 border-b-2 transition ${currentPath === "/stem-horizons" ? "border-brand-cyanBlue text-brand-cyanBlue" : "border-transparent"}`}
+            >
+              STEM Horizons 2026
+            </Link>
+            <Link
+              to="/gallery"
+              onClick={() => setIsOpen(false)}
+              className={`hover:text-brand-darkCyan pb-1 border-b-2 transition ${currentPath === "/gallery" ? "border-brand-cyanBlue text-brand-cyanBlue" : "border-transparent"}`}
+            >
+              Gallery
+            </Link>
+            <Link
+              to="/team"
+              onClick={() => setIsOpen(false)}
+              className={`hover:text-brand-darkCyan pb-1 border-b-2 transition ${currentPath === "/team" ? "border-brand-cyanBlue text-brand-cyanBlue" : "border-transparent"}`}
+            >
+              Team
+            </Link>
           </nav>
 
           {/* Call to Action Buttons */}

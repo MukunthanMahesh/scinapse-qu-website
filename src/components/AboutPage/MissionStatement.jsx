@@ -26,19 +26,19 @@ const MissionStatement = () => {
         {/* Right - Text Content */}
         <div>
           <h2 className="text-brand-black font-sans text-4xl font-bold mb-6 leading-tight">
-            “Science is about many things. It’s about knowledge. It’s about perseverance. But most importantly, science is about ideas.”
+            “Science is about many things. It’s about knowledge. It’s about
+            perseverance. But most importantly, science is about ideas.”
           </h2>
 
           <p className="font-sans text-lg text-gray-800 mb-8 max-w-prose">
-            SciNapse Queen’s empowers undergraduate students to bring their research ideas to life.
-            Through workshops, mentorship, and Ontario-wide competitions, we foster an environment where curiosity meets collaboration. We believe that innovation starts when students are given the platform to explore, experiment, and inspire.
+            SciNapse Queen’s empowers undergraduate students to bring their
+            research ideas to life. Through workshops, mentorship, and
+            Ontario-wide competitions, we foster an environment where curiosity
+            meets collaboration. We believe that innovation starts when students
+            are given the platform to explore, experiment, and inspire.
           </p>
 
-          <RippleButton
-            href="/contact"
-            size="lg"
-            variant="dark"
-          >
+          <RippleButton href="/contact" size="lg" variant="dark">
             Get Involved
           </RippleButton>
         </div>

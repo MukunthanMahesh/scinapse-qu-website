@@ -33,7 +33,9 @@ export default function HeroBanner() {
               Highlights from past SciNapse events
             </h1>
             <p className="text-sm sm:text-base md:text-lg text-brand-white/80">
-              Browse photo sets from conferences, case competitions, and workshops hosted by SciNapse and our partners. Use the gallery to get a feel for what it&apos;s like to participate.
+              Browse photo sets from conferences, case competitions, and
+              workshops hosted by SciNapse and our partners. Use the gallery to
+              get a feel for what it&apos;s like to participate.
             </p>
 
             <div className="flex flex-wrap gap-3 pt-2">

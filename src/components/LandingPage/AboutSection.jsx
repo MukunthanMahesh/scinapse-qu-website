@@ -10,7 +10,7 @@ const AboutSection = () => {
 
   const usccEvent =
     galleryEvents.find((event) =>
-      event.title.includes("Undergraduate Science Case Competition")
+      event.title.includes("Undergraduate Science Case Competition"),
     ) || galleryEvents[1];
 
   const usccImages = usccEvent?.images || [];
@@ -39,9 +39,16 @@ const AboutSection = () => {
           {/* Left: Text + CTAs */}
           <div className="max-w-xl">
             <p className="font-sans text-sm sm:text-base md:text-lg text-brand-white/80 mb-12 md:mb-6 text-justify md:text-left">
-              SciNapse Queen’s leads Queen’s University’s participation in the Undergraduate Science Case Competition (USCC), an Ontario-wide initiative where teams of 2 to 4 students design interdisciplinary research proposals.
-              <br /><br />
-              SciNapse coordinates Queen’s Round 1 internal review by faculty members and doctoral researchers, supports participants through year-round programming, and advances top teams to the provincial finals in Ottawa.
+              SciNapse Queen’s leads Queen’s University’s participation in the
+              Undergraduate Science Case Competition (USCC), an Ontario-wide
+              initiative where teams of 2 to 4 students design interdisciplinary
+              research proposals.
+              <br />
+              <br />
+              SciNapse coordinates Queen’s Round 1 internal review by faculty
+              members and doctoral researchers, supports participants through
+              year-round programming, and advances top teams to the provincial
+              finals in Ottawa.
             </p>
 
             <div className="flex flex-wrap gap-3 justify-center md:justify-normal">
@@ -77,12 +84,10 @@ const AboutSection = () => {
         {/* Horizontal highlight strip with parallax images */}
         <div className="mt-12 overflow-x-auto pb-4">
           <div className="flex gap-4 sm:gap-6 min-w-max">
-            <motion.div
-              className="relative w-64 h-40 sm:w-72 sm:h-44 rounded-2xl overflow-hidden border border-white/15 bg-zinc-900/70 flex-shrink-0"
-            >
+            <motion.div className="relative w-64 h-40 sm:w-72 sm:h-44 rounded-2xl overflow-hidden border border-white/15 bg-zinc-900/70 flex-shrink-0">
               <img
                 src="/landing/uscc_images/collaboration.png"
-                alt='USCC participants collaborating'
+                alt="USCC participants collaborating"
                 className="w-full h-full object-cover"
                 loading="lazy"
               />
@@ -92,9 +97,7 @@ const AboutSection = () => {
               </div>
             </motion.div>
 
-            <motion.div
-              className="relative w-64 h-40 sm:w-72 sm:h-44 rounded-2xl overflow-hidden border border-white/15 bg-zinc-900/70 flex-shrink-0"
-            >
+            <motion.div className="relative w-64 h-40 sm:w-72 sm:h-44 rounded-2xl overflow-hidden border border-white/15 bg-zinc-900/70 flex-shrink-0">
               <img
                 src="/landing/uscc_images/uottawa.png"
                 alt="Picture of uOttawa, destination of final round"
@@ -107,9 +110,7 @@ const AboutSection = () => {
               </div>
             </motion.div>
 
-            <motion.div
-              className="relative w-64 h-40 sm:w-72 sm:h-44 rounded-2xl overflow-hidden border border-white/15 bg-zinc-900/70 flex-shrink-0"
-            >
+            <motion.div className="relative w-64 h-40 sm:w-72 sm:h-44 rounded-2xl overflow-hidden border border-white/15 bg-zinc-900/70 flex-shrink-0">
               <img
                 src="landing/uscc_images/feedback.png"
                 alt="Faculty member giving participant feedback"
@@ -122,9 +123,7 @@ const AboutSection = () => {
               </div>
             </motion.div>
 
-            <motion.div
-              className="relative w-64 h-40 sm:w-72 sm:h-44 rounded-2xl overflow-hidden border border-white/15 bg-zinc-900/70 flex-shrink-0"
-            >
+            <motion.div className="relative w-64 h-40 sm:w-72 sm:h-44 rounded-2xl overflow-hidden border border-white/15 bg-zinc-900/70 flex-shrink-0">
               <img
                 src="landing/uscc_images/communication.jpg"
                 alt="Join the USCC to build your communication & presentation skills"

@@ -31,10 +31,10 @@ export default function HeroBanner() {
         <div className="w-full md:w-1/2 md:pl-10 flex items-center mb-8 md:mb-0">
           <div className="space-y-3 sm:space-y-4 max-w-xl mx-auto md:mx-0">
             <div className="flex justify-center md:justify-start">
-              <a 
-              href="https://linktr.ee/qalc"
-              target="_blank"
-              rel="noopener noreferrer"
+              <a
+                href="https://linktr.ee/qalc"
+                target="_blank"
+                rel="noopener noreferrer"
               >
                 <img
                   src="/horizons/organized-by.png"
@@ -48,38 +48,43 @@ export default function HeroBanner() {
             </p>
 
             <div className="hidden md:block">
-              <FluidText
-                text="STEM Horizons: Space & Medicine"
-              />
+              <FluidText text="STEM Horizons: Space & Medicine" />
             </div>
             <h1 className="md:hidden text-3xl sm:text-4xl md:text-5xl font-bold text-white text-center md:text-left">
               STEM Horizons:
-                <span className="ml-2 text-3xl sm:text-4xl md:text-5xl font-bold text-white text-center md:text-left">
+              <span className="ml-2 text-3xl sm:text-4xl md:text-5xl font-bold text-white text-center md:text-left">
                 Space &amp; Medicine
               </span>
             </h1>
- 
+
             <p className="text-sm sm:text-base md:text-lg text-brand-white/80 text-justify md:text-left">
-              Join us for a conference dedicated to exploring the interdisciplinary intersections of STEM through space and astronomy, bringing together expert speakers from engineering, physics, and medicine alongside a competitive case competition with opportunities for an abstract publication and cash prizes.  
+              Join us for a conference dedicated to exploring the
+              interdisciplinary intersections of STEM through space and
+              astronomy, bringing together expert speakers from engineering,
+              physics, and medicine alongside a competitive case competition
+              with opportunities for an abstract publication and cash prizes.
             </p>
 
             <ul className="space-y-1.5 text-xs sm:text-sm md:text-base text-brand-white">
               <li className="flex items-center gap-2 sm:gap-3 justify-center md:justify-start">
                 <Rocket className="w-4 h-4 text-brand-primary" />
                 <span>
-                  <span className="font-semibold">Case competition:</span> Poster Presentation
+                  <span className="font-semibold">Case competition:</span>{" "}
+                  Poster Presentation
                 </span>
               </li>
               <li className="flex items-center gap-2 sm:gap-3 justify-center md:justify-start">
                 <Users className="w-4 h-4 text-brand-primary" />
                 <span>
-                  <span className="font-semibold">Networking:</span> Engineers, physicists, clinicians
+                  <span className="font-semibold">Networking:</span> Engineers,
+                  physicists, clinicians
                 </span>
               </li>
               <li className="flex items-center gap-2 sm:gap-3 justify-center md:justify-start">
                 <Trophy className="w-4 h-4 text-brand-primary" />
                 <span>
-                  <span className="font-semibold">Prizes:</span> QSURJ abstract publication &amp; cash
+                  <span className="font-semibold">Prizes:</span> QSURJ abstract
+                  publication &amp; cash
                 </span>
               </li>
             </ul>
@@ -99,7 +104,9 @@ export default function HeroBanner() {
                   size="md"
                   variant="outlineLight"
                   onClick={() => {
-                    const target = document.getElementById("conference-schedule");
+                    const target = document.getElementById(
+                      "conference-schedule",
+                    );
                     if (!target) return;
 
                     const smoother = ScrollSmoother.get();

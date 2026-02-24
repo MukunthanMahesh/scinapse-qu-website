@@ -1,5 +1,12 @@
 import { motion } from "framer-motion";
-import { Users, FileText, Lightbulb, ClipboardList, CalendarClock, Award } from "lucide-react";
+import {
+  Users,
+  FileText,
+  Lightbulb,
+  ClipboardList,
+  CalendarClock,
+  Award,
+} from "lucide-react";
 import { slideUpVariant } from "../../utils/motionVariants";
 
 export default function CaseCompetition() {
@@ -19,9 +26,9 @@ export default function CaseCompetition() {
           </h2>
           <p className="mt-3 text-sm text-justify md:text-center textmd:text-base text-brand-white/80 max-w-3xl mx-auto">
             Teams of 2–4 students tackle an interdisciplinary case spanning
-            space, physics, engineering, and medicine—developing a research-style
-            abstract and poster with opportunities for QSURJ publication,
-            prizes, and recognition.
+            space, physics, engineering, and medicine—developing a
+            research-style abstract and poster with opportunities for QSURJ
+            publication, prizes, and recognition.
           </p>
         </div>
 
@@ -42,15 +49,11 @@ export default function CaseCompetition() {
                     <>
                       {/* Arrow for desktop */}
                       <div className="hidden md:flex items-center justify-center mx-2">
-                        <span className="text-brand-white/70 text-2xl">
-                          →
-                        </span>
+                        <span className="text-brand-white/70 text-2xl">→</span>
                       </div>
                       {/* Arrow for mobile */}
                       <div className="md:hidden flex items-center justify-center my-1">
-                        <span className="text-brand-white/60 text-xl">
-                          ↓
-                        </span>
+                        <span className="text-brand-white/60 text-xl">↓</span>
                       </div>
                     </>
                   )}
@@ -71,10 +74,15 @@ export default function CaseCompetition() {
                   className="flex items-start gap-3 text-sm md:text-base text-brand-white/85"
                 >
                   <div className="mt-0.5 h-6 w-6 flex items-center justify-center">
-                    <item.icon className="h-5 w-5 text-brand-cyanBlue" aria-hidden="true" />
+                    <item.icon
+                      className="h-5 w-5 text-brand-cyanBlue"
+                      aria-hidden="true"
+                    />
                   </div>
                   <div>
-                    <p className="font-semibold text-brand-white">{item.label}</p>
+                    <p className="font-semibold text-brand-white">
+                      {item.label}
+                    </p>
                     <p className="text-brand-white/80">{item.text}</p>
                   </div>
                 </div>
@@ -123,9 +131,7 @@ function TimelineCard({ title, highlight, description }) {
       <p className="text-sm md:text-base font-semibold text-brand-cyanBlue mb-2">
         {highlight}
       </p>
-      <p className="text-xs md:text-sm text-brand-white/80">
-        {description}
-      </p>
+      <p className="text-xs md:text-sm text-brand-white/80">{description}</p>
     </div>
   );
 }

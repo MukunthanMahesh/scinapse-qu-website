@@ -25,11 +25,12 @@ const NewsletterCard = () => {
         </div>
         <h3 className="text-xl font-bold">SciNapse Newsletter</h3>
       </div>
-      
+
       <p className="text-gray-300 mb-6 flex-grow">
-        Stay in the loop with our periodic newsletter featuring events, opportunities, and insights from the SciNapse community.
+        Stay in the loop with our periodic newsletter featuring events,
+        opportunities, and insights from the SciNapse community.
       </p>
-      
+
       <form onSubmit={handleNewsletterSubmit} className="mt-auto">
         <div className="mb-4">
           <input
