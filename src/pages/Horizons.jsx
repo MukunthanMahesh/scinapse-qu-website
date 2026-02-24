@@ -8,8 +8,8 @@ export default function HorizonsPage() {
   return (
     <div className="bg-brand-black">
       <HeroBanner />
-      <CaseCompetition />
       <SpeakerSection />
+      <CaseCompetition />
       <ConferenceSchedule />
       <PartnerSection />
     </div>
