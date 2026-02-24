@@ -10,11 +10,11 @@ export default function Loader({ fadingOut }) {
 
   // Disable scroll bar during load
   useEffect(() => {
-  document.body.style.overflow = "hidden";
-  return () => {
-    document.body.style.overflow = "auto";
-  };
-}, []);
+    document.body.style.overflow = "hidden";
+    return () => {
+      document.body.style.overflow = "auto";
+    };
+  }, []);
 
   const baseClasses = `fixed inset-0 z-50 flex flex-col items-center justify-center text-center transition-all duration-500 ease-out`;
   const fadeClass = fadingOut
@@ -24,11 +24,12 @@ export default function Loader({ fadingOut }) {
   const bootProgress = useAppBoot();
   const bootDone = bootProgress === 100;
 
-
   return (
     <>
       {/* Mobile Loader */}
-      <div className={`md:hidden flex flex-col items-center bg-brand-black ${baseClasses} ${fadeClass}`}>
+      <div
+        className={`md:hidden flex flex-col items-center bg-brand-black ${baseClasses} ${fadeClass}`}
+      >
         <l-helix size="70" speed="1.2" color="#5FC6C9 " />
         <div className="mt-16 text-gray-100 text-sm tracking-wide">
           <p>Loading Resources... {bootProgress}%</p>
@@ -41,8 +42,10 @@ export default function Loader({ fadingOut }) {
         </div>
       </div>
       {/* Desktop Loader */}
-    
-      <div className={`hidden md:flex flex-col items-center bg-brand-black ${baseClasses} ${fadeClass}`}>
+
+      <div
+        className={`hidden md:flex flex-col items-center bg-brand-black ${baseClasses} ${fadeClass}`}
+      >
         <l-helix size="80" speed="1.2" color="#5FC6C9 " />
         <div className="mt-16 text-gray-100 text-sm tracking-wide">
           <p>Loading Resources... {bootProgress}%</p>

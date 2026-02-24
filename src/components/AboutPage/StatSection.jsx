@@ -25,7 +25,9 @@ const StatSection = () => (
         </h1>
         {/* Description */}
         <p className="text-md text-gray-800 max-w-3xl mx-auto">
-          For over a decade, SciNapse has empowered undergraduate research at Queen’s through annual competitions and initiatives. Here are some key statistics.
+          For over a decade, SciNapse has empowered undergraduate research at
+          Queen’s through annual competitions and initiatives. Here are some key
+          statistics.
         </p>
       </div>
     </motion.section>

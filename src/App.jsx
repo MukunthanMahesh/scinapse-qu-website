@@ -23,11 +23,12 @@ export default function App() {
   const [fadeOut, setFadeOut] = useState(false);
   const [hideLoader, setHideLoader] = useState(false);
 
-
-
   // Track DOM ready
   useEffect(() => {
-    if (document.readyState === "complete" || document.readyState === "interactive") {
+    if (
+      document.readyState === "complete" ||
+      document.readyState === "interactive"
+    ) {
       setDomReady(true);
     } else {
       const handler = () => setDomReady(true);
@@ -54,28 +55,27 @@ export default function App() {
   return (
     <>
       {!hideLoader && <Loader fadingOut={fadeOut} />}
-      
+
       <div className="min-h-screen flex flex-col bg-brand-white text-brand-black">
         <BrowserRouter>
           <ScrollToTop />
-            <Navbar />
-            <SmoothScroll>
-
-              <main className="flex-1 pt-[72px]">
-                <Routes>
-                  <Route path="/" element={<Home />} />
-                  <Route path="/gallery" element={<Gallery />} />
-                  <Route path="/uscc" element={<USCC />} />
-                  <Route path="/stem-horizons" element={<Horizons />} />
-                  <Route path="/about" element={<About />} />
-                  <Route path="/team" element={<Team />} />
-                  <Route path="/links" element={<Links />} />
-                  <Route path="/contact" element={<Contact />} />
-                </Routes>
-                <Analytics />
-              </main>
-              <Footer />
-            </SmoothScroll>
+          <Navbar />
+          <SmoothScroll>
+            <main className="flex-1 pt-[72px]">
+              <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/gallery" element={<Gallery />} />
+                <Route path="/uscc" element={<USCC />} />
+                <Route path="/stem-horizons" element={<Horizons />} />
+                <Route path="/about" element={<About />} />
+                <Route path="/team" element={<Team />} />
+                <Route path="/links" element={<Links />} />
+                <Route path="/contact" element={<Contact />} />
+              </Routes>
+              <Analytics />
+            </main>
+            <Footer />
+          </SmoothScroll>
         </BrowserRouter>
       </div>
     </>

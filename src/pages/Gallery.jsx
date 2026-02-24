@@ -1,7 +1,7 @@
-import EventSection from '../components/GalleryPage/EventSection.jsx';
+import EventSection from "../components/GalleryPage/EventSection.jsx";
 import HeroBanner from "../components/GalleryPage/HeroBanner.jsx";
-import '../CSS/gallery.css';
-import { events } from '../data/galleryEvents.js';
+import "../CSS/gallery.css";
+import { events } from "../data/galleryEvents.js";
 
 // Main Gallery Page component (now also the main gallery UI)
 export default function GalleryPage() {

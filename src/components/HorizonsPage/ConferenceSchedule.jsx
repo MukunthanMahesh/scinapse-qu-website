@@ -47,13 +47,15 @@ const scheduleItems = [
   {
     time: "12:30 PM",
     title: "Lunch & networking",
-    description: "Lunch served. Use this time to meet speakers, judges, and other teams.",
+    description:
+      "Lunch served. Use this time to meet speakers, judges, and other teams.",
     type: "meal",
   },
   {
     time: "1:30 PM",
     title: "Competition briefing",
-    description: "Instructions for competition presentations and introduction of judges.",
+    description:
+      "Instructions for competition presentations and introduction of judges.",
     type: "competition",
   },
   {
@@ -71,7 +73,8 @@ const scheduleItems = [
   {
     time: "3:30 PM",
     title: "Judges review",
-    description: "Closed-door judging session. Participants can relax or network.",
+    description:
+      "Closed-door judging session. Participants can relax or network.",
     type: "judging",
   },
   {
@@ -109,7 +112,9 @@ export default function ConferenceSchedule() {
               <div
                 key={item.time + item.title}
                 className={`flex flex-row gap-4 sm:gap-6 px-4 sm:px-5 py-3 md:py-3.5 text-sm md:text-base ${
-                  idx !== scheduleItems.length - 1 ? "border-b border-brand-white/10" : ""
+                  idx !== scheduleItems.length - 1
+                    ? "border-b border-brand-white/10"
+                    : ""
                 }`}
               >
                 <div className="w-20 sm:w-24 flex items-start">

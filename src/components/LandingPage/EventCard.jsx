@@ -8,9 +8,8 @@ const EventCard = ({
   location,
   fullDetails,
   imageUrl,
-  link
+  link,
 }) => {
-
   return (
     <>
       {/* Row-style card (no image) */}
@@ -45,9 +44,7 @@ const EventCard = ({
               </a>
             </p>
 
-            <p className="text-xs sm:text-sm text-gray-300">
-              {fullDetails}
-            </p>
+            <p className="text-xs sm:text-sm text-gray-300">{fullDetails}</p>
 
             {link && (
               <div className="mt-3">

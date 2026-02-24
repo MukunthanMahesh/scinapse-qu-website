@@ -6,5 +6,9 @@ import { FaClock, FaUsers, FaMicroscope } from "react-icons/fa";
 export const stats = [
   { label: "Queen's USCC Competitors (2024-2025)", value: 90, icon: FaUsers },
   { label: "Years Running", value: 11, icon: FaClock },
-  { label: "STEM Horizons Competitors (2024-2025)", value: 40, icon: FaMicroscope },
+  {
+    label: "STEM Horizons Competitors (2024-2025)",
+    value: 40,
+    icon: FaMicroscope,
+  },
 ];

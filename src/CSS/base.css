@@ -1,7 +1,8 @@
 @layer base {
   @font-face {
     font-family: "Times Condensed";
-    src: url("/fonts/Times New Roman MT Condensed Regular.otf") format("opentype");
+    src: url("/fonts/Times New Roman MT Condensed Regular.otf")
+      format("opentype");
     font-weight: 400;
     font-style: normal;
     font-display: swap;
@@ -15,7 +16,7 @@
   html {
     overflow-x: hidden;
     overscroll-behavior-x: none;
-    overscroll-behavior-y: none
+    overscroll-behavior-y: none;
   }
 
   body {
@@ -23,7 +24,7 @@
     overflow-x: hidden;
     overscroll-behavior-x: none;
   }
-  
+
   /* Change default text selection highlight color to branded blue */
   ::selection {
     background-color: rgba(116, 220, 223, 0.7);
@@ -36,10 +37,10 @@
   }
 }
 
-img {  
+img {
   user-select: none;
   -moz-user-select: none;
-  -webkit-user-drag: none; 
+  -webkit-user-drag: none;
   -webkit-user-select: none;
   -ms-user-select: none;
 }

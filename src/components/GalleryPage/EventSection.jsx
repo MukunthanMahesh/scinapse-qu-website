@@ -1,21 +1,21 @@
-import { useState, useEffect } from 'react';
-import { motion } from 'framer-motion';
-import MasonryGrid from './MasonryGrid.jsx';
-import FluidText from '../CoreWeb/FluidText.jsx';
-import RippleButton from '../UI/RippleButton.jsx';
+import { useState, useEffect } from "react";
+import { motion } from "framer-motion";
+import MasonryGrid from "./MasonryGrid.jsx";
+import FluidText from "../CoreWeb/FluidText.jsx";
+import RippleButton from "../UI/RippleButton.jsx";
 
 // Hook to detect mobile screens
 function useIsMobile() {
   const isClient = typeof window !== "undefined";
   const [isMobile, setIsMobile] = useState(
-    isClient ? window.innerWidth < 768 : false
+    isClient ? window.innerWidth < 768 : false,
   );
   useEffect(() => {
     if (!isClient) return;
 
     const onResize = () => setIsMobile(window.innerWidth < 768);
-    window.addEventListener('resize', onResize);
-    return () => window.removeEventListener('resize', onResize);
+    window.addEventListener("resize", onResize);
+    return () => window.removeEventListener("resize", onResize);
   }, []);
   return isMobile;
 }
@@ -56,10 +56,16 @@ export default function EventSection({ event }) {
       {/* Event title and date */}
       <div>
         <span className="hidden md:block">
-          <FluidText text={event.title} baseColor="text-brand-white" size="text-3xl" />
+          <FluidText
+            text={event.title}
+            baseColor="text-brand-white"
+            size="text-3xl"
+          />
         </span>
         <span className="block md:hidden">
-          <h2 className="text-2xl font-bold text-brand-white leading-tight mb-1">{event.title}</h2>
+          <h2 className="text-2xl font-bold text-brand-white leading-tight mb-1">
+            {event.title}
+          </h2>
         </span>
       </div>
       <div className="text-brand-white/60 mb-3">{event.date}</div>
@@ -70,25 +76,30 @@ export default function EventSection({ event }) {
           animate={
             isMobile
               ? { opacity: 1 }
-              : { maxHeight: showAll ? '2000px' : '600px', opacity: 1 }
+              : { maxHeight: showAll ? "2000px" : "600px", opacity: 1 }
           }
-          transition={{ 
+          transition={{
             duration: 0.8,
-            ease: "easeInOut"
+            ease: "easeInOut",
           }}
           onAnimationComplete={() => {
-            if (typeof window === "undefined" || typeof document === "undefined") {
+            if (
+              typeof window === "undefined" ||
+              typeof document === "undefined"
+            ) {
               return;
             }
-            const element = document.querySelector(`[data-event="${event.title}"]`);
+            const element = document.querySelector(
+              `[data-event="${event.title}"]`,
+            );
             if (element) {
               if (showAll) {
                 // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
                 // !!!!!! Removing the scrollIntoView to avoid jumping because it was proving to be disruptive
                 // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
                 // Scroll to show the newly revealed content
-                // element.scrollIntoView({ 
-                //   behavior: 'smooth', 
+                // element.scrollIntoView({
+                //   behavior: 'smooth',
                 //   block: 'end',
                 //   inline: 'nearest'
                 // });
@@ -98,14 +109,19 @@ export default function EventSection({ event }) {
                 const scrollTop = window.pageYOffset + rect.top - 100; // 100px above
                 window.scrollTo({
                   top: scrollTop,
-                  behavior: 'smooth'
+                  behavior: "smooth",
                 });
               }
             }
           }}
         >
           {/* Masonry grid for event images, keep all images mounted after first show all */}
-          <MasonryGrid images={event.images} showAll={showAll} initialShow={initialShow} keepAll={hasShownAll} />
+          <MasonryGrid
+            images={event.images}
+            showAll={showAll}
+            initialShow={initialShow}
+            keepAll={hasShownAll}
+          />
         </motion.div>
       </div>
       {/* Show toggle button if there are more images to display */}
@@ -117,10 +133,10 @@ export default function EventSection({ event }) {
             disabled={buttonDisabled}
             variant="primary"
           >
-            {showAll ? 'Show Less' : `View All Photos`}
+            {showAll ? "Show Less" : `View All Photos`}
           </RippleButton>
         </div>
       )}
     </section>
   );
-} 
+}

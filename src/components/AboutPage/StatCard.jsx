@@ -1,7 +1,12 @@
 import React, { useEffect, useRef, useState } from "react";
 import { useMotionValue, animate } from "framer-motion";
 
-export default function StatCard({ value, label, icon: IconComponent, suffix = "+" }) {
+export default function StatCard({
+  value,
+  label,
+  icon: IconComponent,
+  suffix = "+",
+}) {
   const count = useMotionValue(0);
   const [displayCount, setDisplayCount] = useState(0);
   const ref = useRef(null);
@@ -20,7 +25,7 @@ export default function StatCard({ value, label, icon: IconComponent, suffix = "
           observer.disconnect();
         }
       },
-      { threshold: 0.2 }
+      { threshold: 0.2 },
     );
 
     if (ref.current) {
@@ -42,9 +47,15 @@ export default function StatCard({ value, label, icon: IconComponent, suffix = "
 
       <span className="text-5xl font-bold text-brand-white z-10">
         {displayCount}
-        {suffix && <span className="text-2xl font-normal text-white/90 ml-1">{suffix}</span>}
+        {suffix && (
+          <span className="text-2xl font-normal text-white/90 ml-1">
+            {suffix}
+          </span>
+        )}
       </span>
-      <span className="text-md text-brand-white/90 mt-2 tracking-wide z-10">{label}</span>
+      <span className="text-md text-brand-white/90 mt-2 tracking-wide z-10">
+        {label}
+      </span>
     </section>
   );
 }

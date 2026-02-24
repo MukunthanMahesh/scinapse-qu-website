@@ -1,5 +1,5 @@
-import Masonry from 'react-masonry-css';
-import GalleryImage from './ClickableImage.jsx';
+import Masonry from "react-masonry-css";
+import GalleryImage from "./ClickableImage.jsx";
 
 /**
  * MasonryGrid - Uses react-masonry-css for a true Pinterest-style layout
@@ -10,7 +10,8 @@ import GalleryImage from './ClickableImage.jsx';
  */
 function getRandomAspectRatio(seed) {
   // Generate a pseudo-random aspect ratio between 0.9 and 1.5
-  const min = 0.9, max = 1.5;
+  const min = 0.9,
+    max = 1.5;
   const x = Math.abs(Math.sin(seed) * 10000) % 1;
   return min + (max - min) * x;
 }
@@ -20,10 +21,15 @@ const breakpointColumnsObj = {
   default: 4,
   1100: 3,
   700: 2,
-  0: 2
+  0: 2,
 };
 
-export default function MasonryGrid({ images, showAll = false, initialShow = 4, keepAll = false }) {
+export default function MasonryGrid({
+  images,
+  showAll = false,
+  initialShow = 4,
+  keepAll = false,
+}) {
   return (
     <Masonry
       breakpointCols={breakpointColumnsObj}
@@ -33,11 +39,15 @@ export default function MasonryGrid({ images, showAll = false, initialShow = 4, 
       {images.map((img, index) => {
         // Only render all images if showAll or keepAll, otherwise only up to initialShow
         if (!showAll && !keepAll && index >= initialShow) return null;
-        const aspectRatio = getRandomAspectRatio((img.src || '').split('').reduce((acc, c) => acc + c.charCodeAt(0), 0) + index);
+        const aspectRatio = getRandomAspectRatio(
+          (img.src || "")
+            .split("")
+            .reduce((acc, c) => acc + c.charCodeAt(0), 0) + index,
+        );
         // Hide images beyond initialShow unless showAll is true
         const hidden = !showAll && index >= initialShow;
         return (
-          <div key={`${img.src}-${index}`} className={hidden ? 'hidden' : ''}>
+          <div key={`${img.src}-${index}`} className={hidden ? "hidden" : ""}>
             <GalleryImage
               src={img.src}
               alt={img.alt}
@@ -49,4 +59,4 @@ export default function MasonryGrid({ images, showAll = false, initialShow = 4, 
       })}
     </Masonry>
   );
-} 
+}

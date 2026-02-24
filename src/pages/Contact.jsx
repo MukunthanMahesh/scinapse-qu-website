@@ -46,8 +46,9 @@ export default function Contact() {
                   partnerships, or getting involved?
                 </h1>
                 <p className="text-sm sm:text-base text-brand-white/80 max-w-xl">
-                  Reach out about the Undergraduate Science Case Competition, STEM Horizons,
-                  collaborations, or anything SciNapse related. Our team will follow up by email.
+                  Reach out about the Undergraduate Science Case Competition,
+                  STEM Horizons, collaborations, or anything SciNapse related.
+                  Our team will follow up by email.
                 </p>
               </div>
 
@@ -130,7 +131,8 @@ function ContactForm({
         Tell us how we can help
       </h2>
       <p className="mt-2 text-xs sm:text-sm text-brand-white/70">
-        Share a few details about your question or idea. We&apos;ll respond by email.
+        Share a few details about your question or idea. We&apos;ll respond by
+        email.
       </p>
 
       <form
@@ -144,7 +146,7 @@ function ContactForm({
           const lastName = formData.get("lastName") || "";
           const email = formData.get("email") || "";
           const subject = encodeURIComponent(
-            `SciNapse Queen's – ${selectedInquiry} inquiry`
+            `SciNapse Queen's – ${selectedInquiry} inquiry`,
           );
 
           const bodyLines = [
@@ -166,7 +168,7 @@ function ContactForm({
           ];
 
           const body = encodeURIComponent(
-            bodyLines.filter((line) => line !== "").join("\n")
+            bodyLines.filter((line) => line !== "").join("\n"),
           );
 
           window.location.href = `mailto:scinapse@clubs.queensu.ca?subject=${subject}&body=${body}`;

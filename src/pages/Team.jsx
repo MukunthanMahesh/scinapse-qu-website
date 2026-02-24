@@ -4,7 +4,6 @@ import { slideUpVariant } from "../utils/motionVariants";
 import { teamMembers } from "../data/teamData.js";
 
 export default function Team() {
-
   return (
     <div className="min-h-screen bg-zinc-950 text-brand-white">
       <motion.section
