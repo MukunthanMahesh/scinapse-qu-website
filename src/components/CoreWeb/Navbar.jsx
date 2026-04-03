@@ -176,7 +176,7 @@ export default function Navbar() {
         {/* Buttons and Social Media Icons (Desktop Only, Grouped) - Right aligned */}
         <div className="hidden md:flex items-center gap-6 ml-auto">
           {/* USE WHEN HIRING/EVENTS ARE HAPPENING -- All Purpose Indicator */}
-          <div className="flex items-center gap-2 bg-green-500/20 text-green-400 px-3 py-1 rounded-full text-sm font-semibold">
+          {/* <div className="flex items-center gap-2 bg-green-500/20 text-green-400 px-3 py-1 rounded-full text-sm font-semibold">
             <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
             <a
               href="https://www.bouncelife.com/events/696846047c69da5d5990e8eb"
@@ -185,7 +185,7 @@ export default function Navbar() {
             >
               <span>Horizons Tickets on Sale!</span>
             </a>
-          </div>
+          </div> */}
 
           {/* CTA Buttons */}
           <div className="flex gap-3">
