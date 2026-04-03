@@ -28,7 +28,7 @@ export default function Footer() {
                 <p className="leading-snug text-sm mb-1 max-w-[100%] sm:max-w-none">
                   We offer hands-on research experience to undergraduates every
                   year through cross-club events, the USCC, and STEM
-                  Horizons.{" "}
+                  Horizons{" "}
                 </p>
                 <p className="leading-snug text-sm max-w-[100%] sm:max-w-none">
                   Our chapter, based at{" "}

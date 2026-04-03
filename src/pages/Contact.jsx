@@ -41,7 +41,7 @@ export default function Contact() {
                   Contact SciNapse Queen&apos;s
                 </p>
                 <h1 className="text-3xl md:text-4xl font-bold text-brand-white">
-                  Questions about events,
+                  Questions about past or upcoming events,
                   <br />
                   partnerships, or getting involved?
                 </h1>

@@ -44,7 +44,7 @@ export default function HeroBanner() {
               </a>
             </div>
             <p className="text-[11px] sm:text-xs uppercase text-brand-cyanBlue text-center md:text-left">
-              March 7, 2026 • Queen&apos;s University
+              Event concluded on March 7, 2026 • Queen&apos;s University
             </p>
 
             <div className="hidden md:block">
@@ -58,8 +58,8 @@ export default function HeroBanner() {
             </h1>
 
             <p className="text-sm sm:text-base md:text-lg text-brand-white/80 text-justify md:text-left">
-              Join us for a conference dedicated to exploring the
-              interdisciplinary intersections of STEM through space and
+              Thank you for joining us for a conference dedicated to exploring
+              the interdisciplinary intersections of STEM through space and
               astronomy, bringing together expert speakers from engineering,
               physics, and medicine alongside a competitive case competition
               with opportunities for an abstract publication and cash prizes.
@@ -92,11 +92,23 @@ export default function HeroBanner() {
             <div className="space-y-2">
               <div className="flex flex-col sm:flex-row gap-3 pt-3 justify-center md:justify-start">
                 <RippleButton
-                  href="https://www.bouncelife.com/events/696846047c69da5d5990e8eb"
-                  target="_blank"
-                  rel="noopener noreferrer"
                   size="md"
-                  variant="primary"
+                  variant="disabled"
+                  onClick={() => {
+                    const target = document.getElementById(
+                      "conference-schedule",
+                    );
+                    if (!target) return;
+
+                    const smoother = ScrollSmoother.get();
+                    if (smoother) {
+                      smoother.scrollTo(target, true);
+                    } else {
+                      const rect = target.getBoundingClientRect();
+                      const offset = window.pageYOffset + rect.top - 80;
+                      window.scrollTo({ top: offset, behavior: "smooth" });
+                    }
+                  }}
                 >
                   Get Tickets
                 </RippleButton>
@@ -122,9 +134,6 @@ export default function HeroBanner() {
                   Learn more
                 </RippleButton>
               </div>
-              <p className="hidden md:block text-[11px] sm:text-xs text-brand-white/80 text-center md:text-left">
-                *Lunch included
-              </p>
             </div>
           </div>
         </div>
